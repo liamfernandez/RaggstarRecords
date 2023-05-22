@@ -1,10 +1,6 @@
 import type { JSX } from 'preact/jsx-runtime';
 import { useEffect } from 'preact/hooks';
 
-interface IPhotoCarouselProps {
-    
-}
-
 export enum CollapseTypes {
     Experience,
     Education,
@@ -44,9 +40,7 @@ export default function PhotoCarousel(): JSX.Element {
                 {orderOfPics.map((num: number) => {
                     return (
                         <li class="carousel-item min-h-[100px] min-w-[100px]">
-                            <img id={`nav-img-${num}`} onClick={(elm) => {
-                                if (!elm.currentTarget.classList.contains(`opacity-50`))
-                                    elm.currentTarget.classList.toggle(`opacity-50`)
+                            <img id={`nav-img-${num}`} onClick={() => {
                                 navImageClicked(num)
                             }} src={`./main-room/main-room-${num}.jpeg`} class={`w-[100px] h-[100px] object-cover`} />
                         </li>
@@ -57,24 +51,30 @@ export default function PhotoCarousel(): JSX.Element {
     );
 }
 
-function navImageClicked(num: number) {
+function navImageClicked(num: number, scroll:boolean = true) {
     const orderOfPics: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
     for (let x of orderOfPics) {
+        const elm = document.getElementById(`nav-img-${x}`);
         if (x != num) {
-            const elm = document.getElementById(`nav-img-${x}`);
             if (elm?.classList.contains(`opacity-50`)) {
                 elm.classList.toggle(`opacity-50`)
             }
+        } else {
+            console.log(`About to toggle opacity for image number: #`, x)
+            if (!elm?.classList.contains(`opacity-50`))
+                elm?.classList.toggle(`opacity-50`)
         }
     }
 
-    let carousel = document.getElementById(`carousel`);
-    const newXPos = window.innerWidth*(num-1);
-    carousel?.scrollTo(newXPos, 0);
-    toggleButtons(newXPos, carousel?.scrollWidth)
-
+    if (scroll) {
+        let carousel = document.getElementById(`carousel`);
+        const newXPos = window.innerWidth*(num-1);
+        carousel?.scrollTo(newXPos, 0);
+        toggleButtons(newXPos, carousel?.scrollWidth)
+    
+    }
     let navTray = document.getElementById(`navTray`)
-    const navTrayPos = 100 * (num-6);
+    const navTrayPos = 100 * (num-7);
     navTray?.scrollTo(navTrayPos,0)
 }
 
@@ -89,11 +89,15 @@ function scrollImage(scrollRight:boolean): void {
         carousel?.scrollBy(-1 * window.innerWidth, 0);
         newScrollPos -= window.innerWidth;
     }
+
+    toggleButtons(newScrollPos, carousel?.scrollWidth);
+    console.log(`newScrollPos / window.innerWidth =`, Math.floor(newScrollPos / window.innerWidth))
+    navImageClicked(Math.floor(newScrollPos / (window.innerWidth -10)) + 1, false);
 }
 
 function toggleButtons(scrollPos, maxWidth):void {
-    console.log(`scrollPos: ${scrollPos}`)
-    console.log(`maxWidth: ${maxWidth}`)
+    // console.log(`scrollPos: ${scrollPos}`)
+    // console.log(`maxWidth: ${maxWidth}`)
 
     let leftButton = document.getElementById('leftButton')
     let rightButton = document.getElementById('rightButton');
