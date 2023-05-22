@@ -84,14 +84,11 @@ function scrollImage(scrollRight:boolean): void {
     }
 
     toggleButtons(newScrollPos, carousel?.scrollWidth);
-    console.log(`newScrollPos / window.innerWidth =`, Math.floor(newScrollPos / window.innerWidth))
+    // console.log(`newScrollPos / window.innerWidth =`, Math.floor(newScrollPos / window.innerWidth))
     navImageClicked(Math.floor(newScrollPos / (window.innerWidth -10)) + 1, false);
 }
 
 function toggleButtons(scrollPos, maxWidth):void {
-    // console.log(`scrollPos: ${scrollPos}`)
-    // console.log(`maxWidth: ${maxWidth}`)
-
     let leftButton = document.getElementById('leftButton')
     let rightButton = document.getElementById('rightButton');
     if (scrollPos < window.innerWidth) {
