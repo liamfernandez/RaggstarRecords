@@ -1,15 +1,21 @@
 ---
+import PhotoCarousel from '../components/PhotoCarousel';
+import VideoContainer from '../components/VideoContainer.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Atlanta Recording Studio | RAGGSTARRECORDS">
+	<main>
+		<section id="Book Now Hero Video">
+			<VideoContainer />
+		</section>
+		<section id="Main Room + Pics">
+			<span class=" bg-[#454140] bg-black w-full flex items-center justify-center">
+				<h1 class=" z-[1] text-white font-Futura text-sh text-5xl py-10">
+					Main Room
+				</h1>
+			</span>
+		<PhotoCarousel client:load />
+		</section>
+	</main>
+</Layout>
