@@ -3,6 +3,17 @@ export interface Props {
 	title: string;
 }
 
+console.log('from the fence: ', Astro.url.pathname)
+let pageClasses: Map<string,string> = new Map<string,string>();
+const pages = ["", "artists", "about"]
+pages.forEach((path) => {
+	if (path === Astro.url.pathname.substring(1)) {
+		pageClasses.set(path, "bg-gradient-to-bl from-[#1c82e1] to-emerald-400 p-[2px] rounded-xl flex justify-center");
+	}
+	else {
+		pageClasses.set(path, "wait-for-hov p-[2px] rounded-xl flex justify-center");
+	}
+})
 const { title } = Astro.props;
 ---
 
@@ -18,17 +29,23 @@ const { title } = Astro.props;
 	<body>
 		<nav>
 			<div class="bg-[black] flex justify-between items-center pr-20 py-6 pl-10">
-				<img class="h-28 rounded-xl z-[1]" src="/main-logo-raggstar.jpg" />
-				<span class="flex gap-20">
-					<div class="bg-gradient-to-tr rounded-xl flex p-1 justify-center from-blue-600 to-emerald-400">
-							<a href="/" 
-								class="text-white font-Karrik text-xl z-[1] bg-black rounded-xl py-2 px-4 ">
-								Home
-							</a>
+				<img class="h-28 rounded-xl" src="/main-logo-raggstar.jpg" />
+				<span class="flex gap-12">
+					<div id="nav-home" class={pageClasses.get('')}>
+						<a href="/" 
+							class="text-white bg-black font-Futura text-xl rounded-xl py-2 px-2 ">
+							Home
+						</a>
 					</div>
-					<div class="bg-gradient-to-l rounded-xl flex p-1 justify-center from-blue-600 to-emerald-400">
+					<div id="nav-about" class={pageClasses.get('about')}>
+						<a href="/about" 
+							class="text-white font-Futura text-xl bg-black rounded-xl py-2 px-2">
+							About Us
+						</a>
+					</div>
+					<div id="nav-artists" class={pageClasses.get('artists')}>
 						<a href="/artists" 
-							class="text-white font-Karrik text-xl bg-black z-[1] rounded-xl py-2 px-4 tracking-wider">
+							class="text-white font-Futura text-xl bg-black rounded-xl py-2 px-2">
 							Artists
 						</a>
 					</div>
@@ -49,7 +66,7 @@ const { title } = Astro.props;
 						<img src="../YouTube.svg" class="h-[25px]"/>
 					</a>
 				</span>
-				<span class=" font] text-xs">
+				<span class="text-xs">
 					© 2022 RAGGSTARRECORDS | Atlanta, GA
 				</span>
 			</div>
@@ -68,6 +85,16 @@ const { title } = Astro.props;
 		font-family: 'Karrik';
 		src: url('../Karrik-Regular.ttf') format('ttf');
 		src: url('../Karrik-Regular.woff') format('woff');
+	}
+
+	.wait-for-hov {
+		background: linear-gradient(to top right, rgb(52 211 153),rgb(28, 130, 225)) no-repeat
+		calc(200% - var(--i,0)*100%) 100% / 200% calc(100%*var(--i,0) + .08em); 
+		transition: .2s calc(var(--i,0)*.2s), background-position .2s calc(.2s - calc(var(--i,0)*.2s));
+	}
+
+	.wait-for-hov:hover {
+		--i:1;
 	}
 
 	h1 {
