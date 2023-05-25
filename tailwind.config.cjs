@@ -4,7 +4,7 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			'Futura': ['FuturaLTW01-Medium', 'sans-serif'],
-			'Karrik': ['Karrik', 'sans-serif']
+			'Druk': ['Druk', 'sans-serif']
 		},
 		extend: {},
 	},

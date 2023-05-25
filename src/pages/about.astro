@@ -6,20 +6,20 @@ const aboutKeys = ["Rags", "Lex", "Morgen"]
 ---
 
 <Layout title="About Us | RAGGSTARRECORDS">
-	<main class=" mx-20">
-		<h1 class=" text-center font-Futura pt-10 text-4xl">
-			Meet the team
+	<main class=" px-20 bg-[#262626]">
+		<h1 class=" text-center text-gray-200 font-[Druk] pt-20 pb-10 text-5xl">
+			MEET THE TEAM
 		</h1>
-		<div class="flex flex-row justify-center gap-20 py-10">
+		<div class="flex flex-row justify-center gap-20 pb-20">
 			{aboutKeys.map((name) => {
 				return (
 					<div class="flex flex-col items-start w-[320px]">
-						<img src={`../people/${name.toLowerCase()}.jpg`} class="rounded-full object-cover h-[320px] w-[320px]"/>
+						<img src={`../team/${name.toLowerCase()}.jpeg`} class="rounded-full object-cover h-[320px] w-[320px]"/>
 						<span class="flex flex-row w-full items-center justify-start pt-10">
-							<h3 class=" text-2xl text-center pr-4">{name}</h3>
+							<h3 class=" text-2xl text-center text-gray-200 pr-4">{name}</h3>
 							<span class={`${aboutMap[name]["anime"]}`}></span>
 						</span>
-						<span class="pt-2 text-[14px]">
+						<span class="pt-2 text-gray-200 text-[14px]">
 							{aboutMap[name]["description"]}
 						</span>
 					</div>
@@ -32,7 +32,7 @@ const aboutKeys = ["Rags", "Lex", "Morgen"]
 	.bars-5 {
 		width: 17px;
 		aspect-ratio: 1;
-		--c: no-repeat linear-gradient(#000 0 0);
+		--c: no-repeat linear-gradient(#219aea 0 0);
 		background: 
 			var(--c) 0%   50%,
 			var(--c) 50%  50%,
@@ -51,7 +51,7 @@ const aboutKeys = ["Rags", "Lex", "Morgen"]
 	.bars-6 {
 		width: 18px;
 		aspect-ratio: .75;
-		--c: no-repeat linear-gradient(#000 0 0);
+		--c: no-repeat linear-gradient(#58d73c 0 0);
 		background: 
 			var(--c) 0%   50%,
 			var(--c) 50%  50%,
@@ -69,7 +69,7 @@ const aboutKeys = ["Rags", "Lex", "Morgen"]
 	.bars-7 {
 		width: 17px;
 		aspect-ratio: .75;
-		--c: no-repeat linear-gradient(#000 0 0);
+		--c: no-repeat linear-gradient(orange 0 0);
 		background: 
 			var(--c) 0%   50%,
 			var(--c) 50%  50%,

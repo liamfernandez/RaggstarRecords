@@ -1,11 +1,13 @@
 ---
+import { navLabels } from "../strings"
+
 export interface Props {
 	title: string;
 }
+const { title } = Astro.props;
 
-console.log('from the fence: ', Astro.url.pathname)
 let pageClasses: Map<string,string> = new Map<string,string>();
-const pages = ["", "artists", "about"]
+const pages = ["", "services", "about", "discography"]
 pages.forEach((path) => {
 	if (path === Astro.url.pathname.substring(1)) {
 		pageClasses.set(path, "bg-gradient-to-bl from-[#1c82e1] to-emerald-400 p-[2px] rounded-xl flex justify-center");
@@ -14,7 +16,6 @@ pages.forEach((path) => {
 		pageClasses.set(path, "wait-for-hov p-[2px] rounded-xl flex justify-center");
 	}
 })
-const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -28,46 +29,40 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<nav>
-			<div class="bg-[black] flex justify-between items-center pr-20 py-6 pl-10">
+			<div class="bg-[white] flex justify-between items-center pb-1 pt-2 px-8">
 				<img class="h-28 rounded-xl" src="/main-logo-raggstar.jpg" />
 				<span class="flex gap-12">
-					<div id="nav-home" class={pageClasses.get('')}>
-						<a href="/" 
-							class="text-white bg-black font-Futura text-xl rounded-xl py-2 px-2 ">
-							Home
-						</a>
-					</div>
-					<div id="nav-about" class={pageClasses.get('about')}>
-						<a href="/about" 
-							class="text-white font-Futura text-xl bg-black rounded-xl py-2 px-2">
-							About Us
-						</a>
-					</div>
-					<div id="nav-artists" class={pageClasses.get('artists')}>
-						<a href="/artists" 
-							class="text-white font-Futura text-xl bg-black rounded-xl py-2 px-2">
-							Artists
-						</a>
-					</div>
+					{pages.map((page) => {
+						return (
+						<div class={pageClasses.get(page)}>
+							<a href={`/${page}`} 
+								class="text-black bg-white font-Druk tracking-wide rounded-xl py-2 px-2 ">
+								{navLabels[page].toUpperCase()}
+							</a>
+						</div>
+						);
+					})}
 				</span>
 			</div>
+			<hr />
 		</nav>
 		<slot />
+		<hr />
 		<footer>
 			<div class=" flex justify-center flex-col pt-8 pb-6 gap-6 items-center">
 				<span class="bg-white flex gap-4 flex-row">
 					<a href="https://www.instagram.com/raggstarrecords/">
-						<img src="../IG.svg"  class="h-[25px]"/>
+						<img src="../socials/IG.svg"  class="h-[25px]"/>
 					</a>
 					<a href="https://www.tiktok.com/@raggstarrecords">
-						<img src="../TikTok.svg"  class="h-[25px]"/>
+						<img src="../socials/TikTok.svg"  class="h-[25px]"/>
 					</a>
 					<a href="https://www.youtube.com/@raggstarrecords3739">
-						<img src="../YouTube.svg" class="h-[25px]"/>
+						<img src="../socials/YouTube.svg" class="h-[25px]"/>
 					</a>
 				</span>
 				<span class="text-xs">
-					© 2022 RAGGSTARRECORDS | Atlanta, GA
+					© 2023 RAGGSTARRECORDS | Atlanta, GA
 				</span>
 			</div>
 		</footer>
@@ -82,9 +77,9 @@ const { title } = Astro.props;
 	}
 
 	@font-face {
-		font-family: 'Karrik';
-		src: url('../Karrik-Regular.ttf') format('ttf');
-		src: url('../Karrik-Regular.woff') format('woff');
+		font-family: 'Druk';
+		src: url('../DrukWide-Medium.ttf') format('ttf');
+		src: url('../DrukWide-Medium.woff') format('woff');
 	}
 
 	.wait-for-hov {

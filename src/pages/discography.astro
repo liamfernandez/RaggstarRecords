@@ -1,0 +1,16 @@
+---
+import DiscographyContainer from '../components/DiscographyContainer';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Artists | RAGGSTARRECORDS">
+	<main class="bg-[#262626]">
+		<span class="flex flex-col items-center">
+			<h1 class="font-Druk text-white tracking-wide pt-16 text-5xl">
+				CLIENT LIST
+			</h1>
+			<p class="text-gray-400 py-2 text-xs">Click on an artist card to see songs they've crafted using RaggStar services.</p>
+		</span>
+		<DiscographyContainer client:load />
+	</main>
+</Layout>
