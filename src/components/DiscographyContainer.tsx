@@ -2,8 +2,8 @@ import type { JSX } from 'preact/jsx-runtime';
 import "./styles.css"
 
 export default function DiscographyContainer(): JSX.Element {
-    const artists = ['Candi', 'Cee The Scholar', 'Fearless J', 'Gifted', 'HBK Dolo', 'K5', 'Ken Doll', 'Linko',
-     'Morgen', 'NL Preet', 'Rojo', 'Roman Xzavier', 'Shoda', 'Tay', 'Vernell', 'YG', 'Yung Yana']
+    const artists = shuffle(['Candi', 'Cee The Scholar', 'Fearless J', 'Gifted', 'HBK Dolo', 'K5', 'Ken Doll', 'Linko',
+     'Morgen', 'NL Preet', 'Rojo', 'Roman Xzavier', 'Shoda', 'Tay', 'Vernell', 'YG', 'Yung Yana'])
 
      console.log(artists[1].split(` `).join(''))
 
@@ -13,7 +13,7 @@ export default function DiscographyContainer(): JSX.Element {
                 {artists.map((name) => {
                     return(
                         <button class={`image-container`}>
-                            <img src={`../artists/${name.split(` `).join('')}.jpeg`} class={` object-cover h-[200px] w-[200px]`} />
+                            <img src={`../artists/${name.split(` `).join('')}.jpeg`} class={` object-cover h-[300px] w-[300px]`} />
                             <div class={`overlay`}>
                                 <p class={'mt-[47%] text-white'}>{name}</p>
                             </div>
