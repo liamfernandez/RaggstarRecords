@@ -1,18 +1,27 @@
 import type { JSX } from 'preact/jsx-runtime';
+import { useState } from 'preact/hooks';
+import ArtistHub from './ArtistHub';
 import "./styles.css"
 
 export default function DiscographyContainer(): JSX.Element {
-    const artists = shuffle(['Candi', 'Cee The Scholar', 'Fearless J', 'Gifted', 'HBK Dolo', 'K5', 'Ken Doll', 'Linko',
-     'Morgen', 'NL Preet', 'Rojo', 'Roman Xzavier', 'Shoda', 'Tay', 'Vernell', 'YG', 'Yung Yana'])
+    // const artists = shuffle(['Candi', 'Cee The Scholar', 'DattkidRob', 'Fearless J', 'Gifted', 'HBK Dolo', 'K5', 'Ken Doll', 'Linko',
+    //  'Morgen', 'North Ave Jax', 'NL Preet', 'PMG', 'Rae', 'Rojo', 'Roman Xzavier', 
+    //  'Shoda', 'Tay', 'Vernell', 'Winn', 'YG', 'Yung Scrapp', 'Yung Yana']);
+    const artists = ['Candi', 'Cee The Scholar', 'DattkidRob', 'Fearless J', 'Gifted', 'HBK Dolo', 'K5', 'Ken Doll', 'Linko',
+     'Morgen', 'North Ave Jax', 'NL Preet', 'PMG', 'Rae', 'Rojo', 'Roman Xzavier', 
+     'Shoda', 'Tay', 'Vernell', 'Winn', 'YG', 'Yung Scrapp', 'Yung Yana'];
 
-     console.log(artists[1].split(` `).join(''))
+    const [artistToFocus, setArtistToFocus] = useState<string>(``);
 
     return (
         <>
             <div class={`py-10 flex flex-row justify-center gap-1 flex-wrap`}>
-                {artists.map((name) => {
+                {artists.map((name: string) => {
                     return(
-                        <button class={`image-container`}>
+                        <button htmlFor={`more-info-modal`} class={`image-container`} onClick={() => {
+                            setArtistToFocus(name);
+                            showModal();
+                        }}>
                             <img src={`../artists/${name.split(` `).join('')}.jpeg`} class={` object-cover h-[300px] w-[300px]`} />
                             <div class={`overlay`}>
                                 <p class={'mt-[47%] text-white'}>{name}</p>
@@ -21,13 +30,18 @@ export default function DiscographyContainer(): JSX.Element {
                     );
                 })}
             </div>
+            <ArtistHub name={artistToFocus}/>
         </>
     );
 }
 
+function showModal(): void {
+    const elm = document.getElementById(`modal-toggle`)
+    elm.checked = !elm.checked
+}
 
 // If needed, shuffle function to shuffle artist cardsyay
-function shuffle(array) {
+function shuffle(array: any) {
     let currentIndex = array.length,  randomIndex;
   
     // While there remain elements to shuffle.
