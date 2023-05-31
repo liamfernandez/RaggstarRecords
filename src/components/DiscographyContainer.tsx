@@ -22,7 +22,7 @@ export default function DiscographyContainer(): JSX.Element {
                             setArtistToFocus(name);
                             showModal();
                         }}>
-                            <img src={`../artists/${name.split(` `).join('')}.jpeg`} class={` object-cover h-[300px] w-[300px]`} />
+                            <img src={`../artists/${name.split(` `).join('')}.jpeg`} class={` object-cover 2xl:h-[450px] 2xl:w-[450px] h-[300px] w-[300px]`} />
                             <div class={`overlay`}>
                                 <p class={'mt-[47%] text-white'}>{name}</p>
                             </div>
