@@ -29,7 +29,7 @@ export default function PhotoCarousel(): JSX.Element {
                     );
                 })}
             </div>
-            <ul id={`navTray`} class={`carousel carousel-center pt-10 py-4 mx-5 flex flex-row gap-2 overflow-scroll overflow-x-hidden`}>
+            <ul id={`navTray`} class={`carousel carousel-center 2xl:justify-center pt-10 py-4 mx-5 flex flex-row gap-2 overflow-scroll overflow-x-hidden`}>
                 {orderOfPics.map((num: number) => {
                     return (
                         <li class="carousel-item min-h-[100px] min-w-[100px]">

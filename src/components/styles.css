@@ -17,3 +17,38 @@
 .image-container:hover .overlay {
       opacity: 1;
 }
+
+.play-pause {
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 60px;
+  
+    border-color: transparent transparent transparent white;
+    transition: 100ms all ease;
+    cursor: pointer;
+  
+    /* // play state */
+    border-style: solid;
+    border-width: 11.4px 0 11.4px 18.5px;
+}
+
+.paused {
+    border-style: double;
+    border-width: 0px 0 0px 18.5px;
+}
+
+.wait-for-hov {
+    background: linear-gradient(to top right, rgb(52 211 153),rgb(28, 130, 225)) no-repeat
+    calc(200% - var(--i,0)*100%) 100% / 200% calc(100%*var(--i,0) + .08em); 
+    transition: .2s calc(var(--i,0)*.2s), background-position .2s calc(.2s - calc(var(--i,0)*.2s));
+}
+
+.wait-for-hov:hover {
+    --i:1;
+}
+
+/* .play-pause:hover {
+    border-color: transparent transparent transparent #404040;
+  } */

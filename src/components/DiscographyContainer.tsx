@@ -1,16 +1,10 @@
 import type { JSX } from 'preact/jsx-runtime';
-import { useState } from 'preact/hooks';
-import ArtistHub from './ArtistHub';
+import { useEffect, useState } from 'preact/hooks';
+import ArtistPopup from './ArtistPopup';
+import { artists } from '../strings';
 import "./styles.css"
 
 export default function DiscographyContainer(): JSX.Element {
-    // const artists = shuffle(['Candi', 'Cee The Scholar', 'DattkidRob', 'Fearless J', 'Gifted', 'HBK Dolo', 'K5', 'Ken Doll', 'Linko',
-    //  'Morgen', 'North Ave Jax', 'NL Preet', 'PMG', 'Rae', 'Rojo', 'Roman Xzavier', 
-    //  'Shoda', 'Tay', 'Vernell', 'Winn', 'YG', 'Yung Scrapp', 'Yung Yana']);
-    const artists = ['Candi', 'Cee The Scholar', 'DattkidRob', 'Fearless J', 'Gifted', 'HBK Dolo', 'K5', 'Ken Doll', 'Linko',
-     'Morgen', 'North Ave Jax', 'NL Preet', 'PMG', 'Rae', 'Rojo', 'Roman Xzavier', 
-     'Shoda', 'Tay', 'Vernell', 'Winn', 'YG', 'Yung Scrapp', 'Yung Yana'];
-
     const [artistToFocus, setArtistToFocus] = useState<string>(``);
 
     return (
@@ -19,26 +13,26 @@ export default function DiscographyContainer(): JSX.Element {
                 {artists.map((name: string) => {
                     return(
                         <button htmlFor={`more-info-modal`} class={`image-container`} onClick={() => {
-                            setArtistToFocus(name);
-                            showModal();
+                            showModal(name);
                         }}>
-                            <img src={`../artists/${name.split(` `).join('')}.jpeg`} class={` object-cover 2xl:h-[450px] 2xl:w-[450px] h-[300px] w-[300px]`} />
+                            <img src={`../artists/${name.split(` `).join('')}.jpeg`} class={`object-cover 2xl:h-[450px] 2xl:w-[450px] h-[300px] w-[300px]`} />
                             <div class={`overlay`}>
-                                <p class={'mt-[47%] text-white'}>{name}</p>
+                                <p class={'mt-[47%] text-white 2xl:text-2xl'}>{name}</p>
                             </div>
                         </button>
                     );
                 })}
             </div>
-            <ArtistHub name={artistToFocus}/>
+            <ArtistPopup name={artistToFocus}/>
         </>
     );
+
+    function showModal(nameOfArtist:string): void {
+        setArtistToFocus(nameOfArtist); 
+        document.getElementById(`modal-toggle`).showModal()
+    }
 }
 
-function showModal(): void {
-    const elm = document.getElementById(`modal-toggle`)
-    elm.checked = !elm.checked
-}
 
 // If needed, shuffle function to shuffle artist cardsyay
 function shuffle(array: any) {
