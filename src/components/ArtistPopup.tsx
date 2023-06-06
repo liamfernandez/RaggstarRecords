@@ -7,10 +7,12 @@ interface IArtistHubProps {
     name: string;
     setModalOpen: (open:boolean) => void;
     isModalOpen: boolean;
+    songLocations: Map<string, string>;
+    setSongLocations: (songFiles: Map<string, string>) => void;
 }
 
 export default function ArtistPopup(props: IArtistHubProps): JSX.Element {
-    const listOfSongs: string[] = songMap[props.name];
+    const listOfSongs: string[] | undefined = songMap.get(props.name);
 
     return (
         <>
@@ -21,7 +23,11 @@ export default function ArtistPopup(props: IArtistHubProps): JSX.Element {
                             <h1 class={`text-3xl font-Druk text-white`}>{props.name.toUpperCase()}</h1>
                         </span>
                         {
-                            (!!listOfSongs) ? <SongContainer artistName={props.name} songTitles={listOfSongs} /> : <></>
+                            (!!listOfSongs && props.isModalOpen) ? 
+                            <SongContainer 
+                                setSongLocations={props.setSongLocations} 
+                                songLocations={props.songLocations} 
+                                artistName={props.name} songTitles={listOfSongs} /> : <></>
                         }
                         <Socials artist={props.name} modalOpen={props.isModalOpen} /> 
                     </div>

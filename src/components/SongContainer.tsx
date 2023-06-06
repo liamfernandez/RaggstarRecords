@@ -4,12 +4,13 @@ import type { JSX } from 'preact/jsx-runtime';
 interface ISongContainerProps {
     songTitles: string[];
     artistName: string;
+    songLocations: Map<string, string>;
+    setSongLocations: (songFiles: Map<string, string>) => void;
 }
 
 export default function SongContainer(props: ISongContainerProps):JSX.Element {
     const [currentPlayingSong, setCurrentPlayingSong] = useState<string>('');
-    const [songLocations, setSongLocations] = useState<Map<string,string>>(new Map<string,string>());
-    const audioRef = useRef(null);
+    const audioRef = useRef<HTMLAudioElement>(null);
     
     if (props.songTitles.length < 1) {
         return (
@@ -25,24 +26,25 @@ export default function SongContainer(props: ISongContainerProps):JSX.Element {
             }
             let isMounted = true;
 
-            if (!songLocations.has(currentPlayingSong)) {
+            if (!props.songLocations.has(currentPlayingSong)) {
                 const loadingElm = document.getElementById(`loading-${currentPlayingSong}`)
                 loadingElm?.classList.toggle(`hidden`);
 
                 const songData = DownloadSong(currentPlayingSong);
                 songData.then((blob) => {
                     const blobLocation = URL.createObjectURL(blob);
-                    songLocations.set(currentPlayingSong, blobLocation);
+                    props.songLocations.set(currentPlayingSong, blobLocation);
                     audioRef.current.src = blobLocation;
                     loadingElm?.classList.toggle(`hidden`);
                     audioRef.current.play();
                     if (isMounted) {
-                        setSongLocations(songLocations);
+                        props.setSongLocations(props.songLocations);
                     }
                 });
             }
             else {
-                audioRef.current.src = songLocations.get(currentPlayingSong);
+                console.log(`we got the location loaded already`);
+                audioRef.current.src = props.songLocations.get(currentPlayingSong);
                 audioRef.current.play();
             }
 
@@ -56,7 +58,7 @@ export default function SongContainer(props: ISongContainerProps):JSX.Element {
                         return (
                             <li class={`wait-for-hov p-[2px]`}>
                                 <div class={`items-center p-2 justify-between flex flex-row bg-[#262626]`}>
-                                    <span class={`play-pause h-[20px] scale-75`} id={`play-pause-${songName}`} onClick={() => { PlaySong(songName) }} />
+                                    <span class={`play-pause`} id={`play-pause-${songName}`} onClick={() => { PlaySong(songName) }} />
                                     <p class={`text-white`}>{songName}</p>
                                     <span class={`flex flex-row gap-2 items-center`}>
                                         <span id={`timeStamp-${songName}`} class={` text-gray-500 text-xs`}>0:00</span>

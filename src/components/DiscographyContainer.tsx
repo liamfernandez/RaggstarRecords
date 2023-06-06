@@ -7,6 +7,7 @@ import "./styles.css"
 export default function DiscographyContainer(): JSX.Element {
     const [artistToFocus, setArtistToFocus] = useState<string>(``);
     const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const [songLocations, setSongLocations] = useState<Map<string,string>>(new Map<string,string>());
 
     return (
         <>
@@ -24,7 +25,7 @@ export default function DiscographyContainer(): JSX.Element {
                     );
                 })}
             </div>
-            <ArtistPopup name={artistToFocus} setModalOpen={setModalOpen} isModalOpen={modalOpen} />
+            <ArtistPopup setSongLocations={setSongLocations} songLocations={songLocations} name={artistToFocus} setModalOpen={setModalOpen} isModalOpen={modalOpen} />
         </>
     );
 

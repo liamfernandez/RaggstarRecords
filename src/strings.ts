@@ -16,36 +16,83 @@ export const aboutMap = {
     }
 }
 
-export const artists = ['Candi', 'Cee The Scholar', 'DattkidRob', 'Fearless J', 'Gifted', 'HBK Dolo', 
-    'K5', 'Ken Doll', 'Linko', 'Morgen', 'North Ave Jax', 'NL Preet', 'PMG', 'Rae', 'Rojo', 
-    'Roman Xzavier', 'Shoda', 'Tay', 'Vernell', 'Winn', 'YG', 'Yung Scrapp', 'Yung Yana'];
+export const artists = ['PMG', 'Roman Xzavier', 'Tay', 'Vernell', 
+    'Morgen', 'Yung Yana', 'Linko', 'HBK Dolo',
+    'K5', 'Rojo', 'North Ave Jax', 'Rae',
+    'Winn', 'Candi', 'Cee The Scholar', 'NL Preet',
+    'Ken Doll', 'Gifted', 'Fearless J', 'Yung Scrapp',
+    'DattkidRob', 'Shoda', 'Quese'];
+    // YG is left out
 
-export const songMap = {
-    "Candi": ['Bad Bitch Alert'],
-    "Cee The Scholar": ['Figure it Out', 'New and Old'],
-    "DattkidRob": [],
-    "Fearless J": ['Vamp Overlord'],
-    "Gifted": ['All Night'],
-    "HBK Dolo": [],
-    "K5": ['Crash Out'],
-    "Ken Doll": ['Like Nobody Else'],
-    "Linko": ['STACY'],
-    "Morgen": [],
-    "North Ave Jax": [],
-    "NL Preet": [],
-    "PMG": ['Beware', 'Dangerous', 'Stick Up'],
-    "Rae": [],
-    "Rojo": [],
-    "Roman Xzavier": ['Money Lurkin', 'Zaza'],
-    "Shoda": ['BOFA'],
-    "Spank": ['Any SZN'],
-    "Tay": ['Armored', 'High', 'Untitled'],
-    "Vernell": ['Unconditional'],
-    "Winn": [],
-    "YG": [],
-    "Yung Scrapp": [],
-    "Yung Yana": [],
-}
+export const songMap: Map<string, string[]> = new Map<string, string[]>(
+    [
+        ['Candi', ['Bad Bitch Alert']],
+        ["Fearless J", ['Vamp Overlord']],
+        ["Cee The Scholar", ['Figure it Out', 'New and Old']],
+        ["DattkidRob", []],
+        ["Gifted", ['All Night']],
+        ["HBK Dolo", []],
+        ["K5", ['Crash Out']],
+        ["Ken Doll", ['Like Nobody Else']],
+        ["Linko", ['STACY']],
+        ["Morgen", []],
+        ["North Ave Jax", []],
+        ["NL Preet", []],
+        ["PMG", ['Beware', 'Dangerous', 'Stick Up']],
+        ["Quese", []],
+        ["Rae", []],
+        ["Rojo", []],
+        ["Roman Xzavier", ['Money Lurkin', 'Zaza']],
+        ["Shoda", ['BOFA']],
+        ["Spank", ['Any SZN']],
+        ["Tay", ['Armored', 'High', 'Untitled']],
+        ["Vernell", ['Stay Down']],
+        ["Winn", []],
+        ["YG", []],
+        ["Yung Scrapp", []],
+        ["Yung Yana", []]
+    ]
+);
+
+export const servicesMap: Map<string, string> = new Map<string, string>([
+    ['Recording','Capture your musical talent and creativity in a professional studio environment.'],
+    ['Mixing', 'Enhance the individual elements of your tracks and achieve a balanced and polished sound.'],
+    ['Mastering', 'Elevate the overall quality of your music and optimize it for various playback systems.'],
+    ['Production', 'Bring your musical vision to life with expert guidance in arrangement, instrumentation, and sound design.'],
+    ['Photography', 'Showcase your artistry through stunning visual imagery tailored to your musical brand.'],
+    ['Videography', 'Create captivating music videos that visually complement your sound and captivate your audience.'],
+    ['Podcasting', 'Make your podcast debut with professional recording, editing, and post-production services.'],
+    ['Consulting', 'Get expert advice and insights from industry professionals to refine your musical goals and strategies.'],
+    ['Marketing & Promotion', 'Amplify your reach and attract a wider audience through targeted marketing campaigns and promotional strategies.'],
+    ['Hair Care', 'Look and feel your best with professional hair care services to ensure you\'re camera-ready for your music-related projects.']
+]);
+
+// export const instagramMap: Map<string, string> = {
+//     "Candi": ['Bad Bitch Alert'],
+//     "Cee The Scholar": ['Figure it Out', 'New and Old'],
+//     "DattkidRob": [],
+//     "Fearless J": ['Vamp Overlord'],
+//     "Gifted": ['All Night'],
+//     "HBK Dolo": [],
+//     "K5": ['Crash Out'],
+//     "Ken Doll": ['Like Nobody Else'],
+//     "Linko": ['STACY'],
+//     "Morgen": [],
+//     "North Ave Jax": [],
+//     "NL Preet": [],
+//     "PMG": ['Beware', 'Dangerous', 'Stick Up'],
+//     "Rae": [],
+//     "Rojo": [],
+//     "Roman Xzavier": ['Money Lurkin', 'Zaza'],
+//     "Shoda": ['BOFA'],
+//     "Spank": ['Any SZN'],
+//     "Tay": ['Armored', 'High', 'Untitled'],
+//     "Vernell": ['Stay Down'],
+//     "Winn": [],
+//     "YG": [],
+//     "Yung Scrapp": [],
+//     "Yung Yana": [],
+// }
 
 export const navLabels = {
     "": "Home",
