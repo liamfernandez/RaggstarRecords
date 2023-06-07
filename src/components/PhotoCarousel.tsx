@@ -12,24 +12,24 @@ export default function PhotoCarousel(): JSX.Element {
 
     return (
         <>
-            <div id={`carousel`} class={`carousel w-full overflow-x-hidden`}>
+            <div id={`carousel`} class={`carousel w-full md:overflow-x-hidden`}>
                 <div class="absolute flex justify-between translate-y-[380px] left-5 right-5 z-[1] ">
-                    <button id={`leftButton`} class={"btn btn-disabled btn-circle"} onClick={() => {
+                    <button id={`leftButton`} class={"hidden md:inline-flex btn btn-disabled btn-circle"} onClick={() => {
                         scrollImage(false);
                     }}>❮</button> 
-                    <button id={`rightButton`} class={"btn btn-circle"} onClick={() => { 
+                    <button id={`rightButton`} class={"hidden md:inline-flex btn btn-circle"} onClick={() => { 
                         scrollImage(true);
                         }}>❯</button>
                 </div>
                 {orderOfPics.map((num: number) => {
                     return (
-                        <div class="carousel-item relative w-full h-[750px] object-cover">
+                        <div class="carousel-item relative w-full h-[450px] md:h-[750px] object-cover">
                             <img src={`./main-room/main-room-${num}.jpeg`} class={`w-full object-cover`} />
                         </div>
                     );
                 })}
             </div>
-            <ul id={`navTray`} class={`carousel carousel-center 2xl:justify-center pt-10 py-4 mx-5 flex flex-row gap-2 overflow-scroll overflow-x-hidden`}>
+            <ul id={`navTray`} class={`hidden carousel carousel-center 2xl:justify-center pt-10 py-4 mx-5 md:flex flex-row gap-2 overflow-scroll overflow-x-hidden`}>
                 {orderOfPics.map((num: number) => {
                     return (
                         <li class="carousel-item min-h-[100px] min-w-[100px]">

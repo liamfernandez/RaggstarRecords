@@ -14,13 +14,13 @@ const aboutKeys = ["Rags", "Lex", "Morgen"]
 			{aboutKeys.map((name) => {
 				return (
 					<div class="flex flex-col items-start w-[320px]">
-						<img src={`../team/${name.toLowerCase()}.jpeg`} class="rounded-full pb-2 object-cover self-center h-[320px] w-[320px]"/>
+						<img src={`../team/${name.toLowerCase()}.jpeg`} class="rounded-full pb-2 object-cover self-center h-[280px] w-[280px] md:h-[320px] md:w-[320px]"/>
 						<h3 class=" text-2xl text-center text-gray-200">{name}</h3>
 						<span class="flex flex-row w-full items-center justify-start pt-0 gap-3">
 							<span class="text-gray-200 text-[12px]">{aboutMap[name]['role']}</span>
 							<span class={`${aboutMap[name]["anime"]}`}></span>
 						</span>
-						<span class="pt-2 text-gray-200 text-[14px]">
+						<span class="pt-2 text-gray-200 text-[12px] md:text-[14px]">
 							{aboutMap[name]["description"]}
 						</span>
 					</div>
