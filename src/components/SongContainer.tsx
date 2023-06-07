@@ -27,8 +27,10 @@ export default function SongContainer(props: ISongContainerProps):JSX.Element {
             let isMounted = true;
 
             if (!props.songLocations.has(currentPlayingSong)) {
-                const loadingElm = document.getElementById(`loading-${currentPlayingSong}`)
+                const loadingElm = document.getElementById(`loading-${currentPlayingSong}`);
                 loadingElm?.classList.toggle(`hidden`);
+                const playPause = document.getElementById(`play-pause-${currentPlayingSong}`);
+                playPause?.classList.toggle(`hidden`);
 
                 const songData = DownloadSong(currentPlayingSong);
                 songData.then((blob) => {
@@ -36,6 +38,7 @@ export default function SongContainer(props: ISongContainerProps):JSX.Element {
                     props.songLocations.set(currentPlayingSong, blobLocation);
                     audioRef.current.src = blobLocation;
                     loadingElm?.classList.toggle(`hidden`);
+                    playPause?.classList.toggle(`hidden`);
                     audioRef.current.play();
                     if (isMounted) {
                         props.setSongLocations(props.songLocations);
@@ -62,7 +65,7 @@ export default function SongContainer(props: ISongContainerProps):JSX.Element {
                                     <p class={`text-white`}>{songName}</p>
                                     <span class={`flex flex-row gap-2 items-center`}>
                                         <span id={`timeStamp-${songName}`} class={` text-gray-500 text-xs`}>0:00</span>
-                                        <progress id={`progressBar-${songName}`} class={`progress progress-info w-32`} value={0} max={100} />
+                                        <progress id={`progressBar-${songName}`} class={`progress progress-info w-16 md:w-32`} value={0} max={100} />
                                     </span>
                                     <span id={`loading-${songName}`} class={`hidden loading loading-spinner text-[#3ca5e6]`}></span>
                                 </div>

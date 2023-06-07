@@ -6,15 +6,15 @@ const aboutKeys = ["Rags", "Lex", "Morgen"]
 ---
 
 <Layout title="About Us | RAGGSTARRECORDS">
-	<main class=" px-20 bg-[#262626]">
-		<h1 class=" text-center text-gray-200 font-[Druk] pt-20 pb-10 text-5xl">
+	<main class=" md:px-20 bg-[#262626]">
+		<h1 class=" text-center text-gray-200 font-[Druk] pt-12 md:pt-20 pb-10 text-3xl md:text-5xl">
 			MEET THE TEAM
 		</h1>
 		<div class="flex flex-row flex-wrap justify-center gap-24 pb-20">
 			{aboutKeys.map((name) => {
 				return (
 					<div class="flex flex-col items-start w-[320px]">
-						<img src={`../team/${name.toLowerCase()}.jpeg`} class="rounded-full pb-2 object-cover h-[320px] w-[320px]"/>
+						<img src={`../team/${name.toLowerCase()}.jpeg`} class="rounded-full pb-2 object-cover self-center h-[320px] w-[320px]"/>
 						<h3 class=" text-2xl text-center text-gray-200">{name}</h3>
 						<span class="flex flex-row w-full items-center justify-start pt-0 gap-3">
 							<span class="text-gray-200 text-[12px]">{aboutMap[name]['role']}</span>

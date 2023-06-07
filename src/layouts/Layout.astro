@@ -29,14 +29,14 @@ pages.forEach((path) => {
 	</head>
 	<body>
 		<nav>
-			<div class="bg-[white] flex justify-between items-center pb-1 pt-2 px-8">
-				<img class="h-28 rounded-xl" src="/main-logo-raggstar.jpg" />
-				<span class="flex gap-12">
+			<div class="bg-[white] flex justify-between items-center pb-1 md:pt-2 px-1 md:px-8">
+				<img class="md:h-28 h-20" src="/main-logo-raggstar.jpg" />
+				<span class="flex overflow-hidden md:overflow-auto gap-2 md:gap-12">
 					{pages.map((page) => {
 						return (
 						<div class={pageClasses.get(page)}>
 							<a href={`/${page}`} 
-								class="text-black bg-white font-Druk tracking-wide rounded-xl py-2 px-2 ">
+								class="text-black text-[8px] md:text-base bg-white font-Druk tracking-wide rounded-xl md:py-2 py-[1px] px-[1px] md:px-2 ">
 								{navLabels[page].toUpperCase()}
 							</a>
 						</div>
@@ -49,8 +49,8 @@ pages.forEach((path) => {
 		<slot />
 		<hr />
 		<footer>
-			<div class=" flex bg-white justify-center flex-col pt-8 pb-6 gap-6 items-center">
-				<span class=" flex gap-4 flex-row">
+			<div class="flex bg-white justify-center flex-col pt-4 md:pt-8 pb-4 md:pb-6 gap-4 md:gap-6 items-center">
+				<span class=" flex md:gap-4 gap-8 flex-row">
 					<a href="https://www.instagram.com/raggstarrecords/">
 						<img src="../socials/IG.svg"  class="h-[25px]"/>
 					</a>
