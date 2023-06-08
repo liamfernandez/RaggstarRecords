@@ -1,9 +1,11 @@
-export const navLabels = {
-    "": "Home",
-    "services": "Services",
-    "discography": "Discography",
-    "about": "About Us"
-}
+export const navLabels: Map<string, string> = new Map(
+    [
+        ["","Home"],
+        ["services", "Services"],
+        ["discography", "Discography"],
+        ["about", "About Us"]
+    ]
+)
 
 export const aboutMap = {
     "Rags": {

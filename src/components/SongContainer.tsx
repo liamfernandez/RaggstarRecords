@@ -65,7 +65,7 @@ export default function SongContainer(props: ISongContainerProps):JSX.Element {
                                     <p class={`text-white`}>{songName}</p>
                                     <span class={`flex flex-row gap-2 items-center`}>
                                         <span id={`timeStamp-${songName}`} class={` text-gray-500 text-xs`}>0:00</span>
-                                        <progress id={`progressBar-${songName}`} class={`progress progress-info w-16 md:w-32`} value={0} max={100} />
+                                        <progress id={`progressBar-${songName}`} class={`bg-white progress progress-info w-16 md:w-32`} value={0} max={100} />
                                     </span>
                                     <span id={`loading-${songName}`} class={`hidden loading loading-spinner text-[#3ca5e6]`}></span>
                                 </div>
