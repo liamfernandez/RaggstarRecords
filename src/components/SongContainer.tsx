@@ -15,7 +15,7 @@ export default function SongContainer(props: ISongContainerProps):JSX.Element {
     if (props.songTitles.length < 1) {
         return (
             <div>
-                <p class={`text-center text-xs`}>We don't do snippets. This artist has been recording with RaggStar but hasn't dropped yet. Stay tuned.</p>
+                <p class={`text-center text-white text-xs`}>We don't do snippets. This artist has been recording with RaggStar but hasn't dropped yet. Stay tuned.</p>
             </div>
         );
     }
