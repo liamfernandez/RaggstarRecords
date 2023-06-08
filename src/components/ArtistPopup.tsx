@@ -30,12 +30,14 @@ export default function ArtistPopup(props: IArtistHubProps): JSX.Element {
                         </span>
                         {
                             (!!listOfSongs && props.isModalOpen) ? 
-                            <SongContainer 
-                                setSongLocations={props.setSongLocations} 
-                                songLocations={props.songLocations} 
-                                artistName={props.name} songTitles={listOfSongs} /> : <></>
+                            <>
+                                <SongContainer 
+                                    setSongLocations={props.setSongLocations} 
+                                    songLocations={props.songLocations} 
+                                    artistName={props.name} songTitles={listOfSongs} /> 
+                                <Socials artist={props.name} modalOpen={props.isModalOpen} /> 
+                            </> : <></>
                         }
-                        <Socials artist={props.name} modalOpen={props.isModalOpen} /> 
                     </div>
                 </form>
                 <form method={`dialog`} class={`modal-backdrop`}>

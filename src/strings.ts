@@ -23,7 +23,7 @@ export const aboutMap = {
     }
 }
 
-export const artists = ['PMG', 'Roman Xzavier', 'Vernell', 
+export const artists = ['PMG', 'Roman Xzavier', 'DattKidRob', 'Vernell', 
     'Tay', 'Morgen', 'Yung Yana', 'Linko', 
     'HBK Dolo','North Ave Jax', 'K5', 'Rae',
     'Winn', 'Muva Candi', 'Cee The Scholar', 'Rojo',
