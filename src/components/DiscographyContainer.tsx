@@ -1,5 +1,5 @@
 import type { JSX } from 'preact/jsx-runtime';
-import { useState } from 'preact/hooks';
+import { useState, useEffect } from 'preact/hooks';
 import ArtistPopup from './ArtistPopup';
 import { artists } from '../strings';
 import "./styles.css"
@@ -8,6 +8,24 @@ export default function DiscographyContainer(): JSX.Element {
     const [artistToFocus, setArtistToFocus] = useState<string>(``);
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [songLocations, setSongLocations] = useState<Map<string,string>>(new Map<string,string>());
+
+    // UseEffect hook handles URLs per artist
+    useEffect(() => {
+        let url:string = ''; 
+        url = window.location.href;
+
+        if (url.indexOf('?') != -1)
+        {
+            let artistQuery:string = url.split('?')[1];
+            if (artistQuery.includes('%20')) {
+                artistQuery = artistQuery.split('%20').join(' ')
+            }
+
+            if (artists.includes(artistQuery)) {
+                showModal(artistQuery);
+            }
+        }
+    }, [])
 
     return (
         <>
@@ -36,23 +54,3 @@ export default function DiscographyContainer(): JSX.Element {
         setModalOpen(true);
     }
 }
-
-
-// If needed, shuffle function to shuffle artist cardsyay
-// function shuffle(array: any) {
-//     let currentIndex = array.length,  randomIndex;
-  
-//     // While there remain elements to shuffle.
-//     while (currentIndex != 0) {
-  
-//       // Pick a remaining element.
-//       randomIndex = Math.floor(Math.random() * currentIndex);
-//       currentIndex--;
-  
-//       // And swap it with the current element.
-//       [array[currentIndex], array[randomIndex]] = [
-//         array[randomIndex], array[currentIndex]];
-//     }
-  
-//     return array;
-//   }
