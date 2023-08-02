@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+		font-family: 'FuturaLTW01-Medium';
+		src: url('/fonts/Futura LT W01 Medium.ttf') format('ttf');
+		src: url('/fonts/Futura LT W01 Medium.woff') format('woff');
+		src: url('/fonts/Futura LT W01 Medium.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Druk';
+		src: url('/fonts/DrukWide-Medium.ttf') format('ttf');
+		src: url('/fonts/DrukWide-Medium.woff') format('woff');
+	}
+
+	body {
+		@apply bg-white
+	}
