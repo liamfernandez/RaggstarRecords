@@ -2,7 +2,7 @@ import type { JSX } from 'preact/jsx-runtime';
 import { useEffect } from 'preact/hooks';
 
 export default function PhotoCarousel(): JSX.Element {
-    const orderOfPics: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+    const orderOfPics: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
     useEffect(() => {
         let navTrayOne = document.getElementById(`nav-img-1`)
@@ -16,15 +16,15 @@ export default function PhotoCarousel(): JSX.Element {
                 <div class="absolute flex justify-between translate-y-[380px] left-5 right-5 z-[1] ">
                     <button id={`leftButton`} class={"hidden md:inline-flex btn btn-disabled btn-circle"} onClick={() => {
                         scrollImage(false);
-                    }}>❮</button> 
-                    <button id={`rightButton`} class={"hidden md:inline-flex btn btn-circle"} onClick={() => { 
+                    }}>❮</button>
+                    <button id={`rightButton`} class={"hidden md:inline-flex btn btn-circle"} onClick={() => {
                         scrollImage(true);
-                        }}>❯</button>
+                    }}>❯</button>
                 </div>
                 {orderOfPics.map((num: number) => {
                     return (
                         <div class="carousel-item relative w-full h-[450px] md:h-[750px] object-cover">
-                            <img src={`./main-room/main-room-${num}.jpeg`} class={`w-full object-cover`} />
+                            <img src={`/main-room/main-room-${num}.jpeg`} class={`w-full object-cover`} />
                         </div>
                     );
                 })}
@@ -35,7 +35,7 @@ export default function PhotoCarousel(): JSX.Element {
                         <li class="carousel-item min-h-[100px] min-w-[100px]">
                             <img id={`nav-img-${num}`} onClick={() => {
                                 navImageClicked(num)
-                            }} src={`./main-room/main-room-${num}.jpeg`} class={`w-[100px] h-[100px] object-cover`} />
+                            }} src={`/main-room/main-room-${num}.jpeg`} class={`w-[100px] h-[100px] object-cover`} />
                         </li>
                     );
                 })}
@@ -44,8 +44,8 @@ export default function PhotoCarousel(): JSX.Element {
     );
 }
 
-function navImageClicked(num: number, scroll:boolean = true) {
-    const orderOfPics: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+function navImageClicked(num: number, scroll: boolean = true) {
+    const orderOfPics: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     for (let x of orderOfPics) {
         const elm = document.getElementById(`nav-img-${x}`);
         if (x != num) {
@@ -61,21 +61,21 @@ function navImageClicked(num: number, scroll:boolean = true) {
 
     if (scroll) {
         let carousel = document.getElementById(`carousel`);
-        const newXPos = window.innerWidth*(num-1);
+        const newXPos = window.innerWidth * (num - 1);
         carousel?.scrollTo(newXPos, 0);
         toggleButtons(newXPos, carousel?.scrollWidth)
-    
+
     }
     let navTray = document.getElementById(`navTray`)
-    const navTrayPos = 100 * (num-7);
-    navTray?.scrollTo(navTrayPos,0)
+    const navTrayPos = 100 * (num - 7);
+    navTray?.scrollTo(navTrayPos, 0)
 }
 
-function scrollImage(scrollRight:boolean): void {
+function scrollImage(scrollRight: boolean): void {
     let carousel = document.getElementById(`carousel`);
     let newScrollPos = carousel?.scrollLeft;
     if (scrollRight) {
-        carousel?.scrollBy(window.innerWidth,0);
+        carousel?.scrollBy(window.innerWidth, 0);
         newScrollPos += window.innerWidth;
     }
     else {
@@ -85,18 +85,18 @@ function scrollImage(scrollRight:boolean): void {
 
     toggleButtons(newScrollPos, carousel?.scrollWidth);
     // console.log(`newScrollPos / window.innerWidth =`, Math.floor(newScrollPos / window.innerWidth))
-    navImageClicked(Math.floor(newScrollPos / (window.innerWidth -10)) + 1, false);
+    navImageClicked(Math.floor(newScrollPos / (window.innerWidth - 10)) + 1, false);
 }
 
-function toggleButtons(scrollPos, maxWidth):void {
+function toggleButtons(scrollPos, maxWidth): void {
     let leftButton = document.getElementById('leftButton')
     let rightButton = document.getElementById('rightButton');
     if (scrollPos < window.innerWidth) {
         leftButton?.classList.toggle(`btn-disabled`);
     }
-    else if (scrollPos >= maxWidth - window.innerWidth){
+    else if (scrollPos >= maxWidth - window.innerWidth) {
         rightButton?.classList.toggle(`btn-disabled`);
-    } else  {
+    } else {
         if (leftButton?.classList.contains(`btn-disabled`)) {
             leftButton?.classList.toggle(`btn-disabled`);
         }
