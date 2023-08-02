@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit'
 import { artists, songMap } from '$lib/strings.js';
-import { GetSongBlob } from '$lib/server/SongDataProvider.js';
+// import { GetSongBlob } from '$lib/server/SongDataProvider.js';
 
 export async function GET({ params, setHeaders }) {
   const artistName = params.artist.replaceAll('+', ' ');

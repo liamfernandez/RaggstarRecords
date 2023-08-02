@@ -1,6 +1,7 @@
 import fs from "fs"
 import path from "path"
 
+// Not being used as FS can't be used in serverless functions
 export async function GetSongBlob(artistName: string, songName: string): Promise<Blob> {
   const artistSuffix = artistName.replaceAll('+', '');
   const songSuffix = songName.replaceAll('+', '').toLowerCase();
