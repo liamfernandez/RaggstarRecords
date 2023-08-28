@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	const orderOfPics: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+	const orderOfPics: number[] = Array.from({ length: 32 }, (_, i) => i + 1);
 
 	onMount(() => {
 		const navTrayOne = document.getElementById(`nav-img-1`);
@@ -85,18 +85,18 @@
 		>
 	</div>
 	{#each orderOfPics as index}
-		<div class="carousel-item relative w-full h-[450px] md:h-[750px] object-cover">
+		<div class="carousel-item justify-center relative w-full h-[450px] md:h-[750px]">
 			<img
 				alt={`main room image number ${index}`}
-				src={`/main-room/main-room-${index}.jpeg`}
-				class={`w-full object-cover`}
+				src={`/main-room/main-room-${index}.jpg`}
+				class={``}
 			/>
 		</div>
 	{/each}
 </div>
 <ul
 	id={`navTray`}
-	class={`hidden carousel carousel-center 2xl:justify-center pt-10 py-4 mx-5 md:flex flex-row gap-2 overflow-scroll overflow-x-hidden`}
+	class={`hidden carousel carousel-center pt-10 py-4 mx-5 md:flex flex-row gap-2 overflow-scroll overflow-x-hidden`}
 >
 	{#each orderOfPics as index}
 		<li class="carousel-item min-h-[100px] min-w-[100px]">
@@ -104,7 +104,7 @@
 				<img
 					alt={`main room image number ${index}`}
 					id={`nav-img-${index}`}
-					src={`/main-room/main-room-${index}.jpeg`}
+					src={`/main-room/main-room-${index}.jpg`}
 					class={`w-[100px] h-[100px] object-cover`}
 				/>
 			</button>
