@@ -21,8 +21,8 @@
 			on:click={() => {
 				goto('https://booking.raggstarrecords.com');
 			}}
-			class=" bg-gradient-to-tr from-[#1c82e1] via-emerald-400 to-[#1c82e1] text-white font-Futura text-2xl px-4 py-1 rounded-2xl"
-			>Book a Session Today</button
+			class=" bg-gradient-to-tr from-[#1c82e1] via-emerald-400 to-[#1c82e1] text-white font-Futura text-2xl p-2 rounded-2xl"
+			style="box-shadow: 0 5px 10px 0 rgba(0,0,0,1);">Book a Session Today</button
 		>
 		{#each serviceHeaders as header, index}
 			<div class="self-center md:w-5/12" style={getAligment(index)}>
