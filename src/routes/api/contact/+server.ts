@@ -1,6 +1,6 @@
 import { error } from "@sveltejs/kit";
 import twilio from "twilio";
-import { env } from "$env/dynamic/private";
+import { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } from "$env/static/private";
 
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {
@@ -10,8 +10,10 @@ export async function POST({ request }) {
 
   try {
     //twilio code
-    const accountSid: string | undefined = env.TWILIO_ACCOUNT_SID;
-    const authToken: string | undefined = env.TWILIO_AUTH_TOKEN;
+    const accountSid = TWILIO_ACCOUNT_SID;
+    const authToken = TWILIO_AUTH_TOKEN;
+
+    // console.log("accountSid: ", accountSid, "\n authToken: ", authToken, "\n");
 
     const client = twilio(accountSid, authToken);
     const twilioNumber = '+18665168438'; // from number
