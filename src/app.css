@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Regular font */
+@font-face {
+  font-family: 'Lucida-Regular';
+  src: url('fonts/Lucida_Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Bold font */
+@font-face {
+  font-family: 'Lucida-Bold';
+  src: url('fonts/Lucida_Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

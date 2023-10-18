@@ -1,132 +1,132 @@
 <script lang="ts">
-	import '$lib/styles/app.css';
-	import { onMount } from 'svelte';
+	import '../app.css';
+
+	import NavBar from '../lib/components/NavBar.svelte';
+	import FooterBar from '../lib/components/FooterBar.svelte';
+	import MobileNavBar from '../lib/components/MobileNavBar.svelte';
 	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
+	import BookACall from '$lib/components/BookACall.svelte';
 
-	const tabs = ['Home', 'Services', 'Discography', 'About Us'];
-	const slugs: Map<string, string> = new Map([
-		[tabs[0], '/'],
-		[tabs[1], '/services'],
-		[tabs[2], '/discography'],
-		[tabs[3], '/about']
-	]);
+	function navigateAway(goal: 'what-we-do' | 'our-process' | 'home' | 'about' | 'FAQ') {
+		const drawerInput = document.getElementById('my-drawer-4') as HTMLInputElement;
+		if (drawerInput.checked) {
+			drawerInput.checked = false;
+		}
 
-	function RefreshTabs(tabClicked: string) {
-		tabs.forEach((tabName) => {
-			const tabElement = document.getElementById(`tab-${tabName}`);
-			if (tabName !== tabClicked && tabElement?.classList.contains('activeTab')) {
-				console.log(`\n activeTab is enabled for [${tabName}-tab] | disabling now`);
-				tabElement.classList.toggle('wait-for-hov');
-				tabElement.classList.toggle('activeTab');
-			} else if (tabName === tabClicked && tabElement) {
-				console.log(`\n Trying to enable activeTab for [${tabName}]`);
-				tabElement.classList.toggle('wait-for-hov');
-				tabElement.classList.toggle('activeTab');
+		if ($page.url.pathname === '/' && goal === 'home') {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+			window.history.replaceState({}, '', '/');
+		} else if (goal === 'about') {
+			goto('/about');
+		} else if (goal === 'FAQ') {
+			goto('/frequently-asked-questions');
+		} else if ($page.url.pathname === '/') {
+			const element = document.getElementById(goal);
+			element?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+			console.log('scrolling smoothly to ', $page.url.hostname + '/#', goal);
+			window.history.replaceState({}, '', `/#${goal}`);
+		} else {
+			console.log('TELEPORTING');
+
+			if (goal === 'home') {
+				goto(`/`);
+			} else {
+				goto(`/#${goal}`);
 			}
-		});
+		}
 	}
-
-	onMount(() => {
-		tabs.forEach((tabName) => {
-			if (slugs.get(tabName) === $page.url.pathname) {
-				RefreshTabs(tabName);
-			}
-		});
-	});
 </script>
 
 <svelte:head>
-	<link rel="icon" type="image/svg+xml" href="/main-logo-no-bg.png" />
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
 </svelte:head>
-<body class="drawer drawer-end md:block">
+<div class="drawer md:block">
 	<input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-	<div class="drawer-content">
-		<nav>
-			<!-- MOBILE NAV ABOVE -->
-			<div class="bg-[white] flex justify-between items-center pb-1 md:pt-2 pl-1 pr-10 md:px-8">
-				<img class="md:h-28 h-20" alt="main raggstarrecords logo" src="/main-logo-raggstar.jpg" />
-				<label for="my-drawer-4" class="md:hidden">
-					<img src="/hambergermenu.svg" alt="menu with more options" />
-				</label>
-				<span class="hidden md:flex md:gap-12">
-					{#each tabs as tabName}
-						<button
-							on:click={() => RefreshTabs(tabName)}
-							id={`tab-${tabName}`}
-							class="wait-for-hov"
-						>
-							<a
-								href={slugs.get(tabName)}
-								class="text-black text-[8px] md:text-base bg-white font-Druk tracking-wide rounded-xl md:py-2 py-[1px] px-[1px] md:px-2"
-							>
-								{tabName.toUpperCase()}
-							</a>
-						</button>
-					{/each}
-				</span>
-			</div>
-			<hr />
+	<div class="drawer-content bg-white min-h-screen">
+		<nav id="header" class=" header">
+			<NavBar />
+			<MobileNavBar />
 		</nav>
 		<slot />
-		<hr />
 		<footer>
-			<div
-				class="flex bg-white justify-center flex-col pt-4 md:pt-8 pb-4 md:pb-6 gap-4 md:gap-6 items-center"
-			>
-				<span class=" flex md:gap-4 gap-8 flex-row">
-					<a href="https://www.instagram.com/raggstarrecords/">
-						<img src="/socials/IG.svg" alt="Instagram" class="h-[25px]" />
-					</a>
-					<a href="https://www.tiktok.com/@raggstarrecords">
-						<img src="/socials/TikTok.svg" alt="TikTok" class="h-[25px]" />
-					</a>
-					<a href="https://www.youtube.com/@raggstarrecords3739">
-						<img src="/socials/YouTube.svg" alt="YouTube" class="h-[25px]" />
-					</a>
-				</span>
-				<span class="md:text-xs text-[10px] text-black">
-					© 2023 RAGGSTARRECORDS | Atlanta, GA
-				</span>
-			</div>
+			<FooterBar />
 		</footer>
 	</div>
-	<div class="drawer-side">
+	<div class="drawer-side z-40">
 		<label for="my-drawer-4" class="drawer-overlay" />
-		<ul class="flex flex-col gap-4 pt-10 w-[47%] h-full bg-base-200">
+		<ul
+			class="flex flex-col pt-40 z-[10001] w-[60%] bg-white h-full gap-8 items-center text-midGrey"
+		>
 			<label
 				for="my-drawer-4"
-				class={`btn btn-circle self-end bg-white scale-[0.72] mr-7 -mt-5 text-lg text-black`}
+				class={`btn btn-circle self-start bg-white scale-[0.72] -mt-8 ml-2 -mb-8 text-lg text-primary`}
 				>X</label
 			>
-			<!-- Sidebar content here -->
-			{#each tabs as tabName}
-				<li>
-					<a class="pl-6 font-Druk text-sm text-white" href={slugs.get(tabName)}
-						>{tabName.toUpperCase()}</a
-					>
+			<button
+				on:click={() => {
+					navigateAway('home');
+				}}
+			>
+				<li class="nav-button">
+					<p>Home</p>
 				</li>
-			{/each}
+			</button>
+			<button
+				on:click={() => {
+					navigateAway('what-we-do');
+				}}
+			>
+				<li class="nav-button">
+					<p>What We Do</p>
+				</li>
+			</button>
+			<button
+				on:click={() => {
+					navigateAway('our-process');
+				}}
+			>
+				<li class="nav-button">
+					<p>Our Process</p>
+				</li>
+			</button>
+			<button
+				on:click={() => {
+					navigateAway('about');
+				}}
+			>
+				<li class="nav-button">
+					<p>About</p>
+				</li>
+			</button>
+			<button
+				on:click={() => {
+					navigateAway('FAQ');
+				}}
+			>
+				<li class="nav-button">
+					<p>FAQ</p>
+				</li>
+			</button>
+			<li class="nav-button">
+				<a href="https://maps.app.goo.gl/Rh7j4Ep2oDpya7d66">Contact</a>
+			</li>
+			<li>
+				<BookACall backgroundIncluded={true} />
+			</li>
 		</ul>
 	</div>
-</body>
+</div>
 
 <style>
-	.activeTab {
-		@apply bg-gradient-to-bl from-[#1c82e1] to-emerald-400 p-[2px] rounded-xl flex justify-center;
-	}
-
-	.wait-for-hov {
-		background: linear-gradient(to top right, rgb(52 211 153), rgb(28, 130, 225)) no-repeat
-			calc(200% - var(--i, 0) * 100%) 100% / 200% calc(100% * var(--i, 0) + 0.08em);
-		transition: 0.2s calc(var(--i, 0) * 0.2s),
-			background-position 0.2s calc(0.2s - calc(var(--i, 0) * 0.2s));
-		padding: 2px;
-		border-radius: 0.75rem;
-		display: flex;
-		justify-content: center;
-	}
-
-	.wait-for-hov:hover {
-		--i: 1;
+	.header {
+		position: sticky;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: white;
+		transition: transform 0.3s ease-in-out;
+		z-index: 1000; /* make sure it's above other content */
 	}
 </style>
