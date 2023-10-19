@@ -19,17 +19,14 @@ export async function POST({ request }) {
     const twilioNumber = '+18665168438'; // from number
     const toNumber = '+14043748057'
 
-    let successSid: string | null = "";
-
-    client.messages.create({
+    const message = await client.messages.create({
       body: bodyOfMessage,
       from: twilioNumber,
       to: toNumber
     })
-      .then(message => {
-        console.log(message.sid)
-        successSid = message.sid
-      });
+
+    const successSid = message.sid;
+    console.log("YOU KNOW WHAT IT IS: ", successSid)
 
     // console.log("accountSid: ", accountSid, "\n authToken: ", authToken, "\n");
     return new Response("OK", { status: 200, statusText: `Message sent successfully! ID: ${successSid}` })
