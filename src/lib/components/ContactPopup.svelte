@@ -24,6 +24,7 @@
 			loading = true;
 			const response = await SendMessage(values);
 			console.log('Status code on response is: ', response.status);
+			console.log('Status Text is: ', response.statusText);
 			if (response.status === 200) {
 				loading = false;
 				success = true;
