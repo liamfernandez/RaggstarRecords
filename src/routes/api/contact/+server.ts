@@ -13,11 +13,11 @@ export async function POST({ request }) {
     const accountSid = TWILIO_ACCOUNT_SID;
     const authToken = TWILIO_AUTH_TOKEN;
 
-    // console.log("accountSid: ", accountSid, "\n authToken: ", authToken, "\n");
+    console.log("accountSid: ", accountSid, "\n authToken: ", authToken, "\n");
 
     const client = twilio(accountSid, authToken);
     const twilioNumber = '+18665168438'; // from number
-    const toNumber = '+17706958898'
+    const toNumber = '+14043748057'
 
     client.messages.create({
       body: bodyOfMessage,

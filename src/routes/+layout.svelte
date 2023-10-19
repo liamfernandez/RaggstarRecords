@@ -36,6 +36,11 @@
 			}
 		}
 	}
+
+	function openModal() {
+		const dialogElm = document.getElementById('send-a-message') as HTMLDialogElement;
+		dialogElm.showModal();
+	}
 </script>
 
 <svelte:head>
@@ -110,7 +115,7 @@
 				</li>
 			</button>
 			<li class="nav-button">
-				<a href="https://maps.app.goo.gl/Rh7j4Ep2oDpya7d66">Contact</a>
+				<button on:click={openModal}> Contact </button>
 			</li>
 			<li>
 				<BookACall backgroundIncluded={true} />
