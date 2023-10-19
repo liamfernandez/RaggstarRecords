@@ -24,7 +24,7 @@ export async function POST({ request }) {
       from: twilioNumber,
       to: toNumber
     })
-      .then(message => console.log(message.sid));
+      .then(message => console.log(message.sid)).catch(err => console.log("WELL HERE's YOUR ERROR: ", err));
 
     // console.log("accountSid: ", accountSid, "\n authToken: ", authToken, "\n");
     return new Response("OK", { status: 200 })
