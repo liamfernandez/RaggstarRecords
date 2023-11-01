@@ -29,7 +29,7 @@
 <div class="flex flex-col items-start gap-4">
 	<img src={`/ratings/${imgMap.get(reviewer)}`} alt={`reviewer ${reviewer} profile picture`} />
 	<p class="text-xl font-semibold text-darkGrey">{reviewer}.</p>
-	<p class="md:text-xl text-midGrey md:min-h-[12.5rem]">{ratings.get(reviewer)}</p>
+	<p class="md:text-xl text-midGrey">{ratings.get(reviewer)}</p>
 	<span class=" h-[2px] w-[2rem] bg-gray-400 mb-4 mt-10" />
 	<span class="flex flex-row gap-2">
 		{#each stars as star}

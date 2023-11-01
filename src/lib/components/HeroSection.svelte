@@ -4,6 +4,10 @@
 	import OnMount from './OnMount.svelte';
 	import SendUsAMessage from './SendUsAMessage.svelte';
 	import { goto } from '$app/navigation';
+
+	const date = new Date();
+	const year = date.getFullYear();
+	const month = date.getMonth() + 1;
 </script>
 
 <div class="relative isolate overflow-hidden bg-transparent pb-32 2xl:pb-48">
@@ -11,7 +15,7 @@
 	<div class="flex items-center flex-col text-center mt-16 md:mt-72">
 		<div class=" md:-translate-y-40 flex flex-col items-center">
 			<h1
-				class=" text-white text-4xl md:leading-[5rem] max-w-[90%] md:text-6xl md:max-w-3xl font-lucida-bold"
+				class=" translucent rounded-xl text-white text-4xl md:leading-[5rem] max-w-[90%] md:text-6xl md:max-w-3xl font-lucida-bold"
 			>
 				Get out of the 9-5 grind and step into your R&B music career!
 			</h1>
@@ -25,7 +29,7 @@
 				<OnMount>
 					<button
 						on:click={() => {
-							goto('https://calendly.com/raggstarrecords');
+							goto(`https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}`);
 						}}
 						in:fly={{ duration: 1700, x: 75, easing: elasticOut }}
 						class="z-30 transition underline underline-offset-4 text-lg md:text-xl text-white font-extrabold decoration-white decoration-2 hover:scale-110"
@@ -37,3 +41,11 @@
 		</div>
 	</div>
 </div>
+
+<style lang="postcss">
+	.translucent {
+		background-color: rgb(256, 256, 256, 0.2);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+	}
+</style>

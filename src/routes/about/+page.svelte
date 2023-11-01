@@ -4,16 +4,21 @@
 	import { goto } from '$app/navigation';
 	import { fly } from 'svelte/transition';
 	import { elasticOut } from 'svelte/easing';
+	import YourNextSteps from '$lib/components/YourNextSteps.svelte';
 
 	const rags_ar = 1344 / 2257;
 	const rags_height = 2000;
 	const rags_width = Math.round(rags_height * rags_ar);
+
+	const date = new Date();
+	const year = date.getFullYear();
+	const month = date.getMonth() + 1;
 </script>
 
 <svelte:head>
 	<title>About Us | RAGGSTARRECORDS</title>
 </svelte:head>
-<div class="bg-white hidden md:flex flex-col items-center pt-40 pb-20">
+<div class="bg-white hidden md:flex flex-col items-center pt-20 pb-20">
 	<div class="grid xl:grid-cols-2 grid-cols-1 gap-20 items-center mx-28">
 		<span class="flex flex-col items-center">
 			<h1 class="text-[2.50rem] leading-snug font-semibold text-darkGrey">
@@ -62,28 +67,6 @@
 					If you have ANY questions about taking your career into your own hands, just book a call
 					and I will be happy to chat with you!
 				</p>
-				<div class="	flex flex-row items-center justify-center font-openSans gap-20 mt-10">
-					<button
-						on:click={() => {
-							goto('https://maps.app.goo.gl/Rh7j4Ep2oDpya7d66');
-						}}
-						in:fly={{ duration: 1700, x: -75, easing: elasticOut }}
-						class="z-30 transition px-12 py-4 text-[16px] text-white hover:drop-shadow-xl bg-primary shadow-2xl hover:scale-110 rounded-md"
-					>
-						SEND A MESSAGE
-					</button>
-					<OnMount>
-						<button
-							on:click={() => {
-								goto('https://calendly.com/raggstarrecords');
-							}}
-							in:fly={{ duration: 1700, x: 75, easing: elasticOut }}
-							class="z-30 transition underline underline-offset-4 text-md text-primary font-extrabold decoration-primary decoration-2 hover:scale-110"
-						>
-							{'BOOK A CALL >>'}
-						</button>
-					</OnMount>
-				</div>
 				<div class=" h-[2px] mt-4 opacity-75 bg-gray-200 w-full" />
 			</span>
 		</span>
@@ -154,29 +137,8 @@
 					If you have ANY questions about taking your career into your own hands, just book a call
 					and I will be happy to chat with you!
 				</p>
-				<div class="	flex flex-col items-center justify-center font-openSans gap-20 mt-10">
-					<button
-						on:click={() => {
-							goto('https://maps.app.goo.gl/Rh7j4Ep2oDpya7d66');
-						}}
-						in:fly={{ duration: 1700, x: -75, easing: elasticOut }}
-						class="z-30 transition px-12 py-4 text-[16px] text-white hover:drop-shadow-xl bg-primary shadow-2xl hover:scale-110 rounded-md"
-					>
-						SEND A MESSAGE
-					</button>
-					<OnMount>
-						<button
-							on:click={() => {
-								goto('https://calendly.com/raggstarrecords');
-							}}
-							in:fly={{ duration: 1700, x: 75, easing: elasticOut }}
-							class="z-30 transition underline underline-offset-4 text-md text-primary font-extrabold decoration-primary decoration-2 hover:scale-110"
-						>
-							{'BOOK A CALL >>'}
-						</button>
-					</OnMount>
-				</div>
 			</span>
 		</span>
 	</div>
 </div>
+<YourNextSteps />

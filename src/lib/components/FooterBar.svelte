@@ -145,9 +145,11 @@
 			</svg>
 			<p class=" text-midGrey">Atlanta, GA</p>
 		</span>
-		<a
+		<button
 			class="text-sm text-lightGrey underline decoration-lightGrey"
-			href="https://maps.app.goo.gl/Rh7j4Ep2oDpya7d66">Click Here To Send A Message</a
+			on:click={() => {
+				openModal();
+			}}>Click Here To Send A Message</button
 		>
 		<a
 			class="text-sm text-lightGrey underline decoration-lightGrey"

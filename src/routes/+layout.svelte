@@ -7,6 +7,7 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import BookACall from '$lib/components/BookACall.svelte';
+	import ContactPopup from '$lib/components/ContactPopup.svelte';
 
 	function navigateAway(goal: 'what-we-do' | 'our-process' | 'home' | 'about' | 'FAQ') {
 		const drawerInput = document.getElementById('my-drawer-4') as HTMLInputElement;
@@ -123,6 +124,7 @@
 		</ul>
 	</div>
 </div>
+<ContactPopup />
 
 <style>
 	.header {

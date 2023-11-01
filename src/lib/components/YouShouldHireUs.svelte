@@ -37,7 +37,7 @@
 					We focus solely on Rhythm and Blues artists</strong
 				> who are serious about their craft and want to take their art and career to the next level.
 			</p>
-			<h3 class=" text-darkGrey text-3xl md:text-left text-center md:pb-0 pb-4 md:text-[2.2rem]">
+			<h3 class=" text-darkGrey text-3xl md:text-left text-center py-8 md:text-[2.2rem]">
 				What Makes Us Different?
 			</h3>
 			<ul class="-mt-10">

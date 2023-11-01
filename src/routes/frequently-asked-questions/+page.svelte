@@ -1,4 +1,5 @@
 <script>
+	import YourNextSteps from '$lib/components/YourNextSteps.svelte';
 	import Question from '../../lib/icons/Question.svelte';
 </script>
 
@@ -89,6 +90,9 @@
 			or anything you find that needs to be changed.
 		</p>
 	</div>
+</div>
+<div class="text-center">
+	<YourNextSteps />
 </div>
 
 <style>

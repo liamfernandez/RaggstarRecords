@@ -2,7 +2,6 @@
 	import { fly } from 'svelte/transition';
 	import OnMount from './OnMount.svelte';
 	import { elasticOut } from 'svelte/easing';
-	import ContactPopup from './ContactPopup.svelte';
 
 	function openModal() {
 		const dialogElm = document.getElementById('send-a-message') as HTMLDialogElement;
@@ -19,4 +18,3 @@
 		SEND US A MESSAGE
 	</button>
 </OnMount>
-<ContactPopup />

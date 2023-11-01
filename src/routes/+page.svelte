@@ -8,11 +8,7 @@
 	import YouShouldHireUs from '../lib/components/YouShouldHireUs.svelte';
 	import Rating from '../lib/components/Rating.svelte';
 	import PreviewArtist from '../lib/components/PreviewArtist.svelte';
-	import SendUsAMessage from '../lib/components/SendUsAMessage.svelte';
-	import OnMount from '../lib/components/OnMount.svelte';
-	import { fly } from 'svelte/transition';
-	import { elasticOut } from 'svelte/easing';
-	import { goto } from '$app/navigation';
+	import YourNextSteps from '$lib/components/YourNextSteps.svelte';
 </script>
 
 <svelte:head>
@@ -63,7 +59,7 @@
 				description={Strings.Remove_Roadblocks_Copy}
 			/>
 			<HowWeHelpCopy
-				emoji={'⚡️'}
+				emoji={'🕰️'}
 				title={Strings.Save_Time_Title}
 				description={Strings.Save_Time_Copy}
 			/>
@@ -148,7 +144,7 @@
 			d="M0,192L80,181.3C160,171,320,149,480,160C640,171,800,213,960,213.3C1120,213,1280,171,1360,149.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
 		/>
 	</svg>
-	<div class=" bg-white md:py-32 py-10 flex flex-col items-center">
+	<div class=" bg-white md:pt-32 pt-10 flex flex-col items-center">
 		<p class="text-center text-xl md:text-[1.7rem] text-primary pb-4">Don't Believe us?</p>
 		<p class="text-center text-darkGrey font-semibold text-3xl md:text-5xl">
 			See What Our Clients Are Saying
@@ -161,7 +157,7 @@
 		</div>
 
 		<!-- <section id="PLAYABLE SONGS + PREVIEW MIXED & MASTERED WORK"> -->
-		<p class=" text-lightGrey text-lg md:text-2xl pt-20 md:pt-48 tracking-widest">OUR WORK</p>
+		<p class=" text-lightGrey text-lg md:text-2xl pt-20 md:pt-32 tracking-widest">OUR WORK</p>
 		<h2 class=" text-darkGrey text-center text-3xl md:text-6xl pt-4 md:pt-10">
 			Check Out Some of My Favorite Projects
 		</h2>
@@ -171,28 +167,6 @@
 			<PreviewArtist artist={'Tay'} />
 			<PreviewArtist artist={'Yana'} />
 		</div>
-		<p class="text-primary text-lg mb-4">YOUR NEXT STEPS</p>
-		<p class="md:text-5xl text-3xl text-center text-darkGrey font-semibold">
-			Ready To Get Started?
-		</p>
-		<p class="text-midGrey text-md md:text-lg max-w-[85%] md:max-w-xl text-center mt-6">
-			Reach out to us however you prefer! Either send us a message or book a free 1 on 1 call
-		</p>
-		<div
-			class="flex flex-row flex-wrap justify-center items-center font-openSans gap-8 md:gap-20 mt-10"
-		>
-			<SendUsAMessage />
-			<OnMount>
-				<button
-					on:click={() => {
-						goto('https://calendly.com/raggstarrecords');
-					}}
-					in:fly={{ duration: 1700, x: 75, easing: elasticOut }}
-					class="z-30 transition underline underline-offset-4 md:text-xl text-primary font-extrabold decoration-primary decoration-2 hover:scale-110"
-				>
-					{'BOOK A CALL >>'}
-				</button>
-			</OnMount>
-		</div>
 	</div>
+	<YourNextSteps />
 </section>
