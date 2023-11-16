@@ -30,6 +30,10 @@
 		const dialogElm = document.getElementById('send-a-message') as HTMLDialogElement;
 		dialogElm.showModal();
 	}
+
+	const date = new Date();
+	const year = date.getFullYear();
+	const month = date.getMonth() + 1;
 </script>
 
 <div class=" bg-[#e1e1e1] grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-72 pt-8 pb-20 px-20">
@@ -146,14 +150,15 @@
 			<p class=" text-midGrey">Atlanta, GA</p>
 		</span>
 		<button
-			class="text-sm text-lightGrey underline decoration-lightGrey"
+			class="text-sm self-start text-lightGrey underline decoration-lightGrey"
 			on:click={() => {
 				openModal();
 			}}>Click Here To Send A Message</button
 		>
 		<a
 			class="text-sm text-lightGrey underline decoration-lightGrey"
-			href="https://maps.app.goo.gl/Rh7j4Ep2oDpya7d66">Click Here To Book a 1 On 1 Call</a
+			href={`https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}`}
+			>Click Here To Book a 1 On 1 Call</a
 		>
 		<a
 			class="block md:hidden text-xs pt-10 -mb-10 text-lightGrey decoration-lightGrey underline"
