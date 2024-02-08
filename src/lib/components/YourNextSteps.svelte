@@ -19,7 +19,7 @@
 	<div
 		class="flex flex-row flex-wrap justify-center items-center font-openSans gap-8 md:gap-20 mt-10"
 	>
-		<SendUsAMessage />
+		<!-- <SendUsAMessage /> -->
 		<OnMount>
 			<button
 				on:click={() => {

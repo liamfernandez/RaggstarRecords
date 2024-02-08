@@ -149,12 +149,12 @@
 			</svg>
 			<p class=" text-midGrey">Atlanta, GA</p>
 		</span>
-		<button
+		<!-- <button
 			class="text-sm self-start text-lightGrey underline decoration-lightGrey"
 			on:click={() => {
 				openModal();
 			}}>Click Here To Send A Message</button
-		>
+		> -->
 		<a
 			class="text-sm text-lightGrey underline decoration-lightGrey"
 			href={`https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}`}

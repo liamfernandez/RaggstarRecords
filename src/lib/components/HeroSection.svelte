@@ -25,7 +25,7 @@
 				👋
 			</p>
 			<div class="	flex flex-col md:flex-row items-center font-openSans gap-8 md:gap-20 mt-10">
-				<SendUsAMessage />
+				<!-- <SendUsAMessage /> -->
 				<OnMount>
 					<button
 						on:click={() => {
