@@ -4,8 +4,8 @@ import { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } from "$env/static/private";
 
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {
-  const { name, email, message } = await request.json();
-  const bodyOfMessage = `\nName: ${name}\nEmail: ${email}\nMessage: ${message}\n`
+  const { name, email, phoneNumber, message } = await request.json();
+  const bodyOfMessage = `\nName: ${name}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nMessage: ${message}\n`
 
   try {
     //twilio code
