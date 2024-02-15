@@ -1,5 +1,4 @@
 <script>
-	import { goto } from '$app/navigation';
 	import { OnMount } from 'fractils';
 	import { elasticOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
@@ -19,17 +18,16 @@
 	<div
 		class="flex flex-row flex-wrap justify-center items-center font-openSans gap-8 md:gap-20 mt-10"
 	>
-		<!-- <SendUsAMessage /> -->
+		<SendUsAMessage />
 		<OnMount>
-			<button
-				on:click={() => {
-					goto(`https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}`);
-				}}
+			<a
+				href="https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}"
+				target="_blank"
 				in:fly={{ duration: 1700, x: 75, easing: elasticOut }}
 				class="z-30 transition underline underline-offset-4 md:text-xl text-primary font-extrabold decoration-primary decoration-2 hover:scale-110"
 			>
 				{'BOOK A CALL >>'}
-			</button>
+			</a>
 		</OnMount>
 	</div>
 </div>

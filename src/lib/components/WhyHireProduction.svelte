@@ -91,8 +91,8 @@
 		</span>
 	{/if}
 </div>
-<!-- <span use:visibility={options} on:v-change={handleButtonChange} class="flex flex-col items-center">
+<span use:visibility={options} on:v-change={handleButtonChange} class="flex flex-col items-center">
 	{#if buttonVisible}
 		<SendUsAMessage />
 	{/if}
-</span> -->
+</span>

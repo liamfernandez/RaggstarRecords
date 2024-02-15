@@ -98,9 +98,9 @@
 		<li class="nav-button">
 			<a href="/frequently-asked-questions">FAQ</a>
 		</li>
-		<!-- <li class="nav-button">
+		<li class="nav-button">
 			<button on:click={openModal}> Contact </button>
-		</li> -->
+		</li>
 		<li>
 			<BookACall backgroundIncluded={true} />
 		</li>
