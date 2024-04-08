@@ -1,13 +1,13 @@
 <script>
-	import Strings from '../strings';
-	import HeroSection from '../lib/components/HeroSection.svelte';
-	import HowWeHelpCopy from '../lib/components/HowWeHelpCopy.svelte';
-	import BookACall from '../lib/components/BookACall.svelte';
-	import PhasesSection from '../lib/components/PhasesSection.svelte';
-	import WhyHireProduction from '../lib/components/WhyHireProduction.svelte';
-	import YouShouldHireUs from '../lib/components/YouShouldHireUs.svelte';
-	import Rating from '../lib/components/Rating.svelte';
-	import PreviewArtist from '../lib/components/PreviewArtist.svelte';
+	import Strings from '../../strings';
+	import HeroSection from '../../lib/components/HeroSection.svelte';
+	import HowWeHelpCopy from '../../lib/components/HowWeHelpCopy.svelte';
+	import BookACall from '../../lib/components/BookACall.svelte';
+	import PhasesSection from '../../lib/components/PhasesSection.svelte';
+	import WhyHireProduction from '../../lib/components/WhyHireProduction.svelte';
+	import YouShouldHireUs from '../../lib/components/YouShouldHireUs.svelte';
+	import Rating from '../../lib/components/Rating.svelte';
+	import PreviewArtist from '../../lib/components/PreviewArtist.svelte';
 	import YourNextSteps from '$lib/components/YourNextSteps.svelte';
 </script>
 

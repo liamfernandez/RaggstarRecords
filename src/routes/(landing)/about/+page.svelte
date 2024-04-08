@@ -1,6 +1,6 @@
 <script lang="ts">
-	import SendUsAMessage from '../../lib/components/SendUsAMessage.svelte';
-	import OnMount from '../../lib/components/OnMount.svelte';
+	import SendUsAMessage from '../../../lib/components/SendUsAMessage.svelte';
+	import OnMount from '../../../lib/components/OnMount.svelte';
 	import { goto } from '$app/navigation';
 	import { fly } from 'svelte/transition';
 	import { elasticOut } from 'svelte/easing';

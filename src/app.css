@@ -13,6 +13,16 @@
   }
 }
 
+.header {
+		position: sticky;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: white;
+		transition: transform 0.2s ease-in-out;
+		z-index: 1000; /* make sure it's above other content */
+	}
+
 .scrolling-text {
   position: relative;
   overflow: hidden;
@@ -60,4 +70,18 @@
   font-weight: bold;
   font-style: normal;
 
+}
+
+
+/* BLOG CSS */
+.progress-bg::-moz-progress-bar {
+  background-color: 'white';
+}
+
+.progress-bg::-webkit-progress-value {
+  background-color: 'white';
+}
+
+.progress-bg::-webkit-progress-bar {
+  background-color: transparent;
 }

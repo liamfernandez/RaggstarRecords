@@ -1,6 +1,6 @@
 <script>
 	import YourNextSteps from '$lib/components/YourNextSteps.svelte';
-	import Question from '../../lib/icons/Question.svelte';
+	import Question from '$lib/icons/Question.svelte';
 </script>
 
 <svelte:head>
@@ -95,7 +95,7 @@
 	<YourNextSteps />
 </div>
 
-<style>
+<style lang="">
 	p {
 		@apply text-lightGrey;
 	}

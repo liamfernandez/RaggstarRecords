@@ -1,11 +1,11 @@
 <script lang="ts">
-	import '../app.css';
+	import '../../app.css';
 
-	import NavBar from '../lib/components/NavBar.svelte';
-	import FooterBar from '../lib/components/FooterBar.svelte';
-	import MobileNavBar from '../lib/components/MobileNavBar.svelte';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import NavBar from '$lib/components/NavBar.svelte';
+	import FooterBar from '$lib/components/FooterBar.svelte';
+	import MobileNavBar from '$lib/components/MobileNavBar.svelte';
 	import BookACall from '$lib/components/BookACall.svelte';
 	import ContactPopup from '$lib/components/ContactPopup.svelte';
 
@@ -125,15 +125,3 @@
 	</div>
 </div>
 <ContactPopup />
-
-<style>
-	.header {
-		position: sticky;
-		top: 0;
-		left: 0;
-		width: 100%;
-		background-color: white;
-		transition: transform 0.3s ease-in-out;
-		z-index: 1000; /* make sure it's above other content */
-	}
-</style>
