@@ -27,9 +27,9 @@
 	>
 		<path
 			d="M1.72308 16L0 14.2769L11.8154 2.46154H1.23077V0H16V14.7692H13.5385V4.18462L1.72308 16Z"
-			style={'fill: white'}
+			style={'fill: black'}
 			fill-opacity="1"
-			class={'text-white'}
+			class={'text-black'}
 		/>
 	</svg>
 </OnMount>

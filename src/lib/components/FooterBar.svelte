@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import Facebook from '../icons/Facebook.svelte';
 	import Ig from '../icons/IG.svelte';
 	import TikTok from '../icons/TikTok.svelte';
 	import Twitter from '../icons/Twitter.svelte';
+
+	export let smoothScroll = true;
 
 	function navigateAway(goal: 'what-we-do' | 'our-process' | 'home') {
 		if ($page.url.pathname === '/' && goal === 'home') {
@@ -77,36 +78,57 @@
 	</span>
 	<span class="flex flex-col gap-4">
 		<p class="font-semibold text-darkGrey">NAVIGATION</p>
-		<ul class="flex flex-col items-start gap-2">
-			<button
-				on:click={() => {
-					navigateAway('home');
-				}}
-			>
-				<p class=" text-lightGrey hover:underline hover:decoration-lightGrey">Home</p>
-			</button>
-			<button
-				on:click={() => {
-					navigateAway('what-we-do');
-				}}
-			>
-				<p class=" text-lightGrey hover:underline hover:decoration-lightGrey">What We Do</p>
-			</button>
-			<button
-				on:click={() => {
-					navigateAway('our-process');
-				}}
-			>
-				<p class=" text-lightGrey hover:underline hover:decoration-lightGrey">Our Process</p>
-			</button>
-			<a href="/about" class=" text-lightGrey hover:underline hover:decoration-lightGrey"
-				>About Us</a
-			>
-			<button
-				on:click={openModal}
-				class=" text-lightGrey hover:underline hover:decoration-lightGrey">Contact Us</button
-			>
-		</ul>
+		{#if !smoothScroll}
+			<ul class="ml-0 flex flex-col items-start gap-2">
+				<a href="/">
+					<p class=" text-lightGrey hover:underline hover:decoration-lightGrey">Home</p>
+				</a>
+				<a href="/#what-we-do">
+					<p class=" text-lightGrey hover:underline hover:decoration-lightGrey">What We Do</p>
+				</a>
+				<a href="/#our-process">
+					<p class=" text-lightGrey hover:underline hover:decoration-lightGrey">Our Process</p>
+				</a>
+				<a href="/about" class=" text-lightGrey hover:underline hover:decoration-lightGrey"
+					>About Us</a
+				>
+				<button
+					on:click={openModal}
+					class=" text-lightGrey hover:underline hover:decoration-lightGrey">Contact Us</button
+				>
+			</ul>
+		{:else}
+			<ul class="ml-0 flex flex-col items-start gap-2">
+				<button
+					on:click={() => {
+						navigateAway('home');
+					}}
+				>
+					<p class=" text-lightGrey hover:underline hover:decoration-lightGrey">Home</p>
+				</button>
+				<button
+					on:click={() => {
+						navigateAway('what-we-do');
+					}}
+				>
+					<p class=" text-lightGrey hover:underline hover:decoration-lightGrey">What We Do</p>
+				</button>
+				<button
+					on:click={() => {
+						navigateAway('our-process');
+					}}
+				>
+					<p class=" text-lightGrey hover:underline hover:decoration-lightGrey">Our Process</p>
+				</button>
+				<a href="/about" class=" text-lightGrey hover:underline hover:decoration-lightGrey"
+					>About Us</a
+				>
+				<button
+					on:click={openModal}
+					class=" text-lightGrey hover:underline hover:decoration-lightGrey">Contact Us</button
+				>
+			</ul>
+		{/if}
 	</span>
 	<span class="flex flex-col gap-6">
 		<p class="font-semibold text-darkGrey">CONTACTS</p>

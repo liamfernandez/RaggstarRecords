@@ -1,6 +1,8 @@
 import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,7 +11,8 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: [vitePreprocess(), mdsvex({
-		extensions: ['.svelte', '.md']
+		extensions: ['.svelte', '.md'],
+		rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
 	})],
 
 	kit: {

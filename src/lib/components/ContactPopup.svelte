@@ -50,8 +50,8 @@
 			>
 		</form>
 		<img
-			src="./main-logo-no-bg.png"
-			alt=""
+			src="../main-logo-no-bg.png"
+			alt="raggstar records logo"
 			class="hidden md:block absolute left-2 top-2 h-[100px] inset-0 -z-10"
 		/>
 		<h2 class=" text-4xl font-bold text-primary">Contact Us</h2>

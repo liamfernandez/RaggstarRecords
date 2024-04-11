@@ -4,6 +4,7 @@ export type BlogCardProps = {
   description: string;
   slug: string;
   image: string;
+  author?: string;
   post_color?: string; // Hex color code to give each card a unique color
   date_published: string;
 }

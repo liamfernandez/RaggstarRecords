@@ -11,6 +11,20 @@ export default {
         "darkGrey": "#3E3E3E", // dark grey
         "midGrey": "#545454", // medium grey
         "lightGrey": "#6A6A6A", // light grey
+        "PrimaryText": 'var(--PrimaryText)'
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            'ol > li::marker': {
+              color: 'var(--PrimaryText)',
+            },
+            'ul > li::marker': {
+              color: 'var(--PrimaryText)',
+              content: '\\2014'
+            },
+          }
+        }
       },
       fontFamily: {
         "lato": ["Lato", "sans-serif"],
