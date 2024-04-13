@@ -3,6 +3,9 @@
 	import { DefaultBlogPosts } from '$lib/managers/BlogManager';
 </script>
 
+<svelte:head>
+	<title>Blog</title>
+</svelte:head>
 <div class="container mx-auto px-4">
 	<section id="Marquee scrolling headline">
 		<div
@@ -22,7 +25,9 @@
 	</section>
 	<!-- Insert Card Grid Component -->
 	<!-- Feed it BlogCard Components -->
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-		<BlogCard props={DefaultBlogPosts[0]} />
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		{#each DefaultBlogPosts as blogProps}
+			<BlogCard props={blogProps} />
+		{/each}
 	</div>
 </div>

@@ -57,7 +57,7 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta property="og:title" content={title} />
-	<meta property="og:description" content="Check out this article on liamverse.com" />
+	<meta property="og:description" content="Check out this article on raggstarrecords.com" />
 	<meta property="og:image" content={metaImgUrl} />
 </svelte:head>
 

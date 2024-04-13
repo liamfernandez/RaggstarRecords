@@ -69,7 +69,7 @@
 				<Ig size={16} />
 			</button>
 		</span>
-		<p class=" text-lightGrey">RaggStarRecords © 2023</p>
+		<p class=" text-lightGrey">RaggStarRecords © 2024</p>
 		<p class=" text-xs text-lightGrey mt-10 md:block hidden">
 			Site Powered by <a class="hover:underline decoration-lightGrey" href="https://liamverse.io"
 				>Liamverse</a

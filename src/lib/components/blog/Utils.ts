@@ -50,3 +50,50 @@ export function shuffle(array: string[]) {
   }
   return array;
 }
+
+
+export function generateGradientColors(hex:string, amount = 20) {
+    // Helper function to convert a hex color to RGB
+    function hexToRgb(hex:string) {
+        let r = parseInt(hex.slice(1, 3), 16);
+        let g = parseInt(hex.slice(3, 5), 16);
+        let b = parseInt(hex.slice(5, 7), 16);
+        return [r, g, b];
+    }
+
+    // Helper function to convert RGB to hex
+    function rgbToHex(r:number, g:number, b:number) {
+        return "#" + [r, g, b].map(x => {
+            const hex = x.toString(16);
+            return hex.length === 1 ? "0" + hex : hex;
+        }).join("");
+    }
+
+    // Helper function to clamp the values between 0 and 255
+    function clamp(value:number) {
+        return Math.max(0, Math.min(255, value));
+    }
+
+    // Convert the original color to RGB
+    let [r, g, b] = hexToRgb(hex);
+
+    // Generate a lighter color
+    let lighter = rgbToHex(
+        clamp(r + amount),
+        clamp(g + amount),
+        clamp(b + amount)
+    );
+
+    // Generate a darker color
+    let darker = rgbToHex(
+        clamp(r - amount),
+        clamp(g - amount),
+        clamp(b - amount)
+    );
+
+    return {
+        original: hex,
+        lighter: lighter,
+        darker: darker
+    };
+}
