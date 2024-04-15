@@ -3,14 +3,13 @@
   import type { BlogCardProps } from '$lib/managers/BlogManager';
   import { DefaultBlogPosts } from '$lib/managers/BlogManager';
 
-
   const blogPostInfo: BlogCardProps = DefaultBlogPosts[0];
-
 </script>
 
 
 <BlogPageTemplate
   title={blogPostInfo.title}
+  subtitle={blogPostInfo.subtitle}
   published_date={blogPostInfo.date_published}
   coverImg={blogPostInfo.image}>
 

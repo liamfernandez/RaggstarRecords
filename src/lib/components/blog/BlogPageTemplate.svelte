@@ -3,10 +3,11 @@
 	import Clock from '$lib/icons/Clock.svelte';
 	import { onMount } from 'svelte';
 	import Toast from './Toast.svelte';
-	import { countWordsInDiv } from './Utils';
+	import { countWordsInDiv, formatDate } from './Utils';
 
 	export let title: string;
-	export let published_date: string;
+	export let subtitle: string;
+	export let published_date: Date;
 	export let metaImgUrl: string;
 	export let coverImg: string;
 
@@ -63,8 +64,8 @@
 
 <span class="flex justify-center md:-translate-y-40 -translate-y-20">
 	<img
-		class="md:w-[40rem] md:h-[22.5rem] w-[20rem] h-[11.25rem] rounded-lg outline outline-PrimaryText"
-		src={`../blog/${coverImg}/cover.png`}
+		class="md:w-[40rem] md:h-[22.5rem] w-[20rem] h-[11.25rem] rounded-lg outline outline-black"
+		src={`../blog/${coverImg}/cover.jpeg`}
 		alt={title}
 	/>
 </span>
@@ -75,6 +76,11 @@
 		>
 			{title}
 		</h1>
+		<h1
+			class="md:text-2xl sm:text-2xl text-xl md:leading-[3.4rem] max-w-[43rem] my-0 font-extrabold opacity-50"
+		>
+			{subtitle}
+		</h1>
 		<div class="md:w-[43rem] max-w-full">
 			<hr class="mb-4 mt-4" />
 			<span class="flex flex-col md:gap-6 gap-4">
@@ -84,7 +90,7 @@
 							<strong class="text-black">Author: </strong>RGS Staff
 						</p>
 						<p class="mt-[1px] text-xs text-sky-500 md:text-[16px]">
-							<strong class="text-black">Published: </strong>{published_date}
+							<strong class="text-black">Published: </strong>{formatDate(published_date)}
 						</p>
 					</span>
 					{#if minutesToRead > 0}

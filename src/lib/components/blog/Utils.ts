@@ -97,3 +97,27 @@ export function generateGradientColors(hex:string, amount = 20) {
         darker: darker
     };
 }
+
+// DATE HELPER FUNCTIONS TO BE USED IN BLOG POSTS
+  function ordinalSuffix(day: number): string {
+    if (day > 3 && day < 21) return day + 'th'; // covers 4th to 20th
+    switch (day % 10) {
+      case 1:  return day + "st";
+      case 2:  return day + "nd";
+      case 3:  return day + "rd";
+      default: return day + "th";
+    }
+  }
+
+
+export function formatDate(date: Date): string {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+    let day = date.getDate();
+    let monthIndex = date.getMonth();
+    let monthName = monthNames[monthIndex];
+    let year = date.getFullYear();
+
+    return `${monthName} ${ordinalSuffix(day)}, ${year}`;
+}
+

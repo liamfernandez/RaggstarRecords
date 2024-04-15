@@ -10,15 +10,15 @@
   const gif1 = `${assetsUrl}/gif1.gif`;
   const gif2 = `${assetsUrl}/gif2.gif`;
   const gif3 = `${assetsUrl}/gif3.gif`;
-  const img1 = `${assetsUrl}/img1.png`;
-  const img2 = `${assetsUrl}/img2.png`;
-  const img3 = `${assetsUrl}/img3.png`;
-  const img4 = `${assetsUrl}/img4.png`;
-
+  const img1 = `${assetsUrl}/img1.jpeg`;
+  const img2 = `${assetsUrl}/img2.jpeg`;
+  const img3 = `${assetsUrl}/img3.jpeg`;
+  const img4 = `${assetsUrl}/img4.jpeg`;
 </script>
 
 <BlogPageTemplate
   title={blogPostInfo.title}
+  subtitle={blogPostInfo.subtitle}
   published_date={blogPostInfo.date_published}
   coverImg={blogPostInfo.image}>
 
