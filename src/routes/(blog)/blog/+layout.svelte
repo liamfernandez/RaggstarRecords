@@ -68,17 +68,3 @@
 </div>
 <FooterBar smoothScroll={false} />
 <ContactPopup />
-
-<style lang="">
-	.progress-bg::-moz-progress-bar {
-		background-color: 'white';
-	}
-
-	.progress-bg::-webkit-progress-value {
-		background-color: 'white';
-	}
-
-	.progress-bg::-webkit-progress-bar {
-		background-color: transparent;
-	}
-</style>

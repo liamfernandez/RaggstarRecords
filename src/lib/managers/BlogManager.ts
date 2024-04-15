@@ -10,7 +10,7 @@ export type BlogCardProps = {
 	date_published: Date;
 };
 
-export const DefaultBlogPosts: BlogCardProps[] = [
+export let DefaultBlogPosts: BlogCardProps[] = [
 	{
 		title: 'No Label? No Problem',
 		subtitle: 'How to build a Fanbase as an Independent Artist',
@@ -44,8 +44,37 @@ export const DefaultBlogPosts: BlogCardProps[] = [
 		subtitle: 'Tips For a Successful Session',
 		description: '',
 		slug: 'how-to-prepare-for-the-studio',
-		post_color: '#f0d06e',
+		post_color: '#de8c2f',
 		image: 'preparation',
 		date_published: new Date(2024, 2, 9) // 'March 9th, 2024'
-	}
+	},
+  {
+		title: 'Network = Net Worth',
+		subtitle: 'Turn Your Connections Into Dollars',
+		description: '',
+		slug: 'network-equals-net-worth',
+		post_color: '#5a73ff',
+		image: 'network-net-worth',
+		date_published: new Date(2024, 2, 16) // 'March 16th, 2024'
+	},
+  // {
+	// 	title: 'How to Prepare for The Studio',
+	// 	subtitle: 'Tips For a Successful Session',
+	// 	description: '',
+	// 	slug: 'how-to-prepare-for-the-studio',
+	// 	post_color: '#de8c2f',
+	// 	image: 'preparation',
+	// 	date_published: new Date(2024, 2, 9) // 'March 9th, 2024'
+	// },
+  // {
+	// 	title: 'How to Prepare for The Studio',
+	// 	subtitle: 'Tips For a Successful Session',
+	// 	description: '',
+	// 	slug: 'how-to-prepare-for-the-studio',
+	// 	post_color: '#de8c2f',
+	// 	image: 'preparation',
+	// 	date_published: new Date(2024, 2, 9) // 'March 9th, 2024'
+	// }
 ];
+
+export let orderedBlogPosts = DefaultBlogPosts.sort((a, b) => a.date_published > b.date_published ? -1 : 1);

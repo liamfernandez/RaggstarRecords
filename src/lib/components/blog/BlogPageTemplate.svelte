@@ -4,12 +4,20 @@
 	import { onMount } from 'svelte';
 	import Toast from './Toast.svelte';
 	import { countWordsInDiv, formatDate } from './Utils';
+	import { page } from '$app/stores';
+	import { orderedBlogPosts } from '$lib/managers/BlogManager';
 
 	export let title: string;
 	export let subtitle: string;
 	export let published_date: Date;
 	export let metaImgUrl: string;
 	export let coverImg: string;
+
+	console.log('Page store: ', JSON.stringify($page.route.id?.split('/')[3]));
+	console.log(
+		'Correct blog post: ',
+		JSON.stringify(orderedBlogPosts.find((post) => post.slug === $page.route.id?.split('/')[3]))
+	);
 
 	const AVERAGE_WPM_OF_READERS = 267;
 	let minutesToRead = -1;
@@ -76,11 +84,11 @@
 		>
 			{title}
 		</h1>
-		<h1
-			class="md:text-2xl sm:text-2xl text-xl md:leading-[3.4rem] max-w-[43rem] my-0 font-extrabold opacity-50"
+		<h2
+			class="md:text-2xl sm:text-2xl text-xl md:leading-[3.4rem] max-w-[43rem] my-0 font-extrabold text-gray-500"
 		>
 			{subtitle}
-		</h1>
+		</h2>
 		<div class="md:w-[43rem] max-w-full">
 			<hr class="mb-4 mt-4" />
 			<span class="flex flex-col md:gap-6 gap-4">

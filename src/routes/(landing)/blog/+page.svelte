@@ -1,6 +1,8 @@
 <script>
 	import BlogCard from '$lib/components/blog/BlogCard.svelte';
-	import { DefaultBlogPosts } from '$lib/managers/BlogManager';
+	import { orderedBlogPosts } from '$lib/managers/BlogManager';
+
+	const headlineText = `Check Out Our Latest Post: ${orderedBlogPosts[0].title} - ${orderedBlogPosts[0].subtitle}`;
 </script>
 
 <svelte:head>
@@ -14,8 +16,7 @@
 			<div class="whitespace-nowrap">
 				<div class="scrolling-wrapper">
 					<p class="inline-block text-sky-400 font-semibold text-3xl animate-marquee">
-						Check Out Our Latest Blog: No Label? No Problem: How to Build a Fanbase as an
-						Independent Artist
+						{headlineText}
 					</p>
 				</div>
 			</div>
@@ -23,10 +24,8 @@
 			<div class="mask mask-right" />
 		</div>
 	</section>
-	<!-- Insert Card Grid Component -->
-	<!-- Feed it BlogCard Components -->
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-		{#each DefaultBlogPosts as blogProps}
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-6 md:mb-20">
+		{#each orderedBlogPosts as blogProps}
 			<BlogCard props={blogProps} />
 		{/each}
 	</div>
