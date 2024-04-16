@@ -115,9 +115,9 @@
 					<p>FAQ</p>
 				</li>
 			</button>
-			<!-- <li class="nav-button">
+			<li class="nav-button">
 				<button on:click={openModal}> Contact </button>
-			</li> -->
+			</li>
 			<li>
 				<BookACall backgroundIncluded={true} />
 			</li>

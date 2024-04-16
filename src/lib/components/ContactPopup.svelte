@@ -5,6 +5,9 @@
 	import { SendMessage } from '$lib/utils';
 	import { elasticOut } from 'svelte/easing';
 
+	const phoneRegExp =
+		/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
 	let loading: boolean = false;
 	let success = false;
 	let failed = false;
@@ -12,12 +15,14 @@
 	const { form, errors, state, handleChange, handleSubmit } = createForm({
 		initialValues: {
 			name: '',
+			phoneNumber: '',
 			email: '',
 			message: ''
 		},
 		validationSchema: yup.object().shape({
 			name: yup.string().required(),
 			email: yup.string().email().required(),
+			phoneNumber: yup.string().matches(phoneRegExp, 'Phone number is not valid').required(),
 			message: yup.string().required().max(160, 'Message must be at most 160 characters')
 		}),
 		onSubmit: async (values) => {
@@ -36,6 +41,7 @@
 	function closeAndClear() {
 		$form.name = '';
 		$form.email = '';
+		$form.phoneNumber = '';
 		$form.message = '';
 	}
 </script>
@@ -106,6 +112,30 @@
 				on:change={handleChange}
 				on:blur={handleChange}
 				bind:value={$form.email}
+			/>
+			<span class="w-full flex flex-row items-center justify-between">
+				{#if $form.phoneNumber.length > 0 || $errors.phoneNumber}
+					<label for="phoneNumber" in:fly={{ duration: 1000, delay: 300 }} class="label self-start">
+						<span class="label-text">Your Phone Number</span>
+					</label>
+				{/if}
+				{#if $errors.phoneNumber}
+					<p
+						in:fly={{ duration: 750, x: -120, easing: elasticOut }}
+						class=" text-red-400 text-[9px] md:text-[14px]"
+					>
+						{$errors.phoneNumber}
+					</p>
+				{/if}
+			</span>
+			<input
+				type="text"
+				placeholder="Your Number"
+				id="phoneNumber"
+				class="mb-4 focus:outline-tertiary border-gray-400 text-black input input-bordered w-full bg-white"
+				on:change={handleChange}
+				on:blur={handleChange}
+				bind:value={$form.phoneNumber}
 			/>
 			<span class="w-full flex flex-row items-center justify-between">
 				{#if $form.message.length > 0 || $errors.message}

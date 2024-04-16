@@ -13,26 +13,24 @@
 
 {#if backgroundIncluded}
 	<OnMount>
-		<button
-			on:click={() => {
-				goto(`https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}`);
-			}}
+		<a
+			href="https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}"
+			target="_blank"
 			in:fly={{ duration: 2000, y: 40, easing: elasticOut }}
 			class="transition tracking-tight rounded-lg px-8 py-4 text-[16px] text-white hover:drop-shadow-xl bg-primary shadow-2xl hover:bg-darkGrey"
 		>
 			Book A Call
-		</button>
+		</a>
 	</OnMount>
 {:else}
 	<OnMount>
-		<button
-			on:click={() => {
-				goto(`https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}`);
-			}}
+		<a
+			href="https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}"
+			target="_blank"
 			in:fly={{ duration: 2000, y: 40, easing: elasticOut }}
 			class="transition rounded-xl font-bold px-12 py-4 tracking-widest text-[16px] text-white hover:drop-shadow-xl bg-primary shadow-2xl hover:bg-darkGrey"
 		>
 			BOOK A CALL
-		</button>
+		</a>
 	</OnMount>
 {/if}

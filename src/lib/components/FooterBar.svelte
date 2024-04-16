@@ -180,7 +180,7 @@
 		<a
 			class="text-sm text-lightGrey underline decoration-lightGrey"
 			href={`https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}`}
-			>Click Here To Book a 1 On 1 Call</a
+			target="_blank">Click Here To Book a 1 On 1 Call</a
 		>
 		<a
 			class="block md:hidden text-xs pt-10 -mb-10 text-lightGrey decoration-lightGrey underline"
