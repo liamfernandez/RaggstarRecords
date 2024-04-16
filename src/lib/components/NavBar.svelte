@@ -101,5 +101,39 @@
 		<li class="nav-button">
 			<a href="/blog">Blog</a>
 		</li>
+		<li class="nav-button">
+			<button on:click={openModal}> Contact </button>
+		</li>
+		<BookACall backgroundIncluded={true} />
 	</ul>
 </div>
+
+<style>
+	.nav-button {
+		@apply py-2;
+		background: none;
+		border: none;
+		font-size: 16px;
+		cursor: pointer;
+		position: relative;
+		/* padding: 10px 20px; */
+		transition: color 0.3s;
+	}
+	/* Change button text color on hover */
+	.nav-button:hover {
+		@apply text-primary; /* change this to your preferred hover color */
+	}
+	.nav-button::after {
+		@apply bg-primary;
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+	.nav-button:hover::after {
+		width: 100%;
+	}
+</style>
