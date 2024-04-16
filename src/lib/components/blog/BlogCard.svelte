@@ -23,7 +23,7 @@
 			<img
 				src={`blog/${props.image}/cover.jpeg`}
 				alt={`Blog Post titled: ${props.title}`}
-				class="w-full h-[15rem] object-cover"
+				class="w-full h-[15rem] object-cover object-top"
 			/>
 			<div class={'p-6 h-[15rem]'} style={produce_styles()}>
 				<p class="text-xs text-gray-600">{`Published on ${formatDate(props.date_published)}`}</p>

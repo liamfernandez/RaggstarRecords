@@ -81,7 +81,7 @@ body {
 @layer components {
   .progress-bg::-moz-progress-bar {
     background-color: #23ddc4;
-    color: #5a73ff;
+    color: #b179d6;
   }
 
   .progress-bg::-webkit-progress-value {
