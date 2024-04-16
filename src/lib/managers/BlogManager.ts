@@ -1,0 +1,98 @@
+// MATCH WITH BlogCard.Svelte
+export type BlogCardProps = {
+	title: string;
+	subtitle?: string;
+	description: string;
+	slug: string; // name of the folder under routes that contains the blog post
+	image: string; // name of the folder within STATIC > BLOG > that will contain assets for your blog post
+	author?: string;
+	post_color?: string; // Hex color code to give each card a unique color
+	date_published: Date;
+};
+
+let DefaultBlogPosts: BlogCardProps[] = [
+	{
+		title: 'No Label? No Problem',
+		subtitle: 'How to build a Fanbase as an Independent Artist',
+		description:
+			'In this article we will be discussing methods of how successful independent artists were able to build their following without the backing of a major label.',
+		slug: 'how-to-create-a-fanbase-without-a-label',
+		image: 'no-label',
+		date_published: new Date(2024, 1, 2)// 'February 2nd, 2024'
+	},
+	{
+		title: 'The Secret to Branding Revealed!',
+		subtitle: 'Why it Matters and How it Gets You Rich',
+		description:
+			"In this article we will discuss the secret recipe to successful branding! Let's breakdown what it is, why it's important and how you can profit off your brand.",
+		slug: 'secret-to-branding-revealed',
+		post_color: '#FFC0CB',
+		image: 'branding',
+		date_published: new Date(2024, 1, 22) // 'February 22nd, 2024'
+	},
+	{
+		title: 'The Power of Music Videos',
+		subtitle: 'Enhancing Your Songs Through Visual Storytelling',
+		description: 'In this article, we will discuss the transformative power of visuals in the music industry, emphasizing their critical role in enhancing song engagement and visibility.',
+		slug: 'power-of-music-videos',
+		post_color: '#be9251',
+		image: 'music-videos',
+		date_published: new Date(2024, 2, 1) // 'March 1st, 2024'
+	},
+	{
+		title: 'How to Prepare for The Studio',
+		subtitle: 'Tips For a Successful Session',
+		description: 'In this article, we will discuss common issues that lead to unproductive music studio sessions and practical tips on how to make them more effective, including preparation and team dynamics.',
+		slug: 'how-to-prepare-for-the-studio',
+		post_color: '#de8c2f',
+		image: 'preparation',
+		date_published: new Date(2024, 2, 9) // 'March 9th, 2024'
+	},
+  {
+		title: 'Network = Net Worth',
+		subtitle: 'Turn Your Connections Into Dollars',
+		description: 'In this article, we will discuss the critical importance of networking in the music industry, identifying common misconceptions about connections and offering strategies to build professional relationships effectively.',
+		slug: 'network-equals-net-worth',
+		post_color: '#70e2c9',
+		image: 'network-net-worth',
+		date_published: new Date(2024, 2, 16) // 'March 16th, 2024'
+	},
+  {
+		title: 'Music Business For Dummies',
+		subtitle: 'Rights, Royalties, and Publishing',
+		description: 'In this article, we will discuss the intricacies of the music business, debunking myths about royalty distribution and offering a clear guide to understanding various music agreements and rights.',
+		slug: 'music-business-for-dummies',
+		post_color: '#e3e7c6',
+		image: 'music-business',
+		date_published: new Date(2024, 2, 24) // 'March 24th, 2024'
+	},
+  {
+		title: 'Sync Licensing 101',
+		subtitle: 'How to Place Your Music in Movies & TV',
+		description: 'In this article, we will discuss sync licensing in the music industry, explaining how artists can use this avenue for revenue generation and increased exposurethrough strategic music placements in various media.',
+		slug: 'sync-licensing-101',
+		post_color: '#b179d6',
+		image: 'syncs',
+		date_published: new Date(2024, 3, 1) // 'April 1st, 2024'
+	},
+	{
+		title: 'Finding Your Tribe',
+		subtitle: 'Locating and Catering to Your Target Audience',
+		description: 'In this article, we will discuss the importance of identifying and authentically connecting with your specific audience to build a supportive and engaged fanbase in music.',
+		slug: 'finding-your-tribe',
+		post_color: '#fef6c8',
+		image: 'tribe',
+		date_published: new Date(2024, 3, 8) // 'April 8th, 2024'
+	},
+	{
+		title: 'Staying True to The Game',
+		subtitle: 'The Power of Consistency in Your Career',
+		description: 'In this article, we will discuss the crucial role of consistency in the music industry, emphasizing its impact on creative growth, reliable branding, and audience loyalty.',
+		slug: 'staying-true-to-the-game',
+		post_color: '#70afe2',
+		image: 'true-to-the-game',
+		date_published: new Date(2024, 3, 15) // 'March 9th, 2024'
+	},
+];
+
+export let orderedBlogPosts = DefaultBlogPosts.sort((a, b) => a.date_published > b.date_published ? -1 : 1);

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .blurBg {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .proseImg {
+    @apply prose-img:m-auto prose-img:block prose-img:my-4 md:w-fit w-[390px]
+  }
+
+  .proseP {
+    @apply md:prose-p:text-[1.15rem] prose-p:text-[1rem] md:prose-p:leading-[1.8rem] prose-p:leading-[1.5rem] prose-p:text-PrimaryText
+  }
+
+  .proseHeadings {
+    @apply md:prose-h1:text-[2.25rem] md:prose-h2:text-[1.8rem]  md:prose-h3:text-[1.7rem] prose-h1:text-[1.85rem] md:prose-headings:leading-[40px] prose-h2:text-[1.55rem] prose-h3:text-[1.4rem]
+  }
+}
+
+.content {
+  @apply md:min-w-full md:max-w-[43rem] max-w-[85vw] prose proseHeadings proseImg proseP hover:prose-a:text-red-400  prose-strong:text-PrimaryText prose-headings:text-PrimaryText prose-headings:mt-[2.5rem] prose-h3:mb-6 prose-h1:mb-[1.8rem] prose-blockquote:border-PrimaryText prose-blockquote:pr-2 prose-h2:text-[1.8rem] prose-h3:text-[1.7rem] prose-a:text-blue-500;
+}
+
+::selection {
+  background-color: #FFFF00;
+  color: black;
+}
+
+code span::selection {
+  @apply bg-blue-300 text-white
+}
+
+li {
+  @apply text-PrimaryText md:text-[1.10rem] text-[1rem] md:leading-[1.8rem] leading-[1.2rem];
+}
+
+ol {
+  @apply ml-1 md:ml-4;
+}
+
+ul {
+  @apply ml-1 md:ml-4;
+}
+
+cite {
+  @apply font-bold w-fit rounded-xl md:text-[0.95rem] text-[0.75rem] not-italic -mt-3 ml-2 md:-mt-4 md:ml-4 text-sky-500 flex self-start gap-2;
+  /* box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.075); */
+}
+
+cite::before {
+  content: " └ ";
+  @apply md:text-[1rem] text-[0.775rem]  font-extrabold self-end;
+}
+
+h1, h2, h3 {
+  .icon-link {
+		position: relative;
+
+		&::before {
+      @apply scale-75;
+      content: " ";
+      width: 3rem;
+      height: 3rem;
+      background-repeat: no-repeat;
+      background-image: url("../share-heading.png");
+      object-fit: cover;
+			position: absolute;
+      left: -2.7rem;
+      top: -0.5rem;
+			opacity: 0;
+			text-decoration: underline;
+		}
+	}
+
+	&:hover .icon-link::before {
+		opacity: 1;
+	}
+}
