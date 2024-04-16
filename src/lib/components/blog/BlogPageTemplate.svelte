@@ -8,7 +8,7 @@
 	export let title: string;
 	export let subtitle: string;
 	export let published_date: Date;
-	export let metaImgUrl: string;
+	//export let metaImgUrl: string;
 	export let coverImg: string;
 
 	const AVERAGE_WPM_OF_READERS = 267;
@@ -59,7 +59,7 @@
 	<title>{title}</title>
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content="Check out this article on raggstarrecords.com" />
-	<meta property="og:image" content={metaImgUrl} />
+	<meta property="og:image" content={`../blog/${coverImg}/cover.jpeg`} />
 </svelte:head>
 
 <span class="flex justify-center md:-translate-y-40 -translate-y-20">
