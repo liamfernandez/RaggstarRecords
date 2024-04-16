@@ -92,6 +92,7 @@
 				<a href="/about" class=" text-lightGrey hover:underline hover:decoration-lightGrey"
 					>About Us</a
 				>
+				<a href="/blog" class=" text-lightGrey hover:underline hover:decoration-lightGrey">Blog</a>
 				<button
 					on:click={openModal}
 					class=" text-lightGrey hover:underline hover:decoration-lightGrey">Contact Us</button
@@ -123,6 +124,7 @@
 				<a href="/about" class=" text-lightGrey hover:underline hover:decoration-lightGrey"
 					>About Us</a
 				>
+				<a href="/blog" class=" text-lightGrey hover:underline hover:decoration-lightGrey">Blog</a>
 				<button
 					on:click={openModal}
 					class=" text-lightGrey hover:underline hover:decoration-lightGrey">Contact Us</button

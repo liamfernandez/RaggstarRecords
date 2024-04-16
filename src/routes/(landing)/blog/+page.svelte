@@ -11,7 +11,7 @@
 <div class="container mx-auto px-4">
 	<section id="Marquee scrolling headline">
 		<div
-			class="bg-gradient-to-r from-slate-50 to-slate-100 bg-opacity-75 py-5 px-6 overflow-hidden relative mb-8 rounded-2xl"
+			class=" hidden md:block bg-gradient-to-r from-slate-50 to-slate-100 bg-opacity-75 py-5 px-6 overflow-hidden relative mb-8 rounded-2xl"
 		>
 			<div class="whitespace-nowrap">
 				<div class="scrolling-wrapper">

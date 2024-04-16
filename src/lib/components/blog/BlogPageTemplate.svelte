@@ -85,7 +85,7 @@
 			<hr class="mb-4 mt-4" />
 			<span class="flex flex-col md:gap-6 gap-4">
 				<span class="flex flex-row items-center justify-between">
-					<span class="flex flex-row items-center">
+					<span class="flex flex-col md:flex-row items-start md:items-center">
 						<p class="text-xs text-sky-500 md:text-[16px] md:mr-20 mr-2">
 							<strong class="text-black">Author: </strong>RGS Staff
 						</p>

@@ -9,7 +9,7 @@
 	import BookACall from '$lib/components/BookACall.svelte';
 	import ContactPopup from '$lib/components/ContactPopup.svelte';
 
-	function navigateAway(goal: 'what-we-do' | 'our-process' | 'home' | 'about' | 'FAQ') {
+	function navigateAway(goal: 'what-we-do' | 'our-process' | 'home' | 'about' | 'blog' | 'FAQ') {
 		const drawerInput = document.getElementById('my-drawer-4') as HTMLInputElement;
 		if (drawerInput.checked) {
 			drawerInput.checked = false;
@@ -18,6 +18,8 @@
 		if ($page.url.pathname === '/' && goal === 'home') {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 			window.history.replaceState({}, '', '/');
+		} else if (goal === 'blog') {
+			goto('/blog');
 		} else if (goal === 'about') {
 			goto('/about');
 		} else if (goal === 'FAQ') {
@@ -104,6 +106,15 @@
 			>
 				<li class="nav-button">
 					<p>About</p>
+				</li>
+			</button>
+			<button
+				on:click={() => {
+					navigateAway('blog');
+				}}
+			>
+				<li class="nav-button">
+					<p>Blog</p>
 				</li>
 			</button>
 			<button

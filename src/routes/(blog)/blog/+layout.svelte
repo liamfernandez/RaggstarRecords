@@ -40,7 +40,7 @@
 	class="fixed top-0 progress-bg bg-transparent w-full h-[3px] z-50"
 />
 <div id="splash_of_color" class="md:h-[15rem] h-[10rem] bg-white">
-	<div class="md:opacity-100 absolute opacity-0 left-[45%] pt-4 z-50">
+	<div class=" absolute left-[32%] md:left-[45%] pt-4 z-50">
 		<span in:blur={{ duration: 2400, delay: 200 }} class="flex flex-col items-center">
 			<a
 				href="/blog"
