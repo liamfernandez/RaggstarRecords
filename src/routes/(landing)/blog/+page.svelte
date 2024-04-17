@@ -24,7 +24,9 @@
 			<div class="mask mask-right" />
 		</div>
 	</section>
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-6 md:mb-20">
+	<div
+		class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-6 md:mb-20"
+	>
 		{#each orderedBlogPosts as blogProps}
 			<BlogCard props={blogProps} />
 		{/each}
