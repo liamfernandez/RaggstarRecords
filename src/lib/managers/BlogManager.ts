@@ -91,7 +91,25 @@ let DefaultBlogPosts: BlogCardProps[] = [
 		slug: 'staying-true-to-the-game',
 		post_color: '#70afe2',
 		image: 'true-to-the-game',
-		date_published: new Date(2024, 3, 15) // 'March 9th, 2024'
+		date_published: new Date(2024, 3, 15) // 'April 15th, 2024'
+	},
+	{
+		title: 'The Ban',
+		subtitle: 'What Does Banning TikTok Mean for the Music Industry?',
+		description: 'In this article, we will discuss the implications of banning TikTok on the music industry, analyzing the platform\'s role in music discovery, promotion, and artist development.',
+		slug: 'the-banning-of-tiktok',
+		post_color: '#ff7f50',
+		image: 'tiktok-ban',
+		date_published: new Date(2024, 3, 21) // 'April 21st, 2024'
+	},
+	{
+		title: 'Fund Your Sound',
+		subtitle: 'How to Secure Financial Support',
+		description: 'In this article, we will discuss various funding options available to musicians, including grants, sponsorships, and crowdfunding, offering  tips on securing financial support for your music.',
+		slug: 'fund-your-sound',
+		post_color: '#cffc5a',
+		image: 'sound-fund',
+		date_published: new Date(2024, 3, 28) // 'April 28th, 2024'
 	},
 ];
 
