@@ -111,6 +111,15 @@ let DefaultBlogPosts: BlogCardProps[] = [
 		image: 'sound-fund',
 		date_published: new Date(2024, 3, 28) // 'April 28th, 2024'
 	},
+	{
+		title: 'From Unknown to Unskippable',
+		subtitle: 'Winning Strategies for Playlist Features ',
+		description: 'In this article, we will discuss the importance of playlist features, offering strategies to increase chances of landing on popular playlists and maximizing the exposure of your music.',
+		slug: 'unkown-to-unskippable',
+		post_color: '#fde58a',
+		image: 'unskippable',
+		date_published: new Date(2024, 4, 5) // 'May 5th, 2024'
+	},
 ];
 
 export let orderedBlogPosts = DefaultBlogPosts.sort((a, b) => a.date_published > b.date_published ? -1 : 1);
