@@ -113,13 +113,40 @@ let DefaultBlogPosts: BlogCardProps[] = [
 	},
 	{
 		title: 'From Unknown to Unskippable',
-		subtitle: 'Winning Strategies for Playlist Features ',
+		subtitle: 'Winning Strategies for Playlist Features',
 		description: 'In this article, we will discuss the importance of playlist features, offering strategies to increase chances of landing on popular playlists and maximizing the exposure of your music.',
 		slug: 'unkown-to-unskippable',
 		post_color: '#fde58a',
 		image: 'unskippable',
 		date_published: new Date(2024, 4, 5) // 'May 5th, 2024'
 	},
+	{
+		title: 'Recording at Home',
+		subtitle: 'Building a Studio Without Breaking the Bank (Under $500)',
+		description: 'In this article, we will discuss how to set up a home recording studio on a budget, offering tips on selecting essential equipment, optimizing your space, and achieving professional sound quality.',
+		slug: 'recording-at-home',
+		post_color: '#f4edfa',
+		image: 'at-home-build',
+		date_published: new Date(2024, 4, 12) // 'May 12th, 2024'
+	},
+	{
+		title: 'Hometown Hero',
+		subtitle: 'Thriving in Your Local Scene',
+		description: 'In this article, we will discuss strategies for success in your local music scene: building presence, connecting with artists, and engaging with the community.',
+		slug: 'hometown-hero',
+		post_color: '#ffccd5',
+		image: 'hometown',
+		date_published: new Date(2024, 4, 19) // 'May 19th, 2024'
+	},
+	{
+		title: 'Lyrics That Live',
+		subtitle: 'Writing Songs That Resonate',
+		description: 'In this article, we will discuss the art of writing lyrics that deeply resonate with your audience and leave a lasting impact.',
+		slug: 'lyrics-that-live',
+		post_color: '#ffc86b',
+		image: 'lyrical-myrical',
+		date_published: new Date(2024, 4, 25) // 'May 25th, 2024'
+	}
 ];
 
 export let orderedBlogPosts = DefaultBlogPosts.sort((a, b) => a.date_published > b.date_published ? -1 : 1);
