@@ -146,6 +146,15 @@ let DefaultBlogPosts: BlogCardProps[] = [
 		post_color: '#ffc86b',
 		image: 'lyrical-myrical',
 		date_published: new Date(2024, 4, 25) // 'May 25th, 2024'
+	},
+	{
+		title: 'Crowdsourcing Creativity',
+		subtitle: 'How to Engage Your Fans in the Music-Making Process',
+		description: 'In this article, we will discuss the benefits of crowdsourcing creativity in music, exploring ways to involve your fans in the music-making process and build a stronger connection with your audience.',
+		slug: 'crowdsourcing-creativity',
+		post_color: '#e7f5e3',
+		image: 'creativity-from-the-crowd',
+		date_published: new Date(2024, 5, 2) // 'June 3rd, 2024'
 	}
 ];
 
