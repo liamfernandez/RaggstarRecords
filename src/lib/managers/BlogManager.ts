@@ -155,6 +155,15 @@ let DefaultBlogPosts: BlogCardProps[] = [
 		post_color: '#e7f5e3',
 		image: 'creativity-from-the-crowd',
 		date_published: new Date(2024, 5, 2) // 'June 3rd, 2024'
+	},
+	{
+		title: 'Cash in on Your Creativity',
+		subtitle: 'Merchandising Tips for Musicians',
+		description: 'In this article, we will discuss the power of merchandising in the music industry, offering tips on creating and selling merchandise to increase revenue and engage with your fanbase.',
+		slug: 'cash-in-on-your-creativity',
+		post_color: '#ddc7ab',
+		image: 'cashing-creativity',
+		date_published: new Date(2024, 5, 9) // 'June 9th, 2024'
 	}
 ];
 
