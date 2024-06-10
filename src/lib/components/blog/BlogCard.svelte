@@ -21,7 +21,7 @@
 					customHoverStyle mb-64"
 		>
 			<img
-				src={`blog/${props.image}/cover.jpeg`}
+				src={`../blog-assets/${props.image}/cover.jpeg`}
 				alt={`Blog Post titled: ${props.title}`}
 				class="w-full h-[15rem] object-cover object-top"
 			/>
