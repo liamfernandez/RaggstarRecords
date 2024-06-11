@@ -49,8 +49,7 @@
 <svelte:head>
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
-	<!-- Meta Pixel Code -->
-	<!-- Meta Pixel Code -->
+	<meta name="facebook-domain-verification" content="dm46297wigz7s8je1knlvieqb0w9tk" />
 	<script>
 		!(function (f, b, e, v, n, t, s) {
 			if (f.fbq) return;
