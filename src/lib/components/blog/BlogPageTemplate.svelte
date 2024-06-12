@@ -65,7 +65,7 @@
 <span class="flex justify-center md:-translate-y-40 -translate-y-20">
 	<img
 		class="md:w-[40rem] md:h-[22.5rem] w-[20rem] h-[11.25rem] rounded-lg outline outline-black"
-		src={`../blog/${coverImg}/cover.jpeg`}
+		src={`../blog-assets/${coverImg}/cover.jpeg`}
 		alt={title}
 	/>
 </span>

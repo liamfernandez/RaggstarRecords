@@ -13,7 +13,7 @@
 	}
 </script>
 
-<a href={`blog/${props.slug}`}>
+<a href={`/blog/${props.slug}`}>
 	<div class="max-w-2xl my-4 mb-2 h-[30rem] md:w-fit w-[22rem]">
 		<div
 			class="bg-white rounded-3xl overflow-hidden shadow-2xl
