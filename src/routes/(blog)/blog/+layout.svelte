@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import { tweened } from 'svelte/motion';
 	import { cubicInOut } from 'svelte/easing';
+	import { ASSETS_PATH } from '$lib/managers/BlogManager';
 	import { blur } from 'svelte/transition';
 	import ClickOutLink from '$lib/icons/ClickOutLink.svelte';
 	import FooterBar from '$lib/components/FooterBar.svelte';
@@ -87,12 +88,12 @@
 	</div>
 	<img
 		class="h-40 absolute left-[1rem] hidden xl:block"
-		src={'../main-logo-no-bg.png'}
+		src={`${ASSETS_PATH}/../main-logo-no-bg.png`}
 		alt="raggstar logo"
 	/>
 	<img
 		class="h-40 absolute right-[1rem] hidden xl:block"
-		src={'../main-logo-no-bg.png'}
+		src={`${ASSETS_PATH}/../main-logo-no-bg.png`}
 		alt="raggstar logo"
 	/>
 </div>

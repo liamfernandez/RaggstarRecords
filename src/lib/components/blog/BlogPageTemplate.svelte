@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '$lib/styles/prose-mods.css';
 	import Clock from '$lib/icons/Clock.svelte';
+	import { ASSETS_PATH } from '$lib/managers/BlogManager';
 	import { onMount } from 'svelte';
 	import Toast from './Toast.svelte';
 	import { countWordsInDiv, formatDate } from './Utils';
@@ -65,7 +66,7 @@
 <span class="flex justify-center md:-translate-y-40 -translate-y-20">
 	<img
 		class="md:w-[40rem] md:h-[22.5rem] w-[20rem] h-[11.25rem] rounded-lg outline outline-black"
-		src={`../blog-assets/${coverImg}/cover.jpeg`}
+		src={`${ASSETS_PATH}/${coverImg}/cover.jpeg`}
 		alt={title}
 	/>
 </span>
