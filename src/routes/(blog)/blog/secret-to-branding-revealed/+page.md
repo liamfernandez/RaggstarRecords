@@ -1,11 +1,11 @@
 <script lang='ts'>
   import BlogPageTemplate from '$lib/components/blog/BlogPageTemplate.svelte';
-  import type { BlogCardProps } from '$lib/managers/BlogManager';
+  import type { BlogCardProps, ASSETS_PATH } from '$lib/managers/BlogManager';
   import { orderedBlogPosts } from '$lib/managers/BlogManager';
   import { page } from '$app/stores';
 
   const blogPostInfo: BlogCardProps = orderedBlogPosts.find((post) => post.slug === $page.route.id?.split('/')[3]);
-  const assetsUrl = `/blog/${blogPostInfo.image}`;
+  const assetsUrl = `${ASSETS_PATH}/${blogPostInfo.image}`;
   // COPY EVERYTHING ABOVE
 
   const gif1 = `${assetsUrl}/gif1.gif`;

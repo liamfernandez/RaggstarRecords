@@ -1,6 +1,6 @@
 <script lang='ts'>
   import BlogPageTemplate from '$lib/components/blog/BlogPageTemplate.svelte';
-  import type { BlogCardProps } from '$lib/managers/BlogManager';
+  import type { BlogCardProps, ASSETS_PATH } from '$lib/managers/BlogManager';
   import { orderedBlogPosts } from '$lib/managers/BlogManager';
   import { page } from '$app/stores';
 

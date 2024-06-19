@@ -10,6 +10,8 @@ export type BlogCardProps = {
 	date_published: Date;
 };
 
+export const ASSETS_PATH = '/blog-assets';
+
 let DefaultBlogPosts: BlogCardProps[] = [
 	{
 		title: 'No Label? No Problem',
