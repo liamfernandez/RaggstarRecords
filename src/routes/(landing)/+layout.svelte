@@ -50,6 +50,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
 	<meta name="facebook-domain-verification" content="dm46297wigz7s8je1knlvieqb0w9tk" />
+	<!-- Facebook Pixel Code -->
+	<!-- Facebook Pixel Code -->
 	<script>
 		!(function (f, b, e, v, n, t, s) {
 			if (f.fbq) return;
@@ -67,18 +69,19 @@
 			s = b.getElementsByTagName(e)[0];
 			s.parentNode.insertBefore(t, s);
 		})(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '1502090967046087');
+		fbq('init', '391503896615796', {
+			em: 'insert_email_variable'
+		});
 		fbq('track', 'PageView');
 	</script>
-	<noscript>
-		<img
+	<noscript
+		><img
 			height="1"
 			width="1"
-			alt="evil fb pixel"
 			style="display:none"
-			src="https://www.facebook.com/tr?id=1502090967046087&ev=PageView&noscript=1"
-		/>
-	</noscript>
+			src="https://www.facebook.com/tr?id=391503896615796&ev=PageView&noscript=1"
+		/></noscript
+	>
 	<!-- End Meta Pixel Code -->
 </svelte:head>
 <div class="drawer md:block">
