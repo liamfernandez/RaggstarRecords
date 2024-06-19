@@ -171,7 +171,7 @@ let DefaultBlogPosts: BlogCardProps[] = [
 		description: 'In this article, we will discuss DIY music marketing strategies that can help independent artists promote their music effectively without breaking the bank.',
 		slug: 'DIY-music-marketing',
 		post_color: '#d8ffe5',
-		image: 'DIY-music',
+		image: 'doing-it-yourself',
 		date_published: new Date(2024, 5, 16) // 'June 16th, 2024'
 	}
 ];
