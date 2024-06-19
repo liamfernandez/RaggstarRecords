@@ -10,7 +10,7 @@ export type BlogCardProps = {
 	date_published: Date;
 };
 
-export const ASSETS_PATH = '/blog-assets';
+export const ASSETS_PATH = '../blog-assets';
 
 let DefaultBlogPosts: BlogCardProps[] = [
 	{
