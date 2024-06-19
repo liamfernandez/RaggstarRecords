@@ -50,8 +50,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
 	<meta name="facebook-domain-verification" content="dm46297wigz7s8je1knlvieqb0w9tk" />
-	<!-- Facebook Pixel Code -->
-	<!-- Facebook Pixel Code -->
 	<script>
 		!(function (f, b, e, v, n, t, s) {
 			if (f.fbq) return;
@@ -69,10 +67,11 @@
 			s = b.getElementsByTagName(e)[0];
 			s.parentNode.insertBefore(t, s);
 		})(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '391503896615796', {
-			em: 'insert_email_variable'
+		fbq('init', '391503896615796');
+		fbq('track', 'PageView', {
+			page_path: window.location.pathname,
+			page_title: document.title
 		});
-		fbq('track', 'PageView');
 	</script>
 	<noscript
 		><img

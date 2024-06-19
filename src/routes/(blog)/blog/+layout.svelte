@@ -33,7 +33,6 @@
 
 <svelte:head>
 	<link href="https://fonts.googleapis.com/css?family=Akatab" rel="stylesheet" />
-	<!-- Facebook Pixel Code -->
 	<script>
 		!(function (f, b, e, v, n, t, s) {
 			if (f.fbq) return;
@@ -51,10 +50,11 @@
 			s = b.getElementsByTagName(e)[0];
 			s.parentNode.insertBefore(t, s);
 		})(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '391503896615796', {
-			em: 'insert_email_variable'
+		fbq('init', '391503896615796');
+		fbq('track', 'PageView', {
+			page_path: window.location.pathname,
+			page_title: document.title
 		});
-		fbq('track', 'PageView');
 	</script>
 	<noscript
 		><img
