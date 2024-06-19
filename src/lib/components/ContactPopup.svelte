@@ -5,6 +5,15 @@
 	import { SendMessage } from '$lib/utils';
 	import { elasticOut } from 'svelte/easing';
 
+	/// FACEBOOK ADs
+	function generateFBLead() {
+		fbq('track', 'Lead', {
+			value: 1800.0,
+			currency: 'USD'
+		});
+	}
+	///
+
 	const phoneRegExp =
 		/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -26,6 +35,7 @@
 			message: yup.string().required().max(160, 'Message must be at most 160 characters')
 		}),
 		onSubmit: async (values) => {
+			generateFBLead();
 			loading = true;
 			const response = await SendMessage(values);
 			if (response.status === 200) {
