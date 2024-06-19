@@ -164,6 +164,15 @@ let DefaultBlogPosts: BlogCardProps[] = [
 		post_color: '#ddc7ab',
 		image: 'cashing-creativity',
 		date_published: new Date(2024, 5, 9) // 'June 9th, 2024'
+	},
+	{
+		title: 'DIY Music Marketing',
+		subtitle: 'Low-Cost Strategies for Big Results',
+		description: 'In this article, we will discuss DIY music marketing strategies that can help independent artists promote their music effectively without breaking the bank.',
+		slug: 'DIY-music-marketing',
+		post_color: '#d8ffe5',
+		image: 'DIY-music',
+		date_published: new Date(2024, 5, 16) // 'June 16th, 2024'
 	}
 ];
 
