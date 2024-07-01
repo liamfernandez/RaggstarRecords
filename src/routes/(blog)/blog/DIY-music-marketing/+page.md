@@ -154,4 +154,15 @@ Newsletters should be like a good mixtape—personal, memorable, and definitely 
 
 Promoting your music on a budget requires creativity, persistence, and a strategic approach. By leveraging social media, collaborating with other artists, and engaging with local media, you can effectively promote your music and grow your fanbase without significant financial investment. Remember, consistency and engagement are key to building a successful music career. Start implementing these strategies today and watch your music reach new heights.
 
+<div class="flex-col flex justify-center items-center">
+	<iframe
+		src="https://raggstarrecords.substack.com/embed"
+		width="450"
+		height="140"
+		style="border:1px solid #EEE; background:white;"
+		frameborder="0"
+		scrolling="no"
+	/>
+</div>
+
 </BlogPageTemplate>

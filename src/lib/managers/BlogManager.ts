@@ -175,6 +175,24 @@ let DefaultBlogPosts: BlogCardProps[] = [
 		post_color: '#d8ffe5',
 		image: 'doing-it-yourself',
 		date_published: new Date(2024, 5, 16) // 'June 16th, 2024'
+	},
+	{
+		title: 'Got Funding?',
+		subtitle: 'How To Secure Financial Support For Your Next Project Pt. 2',
+		description: 'In this article we will discuss understanding grant types, thorough research, crafting strong applications, and persistently refining efforts through feedback and experience.',
+		slug: 'got-funding',
+		post_color: '#bfe0e2',
+		image: 'assets-got-funding',
+		date_published: new Date(2024, 5, 23) // 'June 23rd, 2024'
+	},
+	{
+		title: 'Teamwork Makes the Dream Work',
+		subtitle: 'The Benefits of Music Collaboration',
+		description: 'In this article we will discuss how collaboration boosts music careers by expanding creative horizons and audiences.',
+		slug: 'teamwork-makes-the-dream-work',
+		post_color: '#ffcbd5',
+		image: 'assets-teamwork-makes-the-dreamwork',
+		date_published: new Date(2024, 5, 30) // 'June 30th, 2024'
 	}
 ];
 
