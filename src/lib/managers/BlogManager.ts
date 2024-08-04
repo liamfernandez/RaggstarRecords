@@ -193,6 +193,51 @@ let DefaultBlogPosts: BlogCardProps[] = [
 		post_color: '#ffcbd5',
 		image: 'assets-teamwork-makes-the-dreamwork',
 		date_published: new Date(2024, 5, 30) // 'June 30th, 2024'
+	},
+	{
+		title: 'Drop Your Music People',
+		subtitle: 'How to Distribute Your Music on ALL Streaming Platforms',
+		description: 'In this article we will discuss selecting the best music distribution platform based on costs, reach, services, and unique features.',
+		slug: 'drop-your-music-people',
+		post_color: '#d3eac8',
+		image: 'assets-drop-your-music-people',
+		date_published: new Date(2024, 6, 7) // 'July 7th
+	},
+	{
+		title: 'Stop Being Shy!🙈 Post Yourself',
+		subtitle: 'Effective Social Media Marketing for Musicians',
+		description: 'In this article we will discuss using social media to build your music brand, create engaging content, and grow your following.',
+		slug: 'stop-being-shy',
+		post_color: '#e8ddf7',
+		image: 'assets-stop-being-shy',
+		date_published: new Date(2024, 6, 14) // 'July 14th, 2024'
+	},
+	{
+		title: 'The Art of Sampling',
+		subtitle: 'Legal and Creative Tips for Independent Artists',
+		description: 'In this article we will discuss the art and legality of music sampling, including obtaining licenses and navigating copyright laws.',
+		slug: 'the-art-of-sampling',
+		post_color: '#66e3fa',
+		image: 'assets-the-art-of-sampling',
+		date_published: new Date(2024, 6, 21) // 'July 21st, 2024'
+	},
+	{
+		title: 'Creating a Killer Press Kit',
+		subtitle: 'Essentials for Independent Artists',
+		description: 'In this article we will discuss creating an effective press kit, including essential components, biography writing, photo selection, and promotion strategies.',
+		slug: 'creating-a-killer-press-kit',
+		post_color: '#d4d8ff',
+		image: 'assets-creating-a-killer-press-kit',
+		date_published: new Date(2024, 6, 28) // 'Juuly 28th, 2024'
+	},
+	{
+		title: 'Tune In to Your Well-being',
+		subtitle: 'The Benefits of Music Collaboration',
+		description: 'In this article we will discuss how collaboration boosts music careers by expanding creative horizons and audiences.',
+		slug: 'tune-in-to-your-well-being',
+		post_color: '#ff9bed',
+		image: 'assets-tune-in-to-your-well-being',
+		date_published: new Date(2024, 7, 4) // 'August 4th, 2024'
 	}
 ];
 
