@@ -232,7 +232,7 @@ let DefaultBlogPosts: BlogCardProps[] = [
 	},
 	{
 		title: 'Tune In to Your Well-being',
-		subtitle: 'The Benefits of Music Collaboration',
+		subtitle: 'Mental Health Tips for Artists',
 		description: 'In this article we will discuss how collaboration boosts music careers by expanding creative horizons and audiences.',
 		slug: 'tune-in-to-your-well-being',
 		post_color: '#ff9bed',
