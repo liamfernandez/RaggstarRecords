@@ -238,7 +238,43 @@ let DefaultBlogPosts: BlogCardProps[] = [
 		post_color: '#ff9bed',
 		image: 'assets-tune-in-to-your-well-being',
 		date_published: new Date(2024, 7, 4) // 'August 4th, 2024'
-	}
+	},
+	{
+		title: 'Navigating the World of Music Publishing',
+		subtitle: 'What EVERY Artist Should Know',
+		description: 'In this article we will discuss music publishing, explaining its importance for musicians, detailing different types of rights, and outlining various publishing deal options.',
+		slug: 'navigating-the-world-of-music-publishing',
+		post_color: '#f6d5da',
+		image: 'assets-navigating-the-world-of-music-publishing',
+		date_published: new Date(2024, 7, 11)
+	},
+	{
+		title: 'Leveraging AI in Music Production',
+		subtitle: 'The Future of Independent Music',
+		description: 'In this article we will discuss AI\'s impact on music production, exploring its benefits for indie artists and highlighting key tools revolutionizing the creative process.',
+		slug: 'leveraging-ai-in-music-production',
+		post_color: '#b9e9d0',
+		image: 'assets-leveraging-ai-in-music-production',
+		date_published: new Date(2024, 7, 18)
+	},
+	{
+		title: 'Exploring Micro-Influencers',
+		subtitle: 'Mental Health Tips for Artists',
+		description: 'In this article we will discuss micro-influencers, explaining their role in music promotion, benefits for indie artists, and strategies for effective collaboration.',
+		slug: 'exploring-micro-influencers',
+		post_color: '#c8d6f5',
+		image: 'assets-exploring-micro-influencers',
+		date_published: new Date(2024, 7, 25)
+	},
+	{
+		title: 'How to Book a Show',
+		subtitle: 'The Ultimate Guide',
+		description: 'In this article we will discuss the process of booking shows as an independent artist, covering goal-setting, creating press kits, venue research, outreach, and performance tips.',
+		slug: 'how-to-book-a-show',
+		post_color: '#efdbe9',
+		image: 'assets-how-to-book-a-show',
+		date_published: new Date(2024, 8, 1)
+	},
 ];
 
 export let orderedBlogPosts = DefaultBlogPosts.sort((a, b) => a.date_published > b.date_published ? -1 : 1);

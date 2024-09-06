@@ -1,5 +1,6 @@
 <script>
 	import BlogCard from '$lib/components/blog/BlogCard.svelte';
+	import NewsletterSignup from '$lib/components/blog/NewsletterSignup.svelte';
 	import { orderedBlogPosts } from '$lib/managers/BlogManager';
 
 	const headlineText = `Check Out Our Latest Post: ${orderedBlogPosts[0].title} - ${orderedBlogPosts[0].subtitle}`;
@@ -24,6 +25,7 @@
 			<div class="mask mask-right" />
 		</div>
 	</section>
+	<NewsletterSignup />
 	<div
 		class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-6 md:mb-20"
 	>
