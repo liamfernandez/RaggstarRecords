@@ -56,7 +56,6 @@ export async function addEmailToGoogleSheet(email: string) {
     spreadsheetId: SHEET_ID,
     range: `Newsletter!J${nextRow}:L${nextRow}`,
     valueInputOption: 'RAW',
-    insertDataOption: 'INSERT_ROWS',
     requestBody: {
       values: [values]
     }

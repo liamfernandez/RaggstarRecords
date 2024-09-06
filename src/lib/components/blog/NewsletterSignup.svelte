@@ -61,7 +61,8 @@
 				<!-- else content here -->
 				<button
 					on:click={handleSubmit}
-					class="w-full sm:w-auto px-6 py-2 bg-black text-white font-semibold rounded-lg hover:bg-[#6b0080] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
+					disabled={success}
+					class="w-full md:min-w-[10rem] sm:w-auto px-6 py-2 bg-black text-white font-semibold rounded-lg hover:bg-[#6b0080] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
 				>
 					Join the Club
 				</button>
@@ -70,7 +71,7 @@
 				{#if $errors.email}
 					<p
 						in:fly={{ duration: 750, x: -120, easing: elasticOut }}
-						class=" text-red-400 text-[9px] md:text-[14px]"
+						class="pl-4 text-red-400 text-[9px] md:text-[14px]"
 					>
 						{$errors.email}
 					</p>
