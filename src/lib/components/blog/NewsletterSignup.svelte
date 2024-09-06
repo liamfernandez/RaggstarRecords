@@ -24,6 +24,10 @@
 			if (response.status === 200) {
 				loading = false;
 				success = true;
+				$form.email = '';
+				setTimeout(() => {
+					success = false;
+				}, 4500);
 			} else {
 				loading = false;
 				failed = true;
@@ -37,14 +41,24 @@
 		class="px-8 md:px-12 py-4 md:py-4 flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 md:space-x-2"
 	>
 		<div class="text-center">
-			<h2 class="text-3xl md:text-3xl font-bold text-gray-900 leading-tight">
+			<h2 class="text-3xl md:text-3xl font-bold md:w-[26rem] w-auto text-gray-900 leading-tight">
 				Expert Tips Delivered Weekly
 			</h2>
 			<p class="mt-1 text-lg text-gray-600">Be In The Know</p>
 		</div>
 		<form on:submit={handleSubmit} class="w-full md:w-auto">
 			<div class="flex flex-col sm:flex-row gap-4 items-center">
-				<NeonEmailInput {form} />
+				{#if !success}
+					<NeonEmailInput {form} />
+				{:else}
+					<p
+						in:fly={{ duration: 800, y: 30, easing: elasticOut }}
+						class=" text-[#068f19] text-[12px] text-center md:text-[14px]"
+					>
+						Thanks! Expect an email this coming Sunday.
+					</p>
+				{/if}
+				<!-- else content here -->
 				<button
 					on:click={handleSubmit}
 					class="w-full sm:w-auto px-6 py-2 bg-black text-white font-semibold rounded-lg hover:bg-[#6b0080] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"

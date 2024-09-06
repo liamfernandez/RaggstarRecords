@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { elasticOut } from 'svelte/easing';
 	import type { Writable } from 'svelte/store';
+	import { fly } from 'svelte/transition';
 
 	export let form: Writable<{
 		email: string;
@@ -26,6 +28,7 @@
 </script>
 
 <div
+	in:fly={{ duration: 1000, x: -60, easing: elasticOut }}
 	class="relative w-full sm:w-64"
 	on:mouseenter={handleMouseEnter}
 	on:mouseleave={handleMouseLeave}
