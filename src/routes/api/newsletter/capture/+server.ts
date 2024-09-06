@@ -13,7 +13,7 @@ export async function POST({ request }) {
     return new Response("OK", { status: 200, statusText: `Email [${email}] appended to google sheet!` })
   }
   catch (err: any) {
-    console.log(JSON.stringify(err));
-    return new Response("FAIL", error(400, err))
+    console.log(JSON.stringify(err, null, 2));
+    return new Response("FAIL", error(400, err));
   }
 }
