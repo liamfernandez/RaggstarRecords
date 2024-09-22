@@ -16,7 +16,6 @@ const auth_key = {
   "universe_domain": "googleapis.com"
 };
 
-
 // Authenticate with Google Sheets API
 async function authenticateGoogleSheets() {
   const auth = new googleAuth.GoogleAuth({
@@ -27,8 +26,9 @@ async function authenticateGoogleSheets() {
   return new sheets_v4.Sheets({ auth: authClient as any });
 }
 
+const SHEET_NAME: string = 'Website:Blog';
 const SHEET_ID = '1EvjFI-BhDq8r8QWGkpHlKnUvr4kryEVEjd212WGDOSE';
-const SHEET_RANGE = 'Newsletter!J:L'; // Assuming the email should be added to column D
+const SHEET_RANGE = `${SHEET_NAME}!J:L`; // Assuming the email should be added to column D
 
 export async function addEmailToGoogleSheet(email: string) {
 
@@ -44,7 +44,7 @@ export async function addEmailToGoogleSheet(email: string) {
   try {
     nextRow = await findNextEmptyCell(sheets)
   } catch (error) {
-    console.log("Failed during authentication")
+    console.log("Failed during finding next cell")
     throw error;
   }
 
@@ -54,7 +54,7 @@ export async function addEmailToGoogleSheet(email: string) {
   // Append the new email
   await sheets.spreadsheets.values.append({
     spreadsheetId: SHEET_ID,
-    range: `Newsletter!J${nextRow}:L${nextRow}`,
+    range: `${SHEET_NAME}!J${nextRow}:L${nextRow}`,
     valueInputOption: 'RAW',
     requestBody: {
       values: [values]

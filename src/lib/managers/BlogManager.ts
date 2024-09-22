@@ -13,6 +13,24 @@ export type BlogCardProps = {
 export const ASSETS_PATH = '/../blog-assets';
 
 let DefaultBlogPosts: BlogCardProps[] = [
+ {
+		title: 'Tour Smarter, Not Harder',
+		subtitle: 'A Guide for Indie Artists',
+		description: 'In this article we discuss planning and executing a successful music tour, covering budgeting, venues, merchandising, cost-cutting strategies, promotion, legal considerations, and fan engagement.',
+    slug: 'tour-smarter-not-harder',
+		image: 'assets-tour-smarter-not-harder',
+    post_color: '#f0d3b8',
+		date_published: new Date(2024, 8, 15) // Sept 15th
+	},
+	{
+		title: 'How to Find a Manager',
+		subtitle: 'The Ultimate Guide',
+		description: 'In this article we discuss how to find and secure a music manager, covering the manager\'s role, assessing needs, networking, preparing pitches, and maintaining professional relationships.',
+    slug: 'how-to-find-a-manager',
+		image: 'assets-how-to-find-a-manager',
+    post_color: '#f6d5d2',
+		date_published: new Date(2024, 8, 8) // Sept 8th
+	},
 	{
 		title: 'No Label? No Problem',
 		subtitle: 'How to build a Fanbase as an Independent Artist',
