@@ -14,6 +14,15 @@ export const ASSETS_PATH = '/../blog-assets';
 
 let DefaultBlogPosts: BlogCardProps[] = [
  {
+		title: 'How to Get Press Coverage for Your Music',
+		subtitle: 'Without Spending $$$ on a PR Team',
+		description: 'In this article we discuss how independent artists secure press coverage, build an online presence, craft compelling stories, create press kits, and pitch to media outlets.',
+    slug: 'how-to-get-press-coverage-for-your-music',
+		image: 'assets-how-to-get-press-coverage-for-your-music',
+    post_color: '#bedcc5',
+		date_published: new Date(2024, 8, 22) // Sept 22
+	},
+ {
 		title: 'Tour Smarter, Not Harder',
 		subtitle: 'A Guide for Indie Artists',
 		description: 'In this article we discuss planning and executing a successful music tour, covering budgeting, venues, merchandising, cost-cutting strategies, promotion, legal considerations, and fan engagement.',
