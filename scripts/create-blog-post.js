@@ -39,8 +39,7 @@ function createBlogPost(name, blogPostSubtitle) {
   const newBlogPost = ` {
 		title: '${name}',
 		subtitle: '${blogPostSubtitle}',
-		description:
-			'FILL THIS IN', // CHANGE THIS
+		description: 'FILL THIS IN', // CHANGE THIS
     slug: '${slug}',
 		image: 'assets-${slug}',
     post_color: '#FFC0CB', // CHANGE THIS

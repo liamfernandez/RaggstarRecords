@@ -19,7 +19,7 @@ const auth_key = {
 // Authenticate with Google Sheets API
 async function authenticateGoogleSheets() {
   const auth = new googleAuth.GoogleAuth({
-    credentials: auth_key, // Path to your service account key file
+    credentials: auth_key,
     scopes: ['https://www.googleapis.com/auth/spreadsheets']
   });
   const authClient = await auth.getClient();
@@ -28,10 +28,9 @@ async function authenticateGoogleSheets() {
 
 const SHEET_NAME: string = 'Website:Blog';
 const SHEET_ID = '1EvjFI-BhDq8r8QWGkpHlKnUvr4kryEVEjd212WGDOSE';
-const SHEET_RANGE = `${SHEET_NAME}!J:L`; // Assuming the email should be added to column D
+const SHEET_RANGE = `${SHEET_NAME}!J:L`;
 
-export async function addEmailToGoogleSheet(email: string) {
-
+export async function addEmailToGoogleSheet(email: string, source: string) {
   let sheets;
   try {
     sheets = await authenticateGoogleSheets();
@@ -48,7 +47,7 @@ export async function addEmailToGoogleSheet(email: string) {
     throw error;
   }
 
-  const values = [email, formatDateInEasternTimeZone(new Date()), 'landing page']
+  const values = [email, formatDateInEasternTimeZone(new Date()), source]
 
 
   // Append the new email

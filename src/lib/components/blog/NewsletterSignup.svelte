@@ -6,6 +6,7 @@
 	import NeonEmailInput from './NeonEmailInput.svelte';
 	import { elasticOut } from 'svelte/easing';
 
+	export let source: string;
 	let loading: boolean = false;
 	let success = false;
 	let failed = false;
@@ -20,7 +21,9 @@
 		onSubmit: async (values) => {
 			console.log('It is submitted');
 			loading = true;
-			const response = await EmailNewsletterCapture(values);
+
+			const response = await EmailNewsletterCapture({ email: values.email, source: source });
+
 			if (response.status === 200) {
 				loading = false;
 				success = true;
@@ -36,7 +39,7 @@
 	});
 </script>
 
-<div class="max-w-[60rem] mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+<div class="max-w-[60rem] mx-auto bg-white rounded-2xl subtle-four-sided-shadow overflow-hidden">
 	<div
 		class="px-8 md:px-12 py-4 md:py-4 flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 md:space-x-2"
 	>
@@ -58,7 +61,6 @@
 						Thanks! Expect an email this coming Sunday.
 					</p>
 				{/if}
-				<!-- else content here -->
 				<button
 					on:click={handleSubmit}
 					disabled={success}
@@ -80,3 +82,12 @@
 		</form>
 	</div>
 </div>
+
+<style>
+	.subtle-four-sided-shadow {
+		box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.06),
+			/* Bottom shadow */ 0 15px 25px -4px rgba(0, 0, 0, 0.15),
+			/* Top shadow */ 2px 0 5px -1px rgba(0, 0, 0, 0.04),
+			/* Right shadow */ 0 15px 25px -4px rgba(0, 0, 0, 0.15); /* Left shadow */
+	}
+</style>

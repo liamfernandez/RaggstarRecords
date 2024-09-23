@@ -25,7 +25,7 @@
 				alt={`Blog Post titled: ${props.title}`}
 				class="w-full h-[15rem] object-cover object-top"
 			/>
-			<div class={'p-6 h-[15rem]'} style={produce_styles()}>
+			<div class={'p-6 md:h-[15rem] h-[17rem]'} style={produce_styles()}>
 				<p class="text-xs text-gray-600">{`Published on ${formatDate(props.date_published)}`}</p>
 				<h2 class="font-semibold text-xl text-gray-900 mt-2 mb-4">
 					{props.title}

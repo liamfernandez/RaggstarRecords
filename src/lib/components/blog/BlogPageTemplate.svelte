@@ -5,6 +5,7 @@
 	import { onMount } from 'svelte';
 	import Toast from './Toast.svelte';
 	import { countWordsInDiv, formatDate } from './Utils';
+	import NewsletterSignup from './NewsletterSignup.svelte';
 
 	export let title: string;
 	export let subtitle: string;
@@ -60,7 +61,7 @@
 	<title>{title}</title>
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content="Check out this article on raggstarrecords.com" />
-	<meta property="og:image" content={`../blog/${coverImg}/cover.jpeg`} />
+	<meta property="og:image" content={`${ASSETS_PATH}/${coverImg}/cover.jpeg`} />
 </svelte:head>
 
 <span class="flex justify-center md:-translate-y-40 -translate-y-20">
@@ -70,7 +71,7 @@
 		alt={title}
 	/>
 </span>
-<div class="md:-mt-32 -mt-16 text-black flex flex-col gap-4 blogFont items-center mx-20">
+<div class="md:-mt-32 -mt-16 text-black flex flex-col gap-4 blogFont items-center mx-10">
 	<article>
 		<h1
 			class="md:text-5xl sm:text-4xl text-3xl md:leading-[3.4rem] max-w-[43rem] my-0 font-extrabold"
@@ -111,6 +112,7 @@
 			<slot />
 		</div>
 	</article>
+	<NewsletterSignup source={`[Blog Post] - '${title}'`} />
 	<Toast show={showToast} {message} />
 </div>
 
