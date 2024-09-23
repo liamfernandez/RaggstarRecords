@@ -74,9 +74,6 @@ async function findNextEmptyCell(sheetsClient: sheets_v4.Sheets) {
 
 
 function formatDateInEasternTimeZone(date: Date): string {
-  // Create a new Date object in the UTC timezone
-  const utcDate = new Date(date.toLocaleString('en-US', { timeZone: 'UTC' }));
-
   // Format options for the Eastern Time Zone
   const options: Intl.DateTimeFormatOptions = {
     timeZone: 'America/New_York',
@@ -90,7 +87,7 @@ function formatDateInEasternTimeZone(date: Date): string {
 
   // Format the date
   const formatter = new Intl.DateTimeFormat('en-US', options);
-  const formattedParts = formatter.formatToParts(utcDate);
+  const formattedParts = formatter.formatToParts(date);
 
   // Extract the parts
   const parts: { [key: string]: string } = {};
