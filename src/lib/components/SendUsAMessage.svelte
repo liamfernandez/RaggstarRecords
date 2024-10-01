@@ -4,7 +4,7 @@
 	import { elasticOut } from 'svelte/easing';
 
 	function openModal() {
-		const dialogElm = document.getElementById('send-a-message') as HTMLDialogElement;
+		const dialogElm = document.getElementById('policies-popup') as HTMLDialogElement;
 		dialogElm.showModal();
 	}
 </script>

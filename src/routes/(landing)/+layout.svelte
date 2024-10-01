@@ -7,7 +7,14 @@
 	import FooterBar from '$lib/components/FooterBar.svelte';
 	import MobileNavBar from '$lib/components/MobileNavBar.svelte';
 	import BookACall from '$lib/components/BookACall.svelte';
-	import ContactPopup from '$lib/components/ContactPopup.svelte';
+	import ContactPopup from '$lib/components/modals/ContactPopup.svelte';
+	import PoliciesPopup from '$lib/components/modals/PoliciesPopup.svelte';
+
+	// DIALOG IDs
+	let policyPopup: HTMLDialogElement;
+	let sendAMessagePopup: HTMLDialogElement;
+	const sendAMessageId = 'send-a-message';
+	// const policiesPopupId = 'policies-popup';
 
 	function navigateAway(goal: 'what-we-do' | 'our-process' | 'home' | 'about' | 'blog' | 'FAQ') {
 		const drawerInput = document.getElementById('my-drawer-4') as HTMLInputElement;
@@ -40,9 +47,8 @@
 		}
 	}
 
-	function openModal() {
-		const dialogElm = document.getElementById('send-a-message') as HTMLDialogElement;
-		dialogElm.showModal();
+	function openContactModal() {
+		policyPopup.showModal();
 	}
 </script>
 
@@ -78,6 +84,7 @@
 			height="1"
 			width="1"
 			style="display:none"
+			alt="FB Pixel"
 			src="https://www.facebook.com/tr?id=391503896615796&ev=PageView&noscript=1"
 		/></noscript
 	>
@@ -160,7 +167,7 @@
 				</li>
 			</button>
 			<li class="nav-button">
-				<button on:click={openModal}> Contact </button>
+				<button on:click={openContactModal}> Contact </button>
 			</li>
 			<li>
 				<BookACall backgroundIncluded={true} />
@@ -168,4 +175,5 @@
 		</ul>
 	</div>
 </div>
-<ContactPopup />
+<ContactPopup popupElm={sendAMessagePopup} />
+<PoliciesPopup popupElm={policyPopup} dependentModal={sendAMessageId} />

@@ -7,7 +7,7 @@
 	import { blur } from 'svelte/transition';
 	import ClickOutLink from '$lib/icons/ClickOutLink.svelte';
 	import FooterBar from '$lib/components/FooterBar.svelte';
-	import ContactPopup from '$lib/components/ContactPopup.svelte';
+	import ContactPopup from '$lib/components/modals/ContactPopup.svelte';
 
 	const progress = tweened(0, {
 		duration: 400,

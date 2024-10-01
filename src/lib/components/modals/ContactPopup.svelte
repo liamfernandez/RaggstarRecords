@@ -5,6 +5,11 @@
 	import { SendMessage } from '$lib/utils';
 	import { elasticOut } from 'svelte/easing';
 
+	const MODAL_ID = 'send-a-message';
+
+	// PROPS
+	export let popupElm: HTMLDialogElement | undefined = undefined;
+
 	/// FACEBOOK ADs
 	function generateFBLead() {
 		fbq('track', 'Lead', {
@@ -12,7 +17,6 @@
 			currency: 'USD'
 		});
 	}
-	///
 
 	const phoneRegExp =
 		/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -49,6 +53,10 @@
 	});
 
 	function closeAndClear() {
+		$errors.name = '';
+		$errors.email = '';
+		$errors.phoneNumber = '';
+		$errors.message = '';
 		$form.name = '';
 		$form.email = '';
 		$form.phoneNumber = '';
@@ -56,7 +64,7 @@
 	}
 </script>
 
-<dialog id="send-a-message" class="modal">
+<dialog bind:this={popupElm} id={MODAL_ID} class="modal">
 	<div class="modal-box flex flex-col items-center bg-white min-w-[70%]">
 		<form method="dialog">
 			<button

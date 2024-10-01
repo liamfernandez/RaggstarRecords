@@ -10,24 +10,26 @@
 	let lastScrollTop = 0;
 
 	onMount(() => {
-		window.addEventListener(
-			'scroll',
-			function () {
-				let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		const scrollHandler = function () {
+			let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-				// When scrolling down
-				if (scrollTop > lastScrollTop && scrollTop > 130) {
-					this.document.getElementById('header').style.transform = 'translateY(-100%)'; // move header out of view
-				}
-				// When scrolling up
-				else {
-					this.document.getElementById('header').style.transform = 'translateY(0)'; // bring header back into view
-				}
+			// When scrolling down
+			if (scrollTop > lastScrollTop && scrollTop > 130) {
+				document.getElementById('header')?.style.setProperty('transform', 'translateY(-100%)'); // move header out of view
+			}
+			// When scrolling up
+			else {
+				document.getElementById('header')?.style.setProperty('transform', 'translateY(0)'); // bring header back into view
+			}
 
-				lastScrollTop = scrollTop;
-			},
-			{ passive: true }
-		); // passive improves performance by not blocking onscroll
+			lastScrollTop = scrollTop;
+		};
+
+		window.addEventListener('scroll', scrollHandler, { passive: true }); // passive improves performance by not blocking onscroll
+
+		return () => {
+			window.removeEventListener('scroll', scrollHandler);
+		};
 	});
 
 	function navigateAway(goal: 'what-we-do' | 'our-process' | 'home') {
@@ -51,7 +53,7 @@
 	}
 
 	function openModal() {
-		const dialogElm = document.getElementById('send-a-message') as HTMLDialogElement;
+		const dialogElm = document.getElementById('policies-popup') as HTMLDialogElement;
 		dialogElm.showModal();
 	}
 </script>

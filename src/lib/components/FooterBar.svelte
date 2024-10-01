@@ -4,6 +4,7 @@
 	import Ig from '../icons/IG.svelte';
 	import TikTok from '../icons/TikTok.svelte';
 	import Twitter from '../icons/Twitter.svelte';
+	import PoliciesPopup from './modals/PoliciesPopup.svelte';
 
 	export let smoothScroll = true;
 
@@ -28,7 +29,7 @@
 	}
 
 	function openModal() {
-		const dialogElm = document.getElementById('send-a-message') as HTMLDialogElement;
+		const dialogElm = document.getElementById('policies-popup') as HTMLDialogElement;
 		dialogElm.showModal();
 	}
 
@@ -190,3 +191,4 @@
 		>
 	</span>
 </div>
+<PoliciesPopup dependentModal="send-a-message" />
