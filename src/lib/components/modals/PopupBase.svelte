@@ -32,10 +32,10 @@
 
 <dialog id={modalId} class="modal" bind:this={popupElm} transition:fly={{ y: -100, duration: 500 }}>
 	<div
-		class={`bg-white modal-box ${widthClasses[width]} flex flex-col items-center max-w-full max-h-[80vh] overflow-auto`}
+		class={`bg-white modal-box md:w-3/5 w-11/12  flex flex-col items-center max-w-full max-h-[80vh] overflow-auto`}
 	>
-		<div class="flex justify-between items-center p-4 border-b w-full">
-			<h2 class="text-primary text-center text-3xl font-semibold">{headerText}</h2>
+		<div class="flex justify-between items-center p-2 md:p-4 border-b w-full">
+			<h2 class="text-primary text-center text-xl md:text-3xl font-semibold">{headerText}</h2>
 			<button
 				on:click={closeModal}
 				class="btn border-0 bg-white btn-circle text-black hover:bg-gray-300 outline-none outline-0"
@@ -62,7 +62,7 @@
 		{#if true}
 			<button
 				on:click={closeModal}
-				class="mt-4 px-6 py-2 w-[40%] bg-black text-white rounded-md transition-colors duration-300 hover:bg-white hover:text-green-800 border border-black"
+				class="mt-4 px-6 py-2 w-[40%] text-center md:text-base text-xs bg-black text-white rounded-md transition-colors duration-300 hover:bg-white hover:text-green-800 border border-black"
 			>
 				I Acknowledge
 			</button>
