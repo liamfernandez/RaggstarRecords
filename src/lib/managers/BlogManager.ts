@@ -14,6 +14,15 @@ export const ASSETS_PATH = '/../blog-assets';
 
 let DefaultBlogPosts: BlogCardProps[] = [
  {
+		title: 'How Indie Artists Can Maximize Their Streams in 2024',
+		subtitle: 'The Ultimate Guide',
+		description: 'In this article we discuss essential streaming strategies for indie musicians, including profile optimization, playlist utilization, audience engagement, and cross-platform promotion.',
+    slug: 'how-indie-artists-can-maximize-their-streams-in-2024',
+		image: 'assets-how-indie-artists-can-maximize-their-streams-in-2024',
+    post_color: '#c1f1cc',
+		date_published: new Date(2024, 8,29) // Sept 29th
+	},
+ {
 		title: 'How to Get Press Coverage for Your Music',
 		subtitle: 'Without Spending $$$ on a PR Team',
 		description: 'In this article we discuss how independent artists secure press coverage, build an online presence, craft compelling stories, create press kits, and pitch to media outlets.',

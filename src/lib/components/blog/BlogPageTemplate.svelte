@@ -72,7 +72,7 @@
 	/>
 </span>
 <div class="md:-mt-32 -mt-16 text-black flex flex-col gap-4 blogFont items-center mx-10">
-	<article>
+	<article class="pb-10">
 		<h1
 			class="md:text-5xl sm:text-4xl text-3xl md:leading-[3.4rem] max-w-[43rem] my-0 font-extrabold"
 		>
