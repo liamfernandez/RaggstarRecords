@@ -1,31 +1,45 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
+	import { modalStore } from '$lib/utils';
 
 	// PROPS
 	export let headerText: string = 'Modal Header';
-	export let width: 'full' | 'wide' | 'medium' | 'narrow' = 'medium';
+	// export let width: 'full' | 'wide' | 'medium' | 'narrow' = 'medium';
 	export let popupElm: HTMLDialogElement | undefined = undefined;
-	export let dependentModal: string;
 	export let modalId: string;
 
-	const widthClasses = {
-		full: 'w-full',
-		wide: 'w-4/5',
-		medium: 'w-3/5',
-		narrow: 'w-2/5'
-	};
+	// const widthClasses = {
+	// 	full: 'w-full',
+	// 	wide: 'w-4/5',
+	// 	medium: 'w-3/5',
+	// 	narrow: 'w-2/5'
+	// };
 
 	export function closeModal() {
-		const parentDialog = document.getElementById(modalId) as HTMLDialogElement;
-		parentDialog.close();
+		// const parentDialog = document.getElementById(modalId) as HTMLDialogElement;
+		// parentDialog.close();
+		popupElm?.close();
 
-		if (dependentModal) {
-			const dialogElm = document.getElementById(dependentModal) as HTMLDialogElement;
+		if ($modalStore.dependentModal) {
+			const dialogElm = document.getElementById($modalStore.dependentModal) as HTMLDialogElement;
 			if (dialogElm) {
 				dialogElm.showModal();
 			}
-		} else {
-			console.error(`Dialog element with id ${dependentModal} not found`);
+			modalStore.update((store) => {
+				store.dependentModal = undefined;
+				return store;
+			});
+
+			return;
+		}
+
+		if ($modalStore.dependantAction) {
+			$modalStore.dependantAction();
+			modalStore.update((store) => {
+				store.dependantAction = undefined;
+				return store;
+			});
+			return;
 		}
 	}
 </script>
@@ -34,9 +48,14 @@
 	<div
 		class={`bg-white modal-box md:w-3/5 w-11/12  flex flex-col items-center max-w-full max-h-[80vh] overflow-auto`}
 	>
-		<div class="flex justify-between items-center p-2 md:p-4 border-b w-full">
+		<div class="flex justify-center p-2 md:p-4 border-b w-full">
 			<h2 class="text-primary text-center text-xl md:text-3xl font-semibold">{headerText}</h2>
 			<button
+				on:click={closeModal}
+				class="btn border-0 text-2xl bg-white btn-circle text-black hover:bg-red-600 hover:text-white outline-none outline-0 absolute right-4 top-2"
+				>✕</button
+			>
+			<!-- <button
 				on:click={closeModal}
 				class="btn border-0 bg-white btn-circle text-black hover:bg-gray-300 outline-none outline-0"
 			>
@@ -54,7 +73,7 @@
 						d="M6 18L18 6M6 6l12 12"
 					/>
 				</svg>
-			</button>
+			</button> -->
 		</div>
 		<div class="p-4">
 			<slot />

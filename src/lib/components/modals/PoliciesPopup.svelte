@@ -4,22 +4,12 @@
 	const MODAL_ID = 'policies-popup';
 
 	export let popupElm: HTMLDialogElement | undefined = undefined;
-	export let dependentModal: string;
-
-	function acknowledge() {
-		const dialogElm = document.getElementById(dependentModal) as HTMLDialogElement;
-	}
 </script>
 
-<PopupBase
-	{dependentModal}
-	{popupElm}
-	modalId={MODAL_ID}
-	headerText="Please take a moment to review our policies"
->
+<PopupBase {popupElm} modalId={MODAL_ID} headerText="Please take a moment to review our policies">
 	<div class="flex flex-col items-center">
 		<h2 class=" text-gray-700 text-center">
-			By booking a session at RaggStar Records, you agree to all of the following studio policies.
+			By booking a session at RaggStar Records, you agree to all of the following studio policies
 		</h2>
 		<span class="mt-4">
 			<a

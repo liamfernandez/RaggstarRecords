@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
+	import { onBookACall, onClickOfContact } from '$lib/utils';
 	import Ig from '../icons/IG.svelte';
 	import TikTok from '../icons/TikTok.svelte';
 	import Twitter from '../icons/Twitter.svelte';
@@ -27,48 +28,32 @@
 			}
 		}
 	}
-
-	function openModal() {
-		const dialogElm = document.getElementById('policies-popup') as HTMLDialogElement;
-		dialogElm.showModal();
-	}
-
-	const date = new Date();
-	const year = date.getFullYear();
-	const month = date.getMonth() + 1;
 </script>
 
 <div class=" bg-[#e1e1e1] grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-72 pt-8 pb-20 px-20">
 	<span class="flex flex-col gap-6">
 		<p class="font-semibold text-darkGrey">FOLLOW US ON</p>
 		<span class="flex flex-row items-center gap-3">
-			<button
-				on:click={() => {
-					goto('https://twitter.com/RaggStarENT');
-				}}
-				class=" bg-[#212121] py-2 px-2"
-			>
+			<a href="https://twitter.com/RaggStarENT" target="_blank" class=" bg-[#212121] py-2 px-2">
 				<Twitter size={16} />
-			</button>
-			<button
-				on:click={() => {
-					goto('https://www.tiktok.com/@raggstarrecords');
-				}}
+			</a>
+			<a
+				href="https://www.tiktok.com/@raggstarrecords"
+				target="_blank"
 				class=" bg-[#212121] py-2 px-2 hover:scale-105"
 			>
 				<TikTok size={14} />
-			</button>
+			</a>
 			<!-- <span class=" bg-[#212121] py-2 px-2">
 						<Facebook size={16} />
 					</span> -->
-			<button
-				on:click={() => {
-					goto('https://www.instagram.com/raggstarrecords/');
-				}}
+			<a
+				href="https://www.instagram.com/raggstarrecords/"
+				target="_blank"
 				class=" bg-[#212121] py-2 px-2 hover:scale-105"
 			>
 				<Ig size={16} />
-			</button>
+			</a>
 		</span>
 		<p class=" text-lightGrey">RaggStarRecords © 2024</p>
 		<p class=" text-xs text-lightGrey mt-10 md:block hidden">
@@ -95,7 +80,7 @@
 				>
 				<a href="/blog" class=" text-lightGrey hover:underline hover:decoration-lightGrey">Blog</a>
 				<button
-					on:click={openModal}
+					on:click={onClickOfContact}
 					class=" text-lightGrey hover:underline hover:decoration-lightGrey">Contact Us</button
 				>
 			</ul>
@@ -127,7 +112,7 @@
 				>
 				<a href="/blog" class=" text-lightGrey hover:underline hover:decoration-lightGrey">Blog</a>
 				<button
-					on:click={openModal}
+					on:click={onClickOfContact}
 					class=" text-lightGrey hover:underline hover:decoration-lightGrey">Contact Us</button
 				>
 			</ul>
@@ -176,14 +161,10 @@
 		</span>
 		<button
 			class="text-sm self-start text-lightGrey underline decoration-lightGrey"
-			on:click={() => {
-				openModal();
-			}}>Click Here To Send A Message</button
+			on:click={onClickOfContact}>Click Here To Send A Message</button
 		>
-		<a
-			class="text-sm text-lightGrey underline decoration-lightGrey"
-			href={`https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}`}
-			target="_blank">Click Here To Book a 1 On 1 Call</a
+		<button class="text-sm text-lightGrey underline decoration-lightGrey" on:click={onBookACall}
+			>Click Here To Book a 1 On 1 Call</button
 		>
 		<a
 			class="block md:hidden text-xs pt-10 -mb-10 text-lightGrey decoration-lightGrey underline"
@@ -191,4 +172,4 @@
 		>
 	</span>
 </div>
-<PoliciesPopup dependentModal="send-a-message" />
+<PoliciesPopup />

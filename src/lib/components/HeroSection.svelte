@@ -3,6 +3,7 @@
 	import { fly } from 'svelte/transition';
 	import OnMount from './OnMount.svelte';
 	import SendUsAMessage from './SendUsAMessage.svelte';
+	import BookACall from './BookACall.svelte';
 
 	const date = new Date();
 	const year = date.getFullYear();
@@ -26,14 +27,7 @@
 			<div class="	flex flex-col md:flex-row items-center font-openSans gap-8 md:gap-20 mt-10">
 				<SendUsAMessage />
 				<OnMount>
-					<a
-						href="https://calendly.com/raggstarrecords/30min?back=1&month=${year}-${month}"
-						target="_blank"
-						in:fly={{ duration: 1700, x: 75, easing: elasticOut }}
-						class="z-30 transition underline underline-offset-4 text-lg md:text-xl text-white font-extrabold decoration-white decoration-2 hover:scale-110"
-					>
-						{'BOOK A CALL >>'}
-					</a>
+					<BookACall backgroundIncluded={false} />
 				</OnMount>
 			</div>
 		</div>

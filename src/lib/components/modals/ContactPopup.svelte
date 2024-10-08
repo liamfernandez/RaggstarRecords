@@ -69,7 +69,7 @@
 		<form method="dialog">
 			<button
 				on:click={closeAndClear}
-				class="btn border-0 text-2xl bg-white btn-circle text-black hover:bg-gray-300 outline-none outline-0 absolute right-2 top-2"
+				class="btn border-0 text-2xl bg-white btn-circle text-black hover:bg-red-600 hover:text-white outline-none outline-0 absolute right-2 top-2"
 				>✕</button
 			>
 		</form>

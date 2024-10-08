@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import BookACall from './BookACall.svelte';
+	import { onClickOfContact } from '$lib/utils';
 
 	const logo_ar: number = 559 / 447;
 	const logo_height: number = 130;
@@ -50,11 +51,6 @@
 				goto(`/#${goal}`);
 			}
 		}
-	}
-
-	function openModal() {
-		const dialogElm = document.getElementById('policies-popup') as HTMLDialogElement;
-		dialogElm.showModal();
 	}
 </script>
 
@@ -104,13 +100,13 @@
 			<a href="/blog">Blog</a>
 		</li>
 		<li class="nav-button">
-			<button on:click={openModal}> Contact </button>
+			<button on:click={onClickOfContact}> Contact </button>
 		</li>
 		<BookACall backgroundIncluded={true} />
 	</ul>
 </div>
 
-<style>
+<style lang="postcss">
 	.nav-button {
 		@apply py-2;
 		background: none;

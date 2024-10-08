@@ -176,4 +176,4 @@
 	</div>
 </div>
 <ContactPopup popupElm={sendAMessagePopup} />
-<PoliciesPopup popupElm={policyPopup} dependentModal={sendAMessageId} />
+<PoliciesPopup popupElm={policyPopup} />
