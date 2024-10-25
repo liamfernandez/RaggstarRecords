@@ -163,8 +163,9 @@
 			class="text-sm self-start text-lightGrey underline decoration-lightGrey"
 			on:click={onClickOfContact}>Click Here To Send A Message</button
 		>
-		<button class="text-sm text-lightGrey underline decoration-lightGrey" on:click={onBookACall}
-			>Click Here To Book a 1 On 1 Call</button
+		<button
+			class="text-sm self-start text-lightGrey underline decoration-lightGrey"
+			on:click={onBookACall}>Click Here To Book a 1 On 1 Call</button
 		>
 		<a
 			class="block md:hidden text-xs pt-10 -mb-10 text-lightGrey decoration-lightGrey underline"

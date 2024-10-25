@@ -14,6 +14,33 @@ export const ASSETS_PATH = '/../blog-assets';
 
 let DefaultBlogPosts: BlogCardProps[] = [
  {
+		title: 'Music Marketing 101',
+		subtitle: 'Promote Like a Pro, Without a Label',
+		description: 'In this article we discuss essential marketing strategies for independent artists, including brand development, social media management, fan engagement, and promotional tactics for music visibility.',
+    slug: 'music-marketing-101',
+		image: 'assets-music-marketing-101',
+    post_color: '#f5e492',
+		date_published: new Date(2024, 10, 20)
+	},
+ {
+		title: 'How to Pitch to Spotify Playlists',
+		subtitle: 'A Guide for Independent Artists',
+		description: 'In this article we will discuss how independent artists can successfully get their music featured on Spotify playlists through editorial pitching, data-driven strategies, and curator outreach.',
+    slug: 'how-to-pitch-to-spotify-playlists',
+		image: 'assets-how-to-pitch-to-spotify-playlists',
+    post_color: '#c2cbff',
+		date_published: new Date(2024, 10, 13)
+	},
+ {
+		title: 'Legal Lifesavers',
+		subtitle: 'Must-Know Contracts for Independent Artists',
+		description: 'In this article we will discuss ten essential music industry contracts artists should know, covering recording, licensing, publishing, management, distribution, and performance agreements to protect their rights.',
+    slug: 'legal-lifesavers',
+		image: 'assets-legal-lifesavers',
+    post_color: '#f0dcd8',
+		date_published: new Date(2024, 10, 6)
+	},
+ {
 		title: 'How Indie Artists Can Maximize Their Streams in 2024',
 		subtitle: 'The Ultimate Guide',
 		description: 'In this article we discuss essential streaming strategies for indie musicians, including profile optimization, playlist utilization, audience engagement, and cross-platform promotion.',
