@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Frequenly Asked Questions & Answers | RAGGSTARRECORDS</title>
+	<title>Frequently Asked Questions & Answers | RAGGSTARRECORDS</title>
 </svelte:head>
 <div class=" bg-primary flex flex-col items-center">
 	<h1
