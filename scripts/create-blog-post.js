@@ -39,11 +39,11 @@ function createBlogPost(name, blogPostSubtitle) {
   const newBlogPost = ` {
 		title: '${name}',
 		subtitle: '${blogPostSubtitle}',
-		description: 'FILL THIS IN', // CHANGE THIS
+		description: 'FILL THIS IN',
     slug: '${slug}',
 		image: 'assets-${slug}',
     post_color: '#FFC0CB', // CHANGE THIS
-		date_published: new Date(2024, 1, 1) // CHANGE THIS
+		date_published: new Date(2024, 12, 3)
 	},`;
 
   // Find the position to insert the new blog post

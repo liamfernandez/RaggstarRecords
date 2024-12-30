@@ -14,13 +14,85 @@ export const ASSETS_PATH = '/../blog-assets';
 
 let DefaultBlogPosts: BlogCardProps[] = [
  {
+		title: 'From Clicks to Cash',
+		subtitle: 'Driving Income Through YouTube and Streaming Platforms',
+		description: 'In this article we discuss how musicians can monetize their content on YouTube and Spotify through profile optimization, content creation, and strategic promotion.',
+    slug: 'from-clicks-to-cash',
+		image: 'assets-from-clicks-to-cash',
+    post_color: '#d1fae4',
+		date_published: new Date(2024, 11, 29)
+	},
+ {
+		title: 'From Demos to DMs',
+		subtitle: 'How to Pitch Your Music to Influencers and Blogs',
+		description: 'In this article we discuss how musicians can effectively pitch their music to influencers and blogs through research, personalization, and relationship building.',
+    slug: 'from-demos-to-dms',
+		image: 'assets-from-demos-to-dms',
+    post_color: '#e0f0ff',
+		date_published: new Date(2024, 11, 22)
+	},
+ {
+		title: '5 Quick Hacks for Music Business',
+		subtitle: 'Labels Don\'t Want You to Know This',
+		description: 'In this article we discuss 5 bulletproof strategies that will help multiply your success.',
+    slug: '5-quick-hacks-for-music-business',
+		image: 'assets-5-quick-hacks-for-music-business',
+    post_color: '#c1e7f6',
+		date_published: new Date(2024, 11, 8)
+	},
+ {
+		title: 'Only Have 1000 Followers?',
+		subtitle: 'No Problem, Tips on How to Turn your 1000 followers into Lifetime Fans',
+		description: 'In this article we discuss how to make the most of these 1000 followers and create a loyal support base that helps you succeed.',
+    slug: 'only-have-1000-followers',
+		image: 'assets-only-have-1000-followers',
+    post_color: '#d3e3cf',
+		date_published: new Date(2024, 11, 1)
+	},
+ {
+		title: '10 Mistakes Killing Your Career',
+		subtitle: 'How to Fix Them Today',
+		description: 'In this article we discuss ten common mistakes musicians make, including poor branding, weak social media presence, and neglecting networking, plus solutions.',
+    slug: '10-mistakes-killing-your-career',
+		image: 'assets-10-mistakes-killing-your-career',
+    post_color: '#e9d4bf',
+		date_published: new Date(2024, 10, 24)
+	},
+ {
+		title: 'We\'re Tracking Your Data',
+		subtitle: 'For Your Stream Growth',
+		description: 'In this article we discuss how musicians can use data analytics to track streaming metrics, understand audience behavior, and improve their marketing strategies.',
+    slug: 'we-re-tracking-your-data',
+		image: 'assets-we-re-tracking-your-data',
+    post_color: '#e0def6',
+		date_published: new Date(2024, 10, 10)
+	},
+ {
+		title: 'Your Account Has Been Hacked',
+		subtitle: 'Secure Your Sound - How to Keep Your Music Safe Online',
+		description: 'In this article we discuss essential copyright protection strategies for musicians, including registration, digital watermarking, secure storage, and handling music theft.',
+    slug: 'your-account-has-been-hacked',
+		image: 'assets-your-account-has-been-hacked',
+    post_color: '#bdddc9',
+		date_published: new Date(2024, 10, 3)
+	},
+ {
+		title: 'Become Unforgettable',
+		subtitle: 'Crafting Your Brand Identity as an Indie Artist',
+		description: 'In this article we discuss how indie artists can build authentic brand identities to attract fans and grow their careers.',
+    slug: 'become-unforgettable',
+		image: 'assets-become-unforgettable',
+    post_color: '#f4dad7',
+		date_published: new Date(2024, 9, 27)
+	},
+ {
 		title: 'Music Marketing 101',
 		subtitle: 'Promote Like a Pro, Without a Label',
 		description: 'In this article we discuss essential marketing strategies for independent artists, including brand development, social media management, fan engagement, and promotional tactics for music visibility.',
     slug: 'music-marketing-101',
 		image: 'assets-music-marketing-101',
     post_color: '#f5e492',
-		date_published: new Date(2024, 10, 20)
+		date_published: new Date(2024, 9, 20)
 	},
  {
 		title: 'How to Pitch to Spotify Playlists',
@@ -29,7 +101,7 @@ let DefaultBlogPosts: BlogCardProps[] = [
     slug: 'how-to-pitch-to-spotify-playlists',
 		image: 'assets-how-to-pitch-to-spotify-playlists',
     post_color: '#c2cbff',
-		date_published: new Date(2024, 10, 13)
+		date_published: new Date(2024, 9, 13)
 	},
  {
 		title: 'Legal Lifesavers',
@@ -38,7 +110,7 @@ let DefaultBlogPosts: BlogCardProps[] = [
     slug: 'legal-lifesavers',
 		image: 'assets-legal-lifesavers',
     post_color: '#f0dcd8',
-		date_published: new Date(2024, 10, 6)
+		date_published: new Date(2024, 9, 6)
 	},
  {
 		title: 'How Indie Artists Can Maximize Their Streams in 2024',
