@@ -14,6 +14,15 @@ export const ASSETS_PATH = '/../blog-assets';
 
 let DefaultBlogPosts: BlogCardProps[] = [
  {
+		title: 'Your Song is Done-- Now What?',
+		subtitle: 'How to Market Yourself After Making Music',
+		description: 'In this article we discuss how musicians must embrace marketing alongside music creation, utilizing social media, playlists, collaborations, and live performances to expand their audience.',
+    slug: 'your-song-is-done-now-what',
+		image: 'assets-your-song-is-done-now-what',
+    post_color: '#d6f1ec',
+		date_published: new Date(2025, 0, 12)
+	},
+ {
 		title: 'From Clicks to Cash',
 		subtitle: 'Driving Income Through YouTube and Streaming Platforms',
 		description: 'In this article we discuss how musicians can monetize their content on YouTube and Spotify through profile optimization, content creation, and strategic promotion.',
