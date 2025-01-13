@@ -55,7 +55,7 @@
 				<Ig size={16} />
 			</a>
 		</span>
-		<p class=" text-lightGrey">RaggStarRecords © 2024</p>
+		<p class=" text-lightGrey">RaggStarRecords © 2025</p>
 		<p class=" text-xs text-lightGrey mt-10 md:block hidden">
 			Site Powered by <a class="hover:underline decoration-lightGrey" href="https://liamverse.io"
 				>Liamverse</a

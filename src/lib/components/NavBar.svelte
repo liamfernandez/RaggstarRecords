@@ -94,6 +94,9 @@
 			<a href="/about">About</a>
 		</li>
 		<li class="nav-button">
+			<a href="/testimonials">Testimonials</a>
+		</li>
+		<li class="nav-button">
 			<a href="/frequently-asked-questions">FAQ</a>
 		</li>
 		<li class="nav-button">
