@@ -43,7 +43,7 @@ function createBlogPost(name, blogPostSubtitle) {
     slug: '${slug}',
 		image: 'assets-${slug}',
     post_color: '#FFC0CB', // CHANGE THIS
-		date_published: new Date(2024, 12, 3)
+		date_published: new Date(2025, 2, 1)
 	},`;
 
   // Find the position to insert the new blog post

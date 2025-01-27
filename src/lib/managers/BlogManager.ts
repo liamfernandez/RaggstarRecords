@@ -13,7 +13,16 @@ export type BlogCardProps = {
 export const ASSETS_PATH = '/../blog-assets';
 
 let DefaultBlogPosts: BlogCardProps[] = [
- {
+	{
+		title: 'What I Wish I Knew About Going Viral',
+		subtitle: 'Why Every Indie Artist Needs a Production Team',
+		description: 'In this article we discuss how production teams help independent R&B and hip-hop artists achieve viral success through technical expertise, strategic content creation, networking, and data-driven branding.',
+		slug: 'what-i-wish-i-knew-about-going-viral',
+		image: 'assets-what-i-wish-i-knew-about-going-viral',
+		post_color: '#e8f6e2',
+		date_published: new Date(2025, 0, 19)
+	},
+	{
 		title: 'Your Song is Done-- Now What?',
 		subtitle: 'How to Market Yourself After Making Music',
 		description: 'In this article we discuss how musicians must embrace marketing alongside music creation, utilizing social media, playlists, collaborations, and live performances to expand their audience.',
@@ -22,7 +31,7 @@ let DefaultBlogPosts: BlogCardProps[] = [
     post_color: '#d6f1ec',
 		date_published: new Date(2025, 0, 12)
 	},
- {
+	{
 		title: 'From Clicks to Cash',
 		subtitle: 'Driving Income Through YouTube and Streaming Platforms',
 		description: 'In this article we discuss how musicians can monetize their content on YouTube and Spotify through profile optimization, content creation, and strategic promotion.',
