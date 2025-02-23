@@ -148,6 +148,7 @@
 					<p>About</p>
 				</li>
 			</button>
+			<!-- TODO: ADD A TESTIMONIALS HERE FOR MOBILE DRAWER NAV -->
 			<button
 				on:click={() => {
 					navigateAway('blog');

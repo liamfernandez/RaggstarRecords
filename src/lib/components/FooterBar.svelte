@@ -78,6 +78,9 @@
 				<a href="/about" class=" text-lightGrey hover:underline hover:decoration-lightGrey"
 					>About Us</a
 				>
+				<a href="/testimonials" class=" text-lightGrey hover:underline hover:decoration-lightGrey"
+					>Testimonials</a
+				>
 				<a href="/blog" class=" text-lightGrey hover:underline hover:decoration-lightGrey">Blog</a>
 				<button
 					on:click={onClickOfContact}
@@ -109,6 +112,9 @@
 				</button>
 				<a href="/about" class=" text-lightGrey hover:underline hover:decoration-lightGrey"
 					>About Us</a
+				>
+				<a href="/testimonials" class=" text-lightGrey hover:underline hover:decoration-lightGrey"
+					>Testimonials</a
 				>
 				<a href="/blog" class=" text-lightGrey hover:underline hover:decoration-lightGrey">Blog</a>
 				<button
