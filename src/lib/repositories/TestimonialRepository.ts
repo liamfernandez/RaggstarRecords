@@ -3,11 +3,18 @@ export type TestimonialProps = {
   first_name: string;
   last_name: string;
   highlight_quote: string;
-  services_purchased: string[]; // REPLACE WITH ENUM list
+  services_purchased: RGS_Service[]; // REPLACE WITH ENUM list
   spotify_url: string;
   apple_music_url: string;
   pfp_url?: string;
 }
+
+export enum RGS_Service {
+		BeatProduction = 'Beat Production',
+		Mastering = 'Mastering Session',
+		Mixing = 'Mixing Session',
+		RevisionsUnlimited = 'Unlimited Revisions'
+	}
 
 export const ASSETS_PATH = '/../testimonial-assets';
 
@@ -22,7 +29,7 @@ export let Testimonials_Data: TestimonialProps[] = [
     first_name: "David",
     last_name: "Vines",
     highlight_quote: "From custom producing my beat to mixing, mastering, and even scheduling consistent meetings, they delivered everything I needed. They didn’t just handle tasks—they empowered me with structure, attention to detail, and a streamlined process that boosted my confidence. They did not stop working on the project until I was 100% satisfied",
-    services_purchased: ["service1", "service2"],
+    services_purchased: [RGS_Service.BeatProduction, RGS_Service.Mastering, RGS_Service.Mixing, RGS_Service.RevisionsUnlimited],
     spotify_url: "",
     apple_music_url: "",
   }

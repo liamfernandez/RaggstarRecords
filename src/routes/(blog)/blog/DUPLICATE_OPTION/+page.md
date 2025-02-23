@@ -1,6 +1,6 @@
 <script lang='ts'>
   import BlogPageTemplate from '$lib/components/blog/BlogPageTemplate.svelte';
-  import type { BlogCardProps, ASSETS_PATH, orderedBlogPosts } from '$lib/managers/BlogManager';
+  import type { BlogCardProps, ASSETS_PATH, orderedBlogPosts } from '$lib/repositories/BlogPostRepository';
   import { page } from '$app/stores';
 
   const blogPostInfo: BlogCardProps = orderedBlogPosts.find((post) => post.slug === $page.route.id?.split('/')[3]);

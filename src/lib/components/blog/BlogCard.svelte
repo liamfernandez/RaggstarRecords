@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { BlogCardProps } from '$lib/managers/BlogManager';
+	import type { BlogCardProps } from '$lib/repositories/BlogPostRepository';
 	import { generateGradientColors } from './Utils';
 	import { formatDate } from './Utils';
 

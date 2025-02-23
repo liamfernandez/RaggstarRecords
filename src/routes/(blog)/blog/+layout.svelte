@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { tweened } from 'svelte/motion';
 	import { cubicInOut } from 'svelte/easing';
-	import { ASSETS_PATH } from '$lib/managers/BlogManager';
+	import { ASSETS_PATH } from '$lib/repositories/BlogPostRepository';
 	import { blur } from 'svelte/transition';
 	import ClickOutLink from '$lib/icons/ClickOutLink.svelte';
 	import FooterBar from '$lib/components/FooterBar.svelte';
