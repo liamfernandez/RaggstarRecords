@@ -81,6 +81,9 @@
 				<p>What We Do</p>
 			</li>
 		</button>
+		<li class="nav-button">
+			<a href="/testimonials">Testimonials</a>
+		</li>
 		<button
 			on:click={() => {
 				navigateAway('our-process');
@@ -92,9 +95,6 @@
 		</button>
 		<li class="nav-button">
 			<a href="/about">About</a>
-		</li>
-		<li class="nav-button">
-			<a href="/testimonials">Testimonials</a>
 		</li>
 		<li class="nav-button">
 			<a href="/frequently-asked-questions">FAQ</a>
