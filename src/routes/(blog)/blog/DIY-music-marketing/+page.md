@@ -1,9 +1,9 @@
 <script lang='ts'>
   import BlogPageTemplate from '$lib/components/blog/BlogPageTemplate.svelte';
-  import type { BlogCardProps } from '$lib/managers/BlogManager';
-  import { ASSETS_PATH } from '$lib/managers/BlogManager';
+  import type { BlogCardProps } from '$lib/repositories/BlogPostRepository';
+  import { ASSETS_PATH } from '$lib/repositories/BlogPostRepository';
 
-  import { orderedBlogPosts } from '$lib/managers/BlogManager';
+  import { orderedBlogPosts } from '$lib/repositories/BlogPostRepository';
   import { page } from '$app/stores';
 
   const blogPostInfo: BlogCardProps = orderedBlogPosts.find((post) => post.slug === $page.route.id?.split('/')[3]);

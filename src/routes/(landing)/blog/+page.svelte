@@ -1,7 +1,7 @@
 <script>
 	import BlogCard from '$lib/components/blog/BlogCard.svelte';
 	import NewsletterSignup from '$lib/components/blog/NewsletterSignup.svelte';
-	import { orderedBlogPosts } from '$lib/managers/BlogManager';
+	import { orderedBlogPosts } from '$lib/repositories/BlogPostRepository';
 
 	const headlineText = `Check Out Our Latest Post: ${orderedBlogPosts[0].title} - ${orderedBlogPosts[0].subtitle}`;
 </script>

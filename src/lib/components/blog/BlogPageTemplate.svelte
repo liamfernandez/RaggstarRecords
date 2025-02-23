@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '$lib/styles/prose-mods.css';
 	import Clock from '$lib/icons/Clock.svelte';
-	import { ASSETS_PATH } from '$lib/managers/BlogManager';
+	import { ASSETS_PATH } from '$lib/repositories/BlogPostRepository';
 	import { onMount } from 'svelte';
 	import Toast from './Toast.svelte';
 	import { countWordsInDiv, formatDate } from './Utils';
