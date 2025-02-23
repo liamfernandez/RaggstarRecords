@@ -20,7 +20,7 @@ function createBlogPost(name, blogPostSubtitle) {
   const staticFolder = path.join('static', 'blog-assets', `assets-${slug}`);
   const routesFolder = path.join('src', 'routes', '(blog)', 'blog', slug);
   const templateFile = path.join('src', 'routes', '(blog)', 'blog', 'DUPLICATE_OPTION', '+page.md');
-  const blogManagerFile = path.join('src', 'lib', 'managers', 'BlogManager.ts');
+  const blogPostRepoFile = path.join('src', 'lib', 'repositories', 'BlogPostRepository.ts');
 
   // Create folder in static/blog-assets
   fs.mkdirSync(staticFolder, { recursive: true });
@@ -34,8 +34,8 @@ function createBlogPost(name, blogPostSubtitle) {
   fs.copyFileSync(templateFile, path.join(routesFolder, '+page.md'));
   console.log(`Copied template to: ${path.join(routesFolder, '+page.md')}`);
 
-  // Update BlogManager.ts
-  let blogManagerContent = fs.readFileSync(blogManagerFile, 'utf8');
+  // Update BlogPostRepository.ts
+  let blogManagerContent = fs.readFileSync(blogPostRepoFile, 'utf8');
   const newBlogPost = ` {
 		title: '${name}',
 		subtitle: '${blogPostSubtitle}',
@@ -52,8 +52,8 @@ function createBlogPost(name, blogPostSubtitle) {
   // Insert the new blog post at the beginning of the array
   blogManagerContent = blogManagerContent.slice(0, insertPosition) + '\n' + newBlogPost + blogManagerContent.slice(insertPosition);
 
-  fs.writeFileSync(blogManagerFile, blogManagerContent);
-  console.log(`Updated BlogManager.ts with new blog post: ${name}`);
+  fs.writeFileSync(blogPostRepoFile, blogManagerContent);
+  console.log(`Updated BlogPostRepository.ts with new blog post: ${name}`);
 }
 
 // Get the blog post name from command line arguments
