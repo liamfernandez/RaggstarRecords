@@ -4,13 +4,10 @@
 </script>
 
 <a
-	class="hover:scale-110 duration-200"
+	class="hover:scale-110 duration-200 z-20"
 	href={url || undefined}
 	rel="noreferrer"
 	target={url ? '_blank' : undefined}
-	on:click|preventDefault={() => {
-		if (!url) return false;
-	}}
 >
 	<svg
 		width={size}

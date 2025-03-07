@@ -12,7 +12,7 @@
 
 	onMount(() => {
 		const scrollHandler = function () {
-			let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
 			// When scrolling down
 			if (scrollTop > lastScrollTop && scrollTop > 130) {
