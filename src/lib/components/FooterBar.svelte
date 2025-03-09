@@ -30,17 +30,21 @@
 	}
 </script>
 
-<div class=" bg-[#e1e1e1] grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-72 pt-8 pb-20 px-20">
+<div class=" grid grid-cols-1 gap-16 bg-[#e1e1e1] px-20 pb-10 pt-8 md:grid-cols-3 md:gap-72">
 	<span class="flex flex-col gap-6">
 		<p class="font-semibold text-darkGrey">FOLLOW US ON</p>
 		<span class="flex flex-row items-center gap-3">
-			<a href="https://twitter.com/RaggStarENT" target="_blank" class=" bg-[#212121] py-2 px-2">
+			<a
+				href="https://twitter.com/RaggStarENT"
+				target="_blank"
+				class=" bg-[#212121] px-2 py-2 hover:scale-105"
+			>
 				<Twitter size={16} />
 			</a>
 			<a
 				href="https://www.tiktok.com/@raggstarrecords"
 				target="_blank"
-				class=" bg-[#212121] py-2 px-2 hover:scale-105"
+				class=" bg-[#212121] px-2 py-2 hover:scale-105"
 			>
 				<TikTok size={14} />
 			</a>
@@ -50,17 +54,17 @@
 			<a
 				href="https://www.instagram.com/raggstarrecords/"
 				target="_blank"
-				class=" bg-[#212121] py-2 px-2 hover:scale-105"
+				class=" bg-[#212121] px-2 py-2 hover:scale-105"
 			>
 				<Ig size={16} />
 			</a>
 		</span>
 		<p class=" text-lightGrey">RaggStarRecords © 2025</p>
-		<p class=" text-xs text-lightGrey mt-10 md:block hidden">
-			Site Powered by <a class="hover:underline decoration-lightGrey" href="https://liamverse.io"
+		<!-- <p class=" mt-10 hidden text-xs text-lightGrey md:block">
+			Site Powered by <a class="decoration-lightGrey hover:underline" href="https://liamverse.io"
 				>Liamverse</a
 			>
-		</p>
+		</p> -->
 	</span>
 	<span class="flex flex-col gap-4">
 		<p class="font-semibold text-darkGrey">NAVIGATION</p>
@@ -126,7 +130,7 @@
 	</span>
 	<span class="flex flex-col gap-6">
 		<p class="font-semibold text-darkGrey">CONTACTS</p>
-		<span class="flex flex-row gap-3 items-center">
+		<span class="flex flex-row items-center gap-3">
 			<svg
 				width="24"
 				height="24"
@@ -166,17 +170,17 @@
 			<p class=" text-midGrey">Atlanta, GA</p>
 		</span>
 		<button
-			class="text-sm self-start text-lightGrey underline decoration-lightGrey"
+			class="self-start text-sm text-lightGrey underline decoration-lightGrey"
 			on:click={onClickOfContact}>Click Here To Send A Message</button
 		>
 		<button
-			class="text-sm self-start text-lightGrey underline decoration-lightGrey"
+			class="self-start text-sm text-lightGrey underline decoration-lightGrey"
 			on:click={onBookACall}>Click Here To Book a 1 On 1 Call</button
 		>
-		<a
-			class="block md:hidden text-xs pt-10 -mb-10 text-lightGrey decoration-lightGrey underline"
+		<!-- <a
+			class="-mb-10 block pt-10 text-xs text-lightGrey underline decoration-lightGrey md:hidden"
 			href="https://liamverse.io">Site Powered by Liamverse</a
-		>
+		> -->
 	</span>
 </div>
 <PoliciesPopup />

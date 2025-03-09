@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { error } from '@sveltejs/kit';
-	import { Testimonials_Data, GetArtistImg } from '$lib/repositories/TestimonialRepository';
+	import {
+		Testimonials_Data,
+		GetArtistImg,
+		ASSETS_PATH
+	} from '$lib/repositories/TestimonialRepository';
 	import type { TestimonialProps } from '$lib/repositories/TestimonialRepository';
 	import VideoPlayer from '$lib/components/atoms/VideoPlayer.svelte';
 	import {
@@ -10,9 +14,9 @@
 		Drum,
 		FileAudio,
 		AudioWaveform,
-		Disc3,
 		Palette
 	} from 'lucide-svelte';
+	import AudioPlayer from '$lib/components/atoms/AudioPlayer.svelte';
 
 	const slug = $page.params.slug;
 
@@ -34,6 +38,12 @@
 
 <svelte:head>
 	<title>Testimonial | {testimonial.first_name} {testimonial.last_name}</title>
+	<meta
+		property="og:title"
+		content="Testimonial | {testimonial.first_name} {testimonial.last_name}"
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content={GetArtistImg(testimonial, 'hq', 'jpg')} />
 </svelte:head>
 
 <!-- START PICTURE AND METADATA -->
@@ -46,7 +56,7 @@
 			{testimonial.first_name}
 			{testimonial.last_name}
 		</h1>
-		<span class=" mt-4 hidden w-fit flex-col gap-2 md:flex">
+		<nav class=" mt-4 hidden w-fit flex-col gap-2 md:flex">
 			<p class="text-[1.2rem] font-light text-cyan-400">Table of Contents</p>
 			<!-- TODO: NEED TO ADD CONDITIONAL FOR IF THE ARTIST HAS THESE THINGS -->
 			<a
@@ -64,7 +74,7 @@
 				class=" ml-2 flex flex-row gap-2 text-gray-300 underline-offset-4 hover:underline"
 				><CornerDownRight class="-mt-[2px] text-cyan-400" />Written Review</a
 			>
-		</span>
+		</nav>
 	</div>
 	<img
 		class="min-w-[18rem] md:min-w-[45rem] md:rounded-l-lg"
@@ -86,6 +96,7 @@
 </div>
 
 <!-- START TIMELINE -->
+<!-- TODO: Have a way to conditionally show this based on the services purchased -->
 <div id="timeline" class=" mx-auto mt-8 w-full max-w-5xl md:mt-24">
 	<h2
 		class=" secBg w-full px-4 py-2 text-center text-3xl font-light text-cyan-400 md:w-fit md:rounded-t-lg md:text-left md:text-3xl"
@@ -93,26 +104,56 @@
 		Timeline of Services
 	</h2>
 	<div class="secBg flex flex-col px-10 pb-6 pt-4 md:rounded-b-lg">
-		<ol class="relative border-s border-gray-200 dark:border-gray-700">
+		<ol class="relative border-s border-gray-700">
 			<li class="mb-10 ms-10">
 				<span
 					class="absolute -start-5 flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 ring-8 ring-blue-900"
 				>
 					<Drum size={22} class=" text-cyan-400" />
 				</span>
+				<h3 class="mb-1 flex items-center text-lg font-semibold text-white">Custom Beat Created</h3>
+				<time class="mb-2 block text-sm font-normal leading-none text-gray-500">Week 1</time>
+				<div class="mt-4">
+					<AudioPlayer
+						fileName={`${ASSETS_PATH}/${testimonial.first_name.toLowerCase() + '_' + testimonial.last_name.toLowerCase() + '/beat'}`}
+					/>
+				</div>
+			</li>
+			<li class="mb-10 ms-10">
+				<span
+					class="absolute -start-5 flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 ring-8 ring-blue-900"
+				>
+					<AudioWaveform size={22} class=" text-cyan-400" />
+				</span>
 				<h3 class="mb-1 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
-					Custom Beat created <span
-						class="me-2 ms-3 rounded-sm bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300"
-						>Latest</span
-					>
+					Rough Mix - Raw Vocals
 				</h3>
 				<time class="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-					>Released on January 13th, 2022</time
+					>Week 2</time
 				>
-				<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-					Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
-					and pre-order E-commerce & Marketing pages.
-				</p>
+				<div class="mt-4">
+					<AudioPlayer
+						fileName={`${ASSETS_PATH}/${testimonial.first_name.toLowerCase() + '_' + testimonial.last_name.toLowerCase() + '/rough-mix'}`}
+					/>
+				</div>
+			</li>
+			<li class="mb-10 ms-10">
+				<span
+					class="absolute -start-5 flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 ring-8 ring-blue-900"
+				>
+					<FileAudio size={22} class=" text-cyan-400" />
+				</span>
+				<h3 class="mb-1 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+					Final Product - Mixed and Mastered
+				</h3>
+				<time class="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+					>Week 3</time
+				>
+				<div class="mt-4">
+					<AudioPlayer
+						fileName={`${ASSETS_PATH}/${testimonial.first_name.toLowerCase() + '_' + testimonial.last_name.toLowerCase() + '/final-mix'}`}
+					/>
+				</div>
 			</li>
 			<li class="mb-10 ms-10">
 				<span
@@ -124,19 +165,20 @@
 					Cover Artwork Created
 				</h3>
 				<time class="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-					>Released on January 13th, 2022</time
+					>Week 4</time
 				>
-				<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-					Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
-					and pre-order E-commerce & Marketing pages.
-				</p>
+				<img
+					src={`${ASSETS_PATH}/${testimonial.first_name.toLowerCase() + '_' + testimonial.last_name.toLowerCase() + '/cover-art.jpeg'}`}
+					alt={`Cover Art`}
+					class="mt-4 w-[80%] rounded-lg md:w-[40%]"
+				/>
 			</li>
 		</ol>
 	</div>
 </div>
 
 <!-- START Written Review -->
-<div id="written-review" class=" mx-auto mt-8 w-full max-w-5xl md:mt-24">
+<div id="written-review" class=" mx-auto mb-32 mt-8 w-full max-w-5xl md:mt-24">
 	<h2
 		class=" secBg w-full px-4 py-2 text-center text-3xl font-light text-cyan-400 md:w-fit md:rounded-t-lg md:text-left md:text-3xl"
 	>

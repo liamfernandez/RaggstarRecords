@@ -15,11 +15,11 @@
 <div id="rectangle" class=" relative h-fit w-[780px] outline outline-[1px] outline-[#0000004D]">
 	<!-- LINK: transparent screen to link out to testimonial page -->
 	<!-- svelte-ignore a11y-missing-content -->
-	<!-- <a
+	<a
 		href={artist_testimonial_page}
 		class="absolute inset-0 z-10"
 		style="background: transparent;"
-	/> -->
+	/>
 	<!-- 4 CORNERS -->
 	<Plus class="absolute -right-[22.5px] -top-[22.5px]" />
 	<Plus class="absolute -bottom-[22.5px] -right-[22.5px]" />
@@ -70,13 +70,12 @@
 				<p class="text-[1.13rem] font-light text-black">{`"${testimonial.highlight_quote}"`}</p>
 			</span>
 
-			<!-- <a
+			<a
 				href={artist_testimonial_page}
-				class="  group z-20 mr-10 flex flex-row gap-1 self-center rounded-sm bg-white px-3 py-1 text-black outline outline-[2px] outline-black duration-100 hover:scale-[1.04] hover:bg-black hover:text-white hover:outline-none"
+				class=" z-20 mr-12 flex flex-row justify-center text-gray-500 underline underline-offset-4 hover:text-gray-900"
 			>
-				<BookText class=" text-primary duration-200 group-hover:text-white" />
 				Read the Full Story
-			</a> -->
+			</a>
 		</div>
 		<!-- END COLUMN 2 - Services & Highlight Quote -->
 	</div>
