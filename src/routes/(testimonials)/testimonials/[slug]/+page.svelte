@@ -47,11 +47,11 @@
 </svelte:head>
 
 <!-- START PICTURE AND METADATA -->
-<div class=" flex flex-col md:ml-40 md:flex-row md:justify-between">
+<div class=" flex flex-col items-center justify-center md:ml-40 md:flex-row">
 	<div
-		class="secBg flex h-fit w-full flex-col gap-2 py-2 text-center md:my-8 md:rounded-l-lg md:py-8 md:pl-12 md:text-left"
+		class="secBg flex h-fit w-full flex-col gap-2 py-2 text-center md:my-8 md:rounded-l-lg md:py-8 md:pl-12 md:text-left 2xl:ml-[14rem] 3xl:ml-[0rem] 3xl:w-fit 3xl:pr-[14rem]"
 	>
-		<p class=" text-2xl font-light text-cyan-400 md:text-3xl">Testimonial</p>
+		<p class=" text-3xl font-light text-cyan-400 md:text-3xl">Testimonial</p>
 		<h1 class="pb-3 text-4xl font-thin text-white md:pb-0 md:text-7xl">
 			{testimonial.first_name}
 			{testimonial.last_name}
@@ -77,7 +77,7 @@
 		</nav>
 	</div>
 	<img
-		class="min-w-[18rem] md:min-w-[45rem] md:rounded-l-lg"
+		class="min-w-[18rem] md:min-w-[45rem] md:rounded-l-lg 3xl:min-w-[60rem] 3xl:rounded-r-lg"
 		src={GetArtistImg(testimonial, 'hq', 'jpg')}
 		alt={`${testimonial.first_name} ${testimonial.last_name}`}
 	/>
@@ -85,7 +85,7 @@
 <!-- START VIDEO PLAYER -->
 <div id="video-player" class="mt-8 flex flex-col items-center md:mt-20">
 	<span
-		class=" secBg mx-auto flex w-full max-w-4xl translate-y-5 flex-row items-center justify-center pb-3 pt-2 text-center font-light text-gray-300 md:rounded-t-lg md:text-2xl"
+		class=" secBg mx-auto flex w-full max-w-4xl translate-y-5 flex-row items-center justify-center pb-3 pt-2 text-center font-light text-gray-300 md:rounded-t-lg md:text-3xl"
 	>
 		<Clapperboard class="scale-75 stroke-[1px] md:scale-100" size={38} color="#22d3ee" />
 	</span>
