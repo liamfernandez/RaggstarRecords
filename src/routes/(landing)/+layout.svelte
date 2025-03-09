@@ -16,7 +16,9 @@
 	const sendAMessageId = 'send-a-message';
 	// const policiesPopupId = 'policies-popup';
 
-	function navigateAway(goal: 'what-we-do' | 'our-process' | 'home' | 'about' | 'blog' | 'FAQ') {
+	function navigateAway(
+		goal: 'what-we-do' | 'our-process' | 'home' | 'about' | 'testimonials' | 'blog' | 'FAQ'
+	) {
 		const drawerInput = document.getElementById('my-drawer-4') as HTMLInputElement;
 		if (drawerInput.checked) {
 			drawerInput.checked = false;
@@ -27,6 +29,8 @@
 			window.history.replaceState({}, '', '/');
 		} else if (goal === 'blog') {
 			goto('/blog');
+		} else if (goal === 'testimonials') {
+			goto('/testimonials');
 		} else if (goal === 'about') {
 			goto('/about');
 		} else if (goal === 'FAQ') {
@@ -92,7 +96,7 @@
 </svelte:head>
 <div class="drawer md:block">
 	<input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-	<div class="drawer-content bg-white min-h-screen">
+	<div class="drawer-content min-h-screen bg-white">
 		<nav id="header" class=" header">
 			<NavBar />
 			<MobileNavBar />
@@ -105,11 +109,11 @@
 	<div class="drawer-side z-40">
 		<label for="my-drawer-4" class="drawer-overlay" />
 		<ul
-			class="flex flex-col pt-40 z-[10001] w-[60%] bg-white h-full gap-8 items-center text-midGrey"
+			class="z-[10001] flex h-full w-[60%] flex-col items-center gap-8 bg-white pt-40 text-midGrey"
 		>
 			<label
 				for="my-drawer-4"
-				class={`btn btn-circle self-start bg-white scale-[0.72] -mt-8 ml-2 -mb-8 text-lg text-primary`}
+				class={`btn btn-circle -mb-8 -mt-8 ml-2 scale-[0.72] self-start bg-white text-lg text-primary`}
 				>X</label
 			>
 			<button
@@ -149,6 +153,15 @@
 				</li>
 			</button>
 			<!-- TODO: ADD A TESTIMONIALS HERE FOR MOBILE DRAWER NAV -->
+			<button
+				on:click={() => {
+					navigateAway('testimonials');
+				}}
+			>
+				<li class="nav-button">
+					<p>Testimonials</p>
+				</li>
+			</button>
 			<button
 				on:click={() => {
 					navigateAway('blog');
