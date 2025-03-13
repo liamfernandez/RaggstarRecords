@@ -14,15 +14,15 @@
 
 <div
 	id="rectangle"
-	class=" relative mx-auto h-fit max-w-[80vw] outline outline-[1px] outline-[#0000004D] md:mx-0 md:max-w-[780px]"
+	class=" relative mx-auto h-fit max-w-[80vw] outline outline-[1px] outline-[#0000004D] md:mx-0 md:max-w-[800px]"
 >
 	<!-- LINK: transparent screen to link out to testimonial page -->
 	<!-- svelte-ignore a11y-missing-content -->
-	<a
+	<!-- <a
 		href={artist_testimonial_page}
 		class="absolute inset-0 z-10 hidden md:block"
 		style="background: transparent;"
-	/>
+	/> -->
 	<!-- 4 CORNERS -->
 	<Plus class="absolute -right-[22.5px] -top-[22.5px]" />
 	<Plus class="absolute -bottom-[22.5px] -right-[22.5px]" />
@@ -68,7 +68,7 @@
 			class="flex flex-col items-center gap-3 px-4 text-center md:items-start md:text-left"
 		>
 			<p class="testimonialHeader">Services Purchased</p>
-			<div class="ml-1 flex max-w-[550px] flex-col flex-wrap items-center gap-4 md:flex-row">
+			<div class="ml-1 flex max-w-[550px] flex-row flex-wrap items-center justify-center gap-4">
 				{#each testimonial.services_purchased as rgs_service}
 					<RgsServiceTag service={rgs_service} />
 				{/each}
@@ -81,7 +81,7 @@
 
 			<a
 				href={artist_testimonial_page}
-				class=" z-20 flex flex-row justify-center text-gray-500 underline underline-offset-4 hover:text-gray-900 md:mr-12"
+				class=" z-20 flex w-full flex-row justify-center self-center text-gray-500 underline underline-offset-4 hover:text-gray-900 md:mr-12 md:w-fit"
 			>
 				Read the Full Story
 			</a>
