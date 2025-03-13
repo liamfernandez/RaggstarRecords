@@ -12,12 +12,15 @@
 		`/testimonials/${testimonial.first_name}-${testimonial.last_name}-${testimonial.id}`.toLowerCase();
 </script>
 
-<div id="rectangle" class=" relative h-fit w-[780px] outline outline-[1px] outline-[#0000004D]">
+<div
+	id="rectangle"
+	class=" relative mx-auto h-fit max-w-[80vw] outline outline-[1px] outline-[#0000004D] md:mx-0 md:max-w-[780px]"
+>
 	<!-- LINK: transparent screen to link out to testimonial page -->
 	<!-- svelte-ignore a11y-missing-content -->
 	<a
 		href={artist_testimonial_page}
-		class="absolute inset-0 z-10"
+		class="absolute inset-0 z-10 hidden md:block"
 		style="background: transparent;"
 	/>
 	<!-- 4 CORNERS -->
@@ -26,9 +29,12 @@
 	<Plus class="absolute -left-[22.5px] -top-[22.5px]" />
 	<Plus class="absolute -bottom-[22.5px] -left-[22.5px]" />
 	<!-- 4 CORNERS -->
-	<div class=" flex h-full flex-row gap-8 pb-2 pt-3">
+	<div class=" flex h-full flex-col gap-8 pb-2 pt-3 md:flex-row">
 		<!-- Column 1 - Artist Bio -->
-		<div id="artist-bio" class="flex flex-col justify-between pl-3">
+		<div
+			id="artist-bio"
+			class="flex flex-col items-center justify-between pl-3 text-center md:items-start md:text-left"
+		>
 			<span class="flex flex-col gap-2">
 				<p class=" testimonialHeader">Artist</p>
 				<p class=" text-3xl font-light text-black">
@@ -36,7 +42,7 @@
 					{testimonial.last_name}
 				</p>
 			</span>
-			<div>
+			<div class="mt-4 md:mt-0">
 				<img
 					src={GetArtistImg(testimonial)}
 					class=" rounded-t-lg"
@@ -57,9 +63,12 @@
 		<!-- END Column 1 - Artist Bio -->
 
 		<!-- COLUMN 2 - Services & Highlight Quote -->
-		<div id="services & highlight quote" class="flex flex-col gap-3">
+		<div
+			id="services & highlight quote"
+			class="flex flex-col items-center gap-3 px-4 text-center md:items-start md:text-left"
+		>
 			<p class="testimonialHeader">Services Purchased</p>
-			<div class="ml-1 flex max-w-[550px] flex-row flex-wrap gap-4">
+			<div class="ml-1 flex max-w-[550px] flex-col flex-wrap items-center gap-4 md:flex-row">
 				{#each testimonial.services_purchased as rgs_service}
 					<RgsServiceTag service={rgs_service} />
 				{/each}
@@ -67,12 +76,12 @@
 
 			<span class="flex max-w-[490px] flex-col gap-1">
 				<p class="testimonialHeader">In Their Words</p>
-				<p class="text-[1.13rem] font-light text-black">{`"${testimonial.highlight_quote}"`}</p>
+				<p class="text-[1.13rem] font-light text-black">{testimonial.highlight_quote}</p>
 			</span>
 
 			<a
 				href={artist_testimonial_page}
-				class=" z-20 mr-12 flex flex-row justify-center text-gray-500 underline underline-offset-4 hover:text-gray-900"
+				class=" z-20 flex flex-row justify-center text-gray-500 underline underline-offset-4 hover:text-gray-900 md:mr-12"
 			>
 				Read the Full Story
 			</a>
