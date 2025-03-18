@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import BookACall from './BookACall.svelte';
 	import { onClickOfContact } from '$lib/utils';
+	import PtpBanner from './molecules/PtpBanner.svelte';
 
 	const logo_ar: number = 559 / 447;
 	const logo_height: number = 130;
@@ -54,7 +55,10 @@
 	}
 </script>
 
-<div class="hidden md:flex flex-row justify-between items-center w-full pl-32">
+{#if new Date() < new Date('2025-03-20T20:00:00-04:00')}
+	<PtpBanner />
+{/if}
+<div class="hidden w-full flex-row items-center justify-between pl-32 md:flex">
 	<img
 		src="/main-logo-no-bg.png"
 		class=""
@@ -62,7 +66,7 @@
 		width={Math.round(logo_height * logo_ar)}
 		alt="RaggStarRecords Logo"
 	/>
-	<ul class="flex flex-row gap-8 items-center mr-20 text-midGrey">
+	<ul class="mr-20 flex flex-row items-center gap-8 text-midGrey">
 		<button
 			on:click={() => {
 				navigateAway('home');
