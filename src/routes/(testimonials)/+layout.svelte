@@ -40,7 +40,7 @@
 		}
 
 		.responsive-background {
-			@apply cheap;
+			@apply bg-gradient-to-b from-[#30338d] to-[#23204f];
 		}
 	}
 
@@ -76,7 +76,7 @@
 	}
 
 	/* Secondary rotating layer for depth */
-	.container::after {
+	.cheap::after {
 		width: 180%;
 		height: 180%;
 		animation: rotate-reverse 10s linear infinite;

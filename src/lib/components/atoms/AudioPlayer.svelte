@@ -6,11 +6,11 @@
 	export let fileExtension = 'mp3';
 
 	// State
-	let audio: HTMLAudioElement;
-	let isPlaying = false;
+	export let audioElement: HTMLAudioElement;
+	export let handlePlay: (player: HTMLAudioElement) => void;
 	let duration = 0;
 	let currentTime = 0;
-
+	let isPlaying = false;
 	// Format time in MM:SS
 	const formatTime = (seconds: number) => {
 		const mins = Math.floor(seconds / 60);
@@ -19,37 +19,45 @@
 	};
 
 	onMount(() => {
-		audio.addEventListener('timeupdate', () => {
-			currentTime = audio.currentTime;
+		audioElement.addEventListener('timeupdate', () => {
+			currentTime = audioElement.currentTime;
 		});
 
-		audio.addEventListener('loadedmetadata', () => {
-			duration = audio.duration;
+		audioElement.addEventListener('loadedmetadata', () => {
+			duration = audioElement.duration;
 		});
 
-		audio.addEventListener('ended', () => {
+		audioElement.addEventListener('ended', () => {
+			isPlaying = false;
+		});
+
+		audioElement.addEventListener('pause', () => {
 			isPlaying = false;
 		});
 	});
 
 	const togglePlay = () => {
+		if (audioElement) {
+			handlePlay(audioElement);
+		}
+
 		if (isPlaying) {
-			audio.pause();
+			audioElement.pause();
 		} else {
-			audio.play();
+			audioElement.play();
 		}
 		isPlaying = !isPlaying;
 	};
 
 	const handleSeek = (e: any) => {
 		const seekPosition = e.target.value;
-		audio.currentTime = seekPosition;
+		audioElement.currentTime = seekPosition;
 		currentTime = seekPosition;
 	};
 </script>
 
 <div class="flex max-w-xl flex-col rounded-lg bg-black p-6 shadow-lg">
-	<audio bind:this={audio} src={`${fileName}.${fileExtension}`} preload="metadata"></audio>
+	<audio bind:this={audioElement} src={`${fileName}.${fileExtension}`} preload="metadata"></audio>
 	<div class="flex flex-row items-center gap-4">
 		<button
 			on:click={togglePlay}

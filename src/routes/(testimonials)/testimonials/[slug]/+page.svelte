@@ -34,6 +34,18 @@
 	if (!MapTestimonials.has(slug)) {
 		throw error(404, 'Testimonial not found');
 	}
+
+	let audioPlayers: HTMLAudioElement[] = [];
+
+	// Function to handle when an audio player starts playing
+	function handlePlay(currentPlayer: HTMLAudioElement) {
+		// Pause all other players
+		audioPlayers.forEach((player) => {
+			if (player !== currentPlayer && !player.paused) {
+				player.pause();
+			}
+		});
+	}
 </script>
 
 <svelte:head>
@@ -72,7 +84,7 @@
 			<a
 				href="#written-review"
 				class=" ml-2 flex flex-row gap-2 text-gray-300 underline-offset-4 hover:underline"
-				><CornerDownRight class="-mt-[2px] text-cyan-400" />Written Review</a
+				><CornerDownRight class="-mt-[2px] text-cyan-400" />The Full Story</a
 			>
 		</nav>
 	</div>
@@ -115,6 +127,8 @@
 				<time class="mb-2 block text-sm font-normal leading-none text-gray-500">Week 1</time>
 				<div class="mt-4">
 					<AudioPlayer
+						{handlePlay}
+						bind:audioElement={audioPlayers[0]}
 						fileName={`${ASSETS_PATH}/${testimonial.first_name.toLowerCase() + '_' + testimonial.last_name.toLowerCase() + '/beat'}`}
 					/>
 				</div>
@@ -133,6 +147,8 @@
 				>
 				<div class="mt-4">
 					<AudioPlayer
+						{handlePlay}
+						bind:audioElement={audioPlayers[1]}
 						fileName={`${ASSETS_PATH}/${testimonial.first_name.toLowerCase() + '_' + testimonial.last_name.toLowerCase() + '/rough-mix'}`}
 					/>
 				</div>
@@ -151,6 +167,8 @@
 				>
 				<div class="mt-4">
 					<AudioPlayer
+						{handlePlay}
+						bind:audioElement={audioPlayers[2]}
 						fileName={`${ASSETS_PATH}/${testimonial.first_name.toLowerCase() + '_' + testimonial.last_name.toLowerCase() + '/final-mix'}`}
 					/>
 				</div>
@@ -182,7 +200,7 @@
 	<h2
 		class=" secBg w-full px-4 py-2 text-center text-3xl font-light text-cyan-400 md:w-fit md:rounded-t-lg md:text-left md:text-3xl"
 	>
-		Written Review
+		The Full Story
 	</h2>
 	<div class="secBg flex flex-col gap-8 px-6 pb-6 pt-4 text-white md:rounded-b-lg md:px-4">
 		<p>
