@@ -33,7 +33,7 @@
 					viewBox="0 0 2 2"
 					class="mx-2 inline size-0.5 fill-current"
 					aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg
-				>Join us in Atlanta on April 17th for Atlanta's Premier Open Mic Experience.
+				>Join us on Thursday, April 17th for Atlanta's Premier Open Mic Experience.
 			</p>
 			<a
 				href="https://passthepeace.eventcube.io/events/73043/pass-the-peace-atlantas-premier-open-mic-experience-episode-2/"
