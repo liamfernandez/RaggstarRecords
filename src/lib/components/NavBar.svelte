@@ -55,7 +55,7 @@
 	}
 </script>
 
-{#if new Date() < new Date('2025-03-20T20:00:00-04:00')}
+{#if new Date() < new Date('2025-04-17T19:00:00-04:00')}
 	<PtpBanner />
 {/if}
 <div class="hidden w-full flex-row items-center justify-between pl-32 md:flex">

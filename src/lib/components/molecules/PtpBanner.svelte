@@ -33,10 +33,10 @@
 					viewBox="0 0 2 2"
 					class="mx-2 inline size-0.5 fill-current"
 					aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg
-				>Join us in Atlanta on March 20th for a special event.
+				>Join us in Atlanta on April 17th for Atlanta's Premier Open Mic Experience.
 			</p>
 			<a
-				href="https://passthepeace.eventcube.io/"
+				href="https://passthepeace.eventcube.io/events/73043/pass-the-peace-atlantas-premier-open-mic-experience-episode-2/"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
